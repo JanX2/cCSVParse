@@ -43,6 +43,8 @@ static char *cstrstr(const char *haystack, const char needle) {
 		retval[stringSize] = '\0';
 	}
 	NSMutableString *tempString = [NSMutableString stringWithCString: retval encoding:encoding];
+	free(retval);
+	retval = NULL;
 	[tempString replaceOccurrencesOfString:@"\"\"" 
 				    withString:@"\"" 
 				       options:0
@@ -201,6 +203,7 @@ static char *cstrstr(const char *haystack, const char needle) {
 						[csvContent addObject: csvLine];
 					}
 					csvLine = [NSMutableArray new];
+					[csvLine autorelease];
 				}
 				if (laststop != textp && (quoteCount % 2) == 0) {
 					[csvLine addObject: [self parseString:textp withLastStop:laststop]];
@@ -210,10 +213,12 @@ static char *cstrstr(const char *haystack, const char needle) {
 						[csvContent addObject: csvLine];
 					}
 					csvLine = [NSMutableArray new];
+					[csvLine autorelease];
 				} 
 				if ((*textp == '\0' || (quoteCount % 2) != 0) && lineBeginning != textp) {
 					lastLineBuffer = lineBeginning;
 					csvLine = [NSMutableArray new];
+					[csvLine autorelease];
 				}
 			}
 
@@ -221,11 +226,15 @@ static char *cstrstr(const char *haystack, const char needle) {
 				textp++;
 		}
 	}
+
+	free(buffer);
+	buffer = NULL;
+
 	return csvContent;
 }
 
 -(BOOL)openFile:(NSString*)fileName {
-	fileHandle = open([fileName cString], O_RDONLY);
+	fileHandle = open([fileName UTF8String], O_RDONLY);
 	return (fileHandle > 0);
 }
 
