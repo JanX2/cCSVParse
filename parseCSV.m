@@ -1,3 +1,12 @@
+/*
+ * cCSVParse, a small CVS file parser
+ *
+ * © 2007-2009 Michael Stapelberg and contributors
+ * http://michael.stapelberg.de/
+ *
+ * This source code is BSD-licensed, see LICENSE for the complete license.
+ *
+ */
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -38,10 +47,10 @@ static char *cstrstr(const char *haystack, const char needle) {
 		stringSize -= 2;
 	}
 	char *retval = (char*)malloc(stringSize + 1);
-	if (retval != NULL) {
-		strncpy(retval, laststop, (size_t)(stringSize));
-		retval[stringSize] = '\0';
-	}
+	if (retval == NULL)
+		return NULL;
+	strncpy(retval, laststop, (size_t)(stringSize));
+	retval[stringSize] = '\0';
 	NSMutableString *tempString = [NSMutableString stringWithCString: retval encoding:encoding];
 	free(retval);
 	retval = NULL;
