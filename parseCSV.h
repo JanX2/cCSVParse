@@ -13,7 +13,11 @@
 	int fileHandle;
 	int bufferSize;
 	char delimiter;
+	char endOfLine[3];
 	NSStringEncoding encoding;
+	BOOL verbose;
+	BOOL fileMode;
+	NSData *_data;
 }
 -(id)init;
 -(BOOL)openFile:(NSString*)fileName;
@@ -21,7 +25,12 @@
 -(char)autodetectDelimiter;
 -(char)delimiter;
 -(void)setDelimiter:(char)newDelimiter;
+-(NSString *)delimiterString;
 -(void)setBufferSize:(int)newBufferSize;
+-(NSString *)endOfLine;
 -(NSMutableArray*)parseFile;
+-(NSMutableArray *)parseData:(NSData *)data;
 -(void)setEncoding:(NSStringEncoding)newEncoding;
+-(BOOL)verbose;
+-(void)setVerbose:(BOOL)value;
 @end
