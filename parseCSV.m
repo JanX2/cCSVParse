@@ -80,7 +80,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 								withString:@"\"" 
 								   options:0
 									 range:NSMakeRange(0, [tempString length])];
-	return [tempString copy];
+	return tempString;
 }
 
 
