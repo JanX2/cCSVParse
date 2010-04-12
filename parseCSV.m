@@ -193,6 +193,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		if (lastLineBuffer != NULL) {
 			
 			if (strlen(lastLineBuffer) == bufferSize) {
+				
 				[csvContent removeAllObjects];
 				[csvContent addObject:[NSArray arrayWithObject: @"ERROR: Buffer too small"]];
 				return csvContent;
@@ -234,7 +235,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			n = read(fileHandle, (buffer + diff), bufferSize);
 		}
 		else {
-			n = [dataStream read:(uint8_t *)buffer maxLength:bufferSize];
+			n = [dataStream read:(uint8_t *)(buffer + diff) maxLength:bufferSize];
 		}
 
 		if (n <= 0)
