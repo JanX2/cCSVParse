@@ -193,7 +193,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		if (lastLineBuffer != NULL) {
 			
 			if (strlen(lastLineBuffer) == bufferSize) {
-				
+				// CHANGEME: Recover from this
 				[csvContent removeAllObjects];
 				[csvContent addObject:[NSArray arrayWithObject: @"ERROR: Buffer too small"]];
 				return csvContent;
