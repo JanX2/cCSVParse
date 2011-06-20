@@ -116,7 +116,8 @@ static char *cstrstr(const char *haystack, const char needle) {
 	if (fileHandle <= 0)
 		return csvContent;
 	char possibleDelimiters[4] = ",;\t\0";
-	int n = 1, diff;
+	ssize_t n = 1;
+	size_t diff;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
 	char *buffer = malloc(sizeof(char) * (bufferSize + 1));
