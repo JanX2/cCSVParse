@@ -63,24 +63,19 @@ char searchDelimiter(char *textp) {
  *
  */
 NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
-	size_t stringSize = (size_t)(textp - laststop);
+	NSUInteger stringSize = (size_t)(textp - laststop);
 	if (*laststop == '\"' && *(laststop+1) != '\0' && *(laststop + stringSize - 1) == '\"') {
 		laststop++;
 		stringSize -= 2;
 	}
-	char *retval = (char *)malloc(stringSize + 1);
-	if (retval == NULL)
-		return nil;
-	strncpy(retval, laststop, stringSize);
-	retval[stringSize] = '\0';
-	NSMutableString *tempString = [NSMutableString stringWithCString:retval encoding:encoding];
-	free(retval);
-	retval = NULL;
+	NSMutableString *tempString = [[NSMutableString alloc] initWithBytes:laststop
+																  length:stringSize
+																encoding:encoding];
 	[tempString replaceOccurrencesOfString:@"\"\"" 
 								withString:@"\"" 
 								   options:0
 									 range:NSMakeRange(0, [tempString length])];
-	return tempString;
+	return [tempString autorelease];
 }
 
 
