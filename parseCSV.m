@@ -64,17 +64,21 @@ char searchDelimiter(char *textp) {
  */
 NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	NSUInteger stringSize = (size_t)(textp - laststop);
+	
 	if (*laststop == '\"' && *(laststop+1) != '\0' && *(laststop + stringSize - 1) == '\"') {
 		laststop++;
 		stringSize -= 2;
 	}
+	
 	NSMutableString *tempString = [[NSMutableString alloc] initWithBytes:laststop
 																  length:stringSize
 																encoding:encoding];
+	
 	[tempString replaceOccurrencesOfString:@"\"\"" 
 								withString:@"\"" 
 								   options:0
 									 range:NSMakeRange(0, [tempString length])];
+	
 	return [tempString autorelease];
 }
 
