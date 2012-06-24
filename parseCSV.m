@@ -68,10 +68,10 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		laststop++;
 		stringSize -= 2;
 	}
-	char *retval = (char*)malloc(stringSize + 1);
+	char *retval = (char *)malloc(stringSize + 1);
 	if (retval == NULL)
-		return NULL;
-	strncpy(retval, laststop, (size_t)(stringSize));
+		return nil;
+	strncpy(retval, laststop, stringSize);
 	retval[stringSize] = '\0';
 	NSMutableString *tempString = [NSMutableString stringWithCString:retval encoding:encoding];
 	free(retval);
