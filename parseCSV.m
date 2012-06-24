@@ -63,7 +63,7 @@ char searchDelimiter(char *textp) {
  *
  */
 NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
-	int stringSize = (int)(textp - laststop);
+	size_t stringSize = (size_t)(textp - laststop);
 	if (*laststop == '\"' && *(laststop+1) != '\0' && *(laststop + stringSize - 1) == '\"') {
 		laststop++;
 		stringSize -= 2;
@@ -178,7 +178,8 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	NSInputStream *dataStream = nil;
 	
 
-	size_t n = 1, diff;
+	ssize_t n = 1;
+	size_t diff;
 	NSUInteger lastColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
