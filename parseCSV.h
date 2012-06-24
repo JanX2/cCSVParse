@@ -9,16 +9,7 @@
  */
 #import <Cocoa/Cocoa.h>
 
-@interface CSVParser:NSObject {
-	int fileHandle;
-	int bufferSize;
-	char delimiter;
-	char endOfLine[3];
-	NSStringEncoding encoding;
-	BOOL verbose;
-	BOOL fileMode;
-	NSData *_data;
-}
+@interface CSVParser:NSObject 
 -(id)init;
 -(BOOL)openFile:(NSString*)fileName;
 -(void)closeFile;

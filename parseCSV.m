@@ -84,7 +84,16 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 
-@implementation CSVParser
+@implementation CSVParser {
+	int fileHandle;
+	size_t bufferSize;
+	char delimiter;
+	char endOfLine[3];
+	NSStringEncoding encoding;
+	BOOL verbose;
+	BOOL fileMode;
+	NSData *_data;
+}
 
 -(void)setData:(NSData *)value {
     if (_data != value) {
@@ -169,13 +178,13 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	NSInputStream *dataStream = nil;
 	
 
-	NSInteger n = 1, diff;
+	size_t n = 1, diff;
 	NSUInteger lastColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
 	bool addCurrentLineStartNew = false;
-	int bufferCapacity = bufferSize + 1;
-	int necessaryCapacity = 0;
+	size_t bufferCapacity = bufferSize + 1;
+	size_t necessaryCapacity = 0;
 	char *buffer = malloc(sizeof(char) * bufferCapacity);
 	char *textp = NULL, *lastStop = NULL, *lineStart = NULL, *lastLineBuffer = NULL;
 	
