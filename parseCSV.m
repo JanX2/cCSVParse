@@ -204,7 +204,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			if (strlen(lastLineBuffer) == bufferSize) {
 				// CHANGEME: Recover from this
 				[csvContent removeAllObjects];
-				[csvContent addObject:[NSArray arrayWithObject: @"ERROR: Buffer too small"]];
+				[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Buffer too small"]];
 				return csvContent;
 			}
 			
@@ -227,7 +227,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 				buffer = realloc(buffer, necessaryCapacity);
 				if (buffer == NULL) {
 					[csvContent removeAllObjects];
-					[csvContent addObject: [NSArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
+					[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
 					return csvContent;
 				}
 				bufferCapacity = necessaryCapacity;
