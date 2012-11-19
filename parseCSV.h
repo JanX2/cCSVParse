@@ -7,7 +7,12 @@
  * This source code is BSD-licensed, see LICENSE for the complete license.
  *
  */
-#import <Cocoa/Cocoa.h>
+
+#if TARGET_OS_IPHONE
+	#import <UIKit/UIKit.h>
+#else
+	#import <Cocoa/Cocoa.h>
+#endif
 
 @interface CSVParser:NSObject 
 -(id)init;
