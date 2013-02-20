@@ -20,14 +20,16 @@
 -(void)closeFile;
 -(char)autodetectDelimiter;
 -(NSString *)delimiterString;
--(void)setBufferSize:(int)newBufferSize;
 -(NSString *)endOfLine;
 -(NSMutableArray*)parseFile;
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
--(void)setEncoding:(NSStringEncoding)newEncoding;
 
 @property (assign) char delimiter;
+@property (assign) NSStringEncoding encoding;
+
+@property (assign) size_t bufferSize;
+
 @property (assign) BOOL verbose;
 
 @end
