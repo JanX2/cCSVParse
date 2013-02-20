@@ -362,11 +362,10 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
  *
  */
 -(NSMutableArray*)parseFile {
+	if (fileHandle <= 0)  return [NSMutableArray array];
+	
 	NSMutableArray *csvContent = [NSMutableArray array];
 
-	if (fileHandle <= 0)
-		return [NSMutableArray array];
-	
 	return [self parseInto:csvContent];
 
 }
