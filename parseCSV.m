@@ -357,7 +357,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 /*
- * Parses the CSV-file with the given filename and stores the result in a
+ * Parses the CSV-file with the given filename and return the result as an
  * NSMutableArray.
  *
  */
@@ -372,7 +372,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 /*
- * Parses the CSV-file with the given filename and stores the result in a
+ * Parses the data as CSV and return the result as an
  * NSMutableArray.
  *
  */
