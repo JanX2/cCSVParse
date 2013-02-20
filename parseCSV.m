@@ -84,13 +84,13 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 
 
 @implementation CSVParser {
-	int fileHandle;
+	int _fileHandle;
 	size_t _bufferSize;
 	char _delimiter;
-	char endOfLine[3];
+	char _endOfLine[3];
 	NSStringEncoding _encoding;
 	BOOL _verbose;
-	BOOL fileMode;
+	BOOL _fileMode;
 	NSData *_data;
 }
 
@@ -107,13 +107,13 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		// Set default _bufferSize
 		_bufferSize = 2048;
 		// Set fileHandle to an invalid value
-		fileHandle = 0;
+		_fileHandle = 0;
 		// Set delimiter to 0
 		_delimiter = '\0';
 		// Set endOfLine to empty
-		endOfLine[0] = '\0';
-		endOfLine[1] = '\0';
-		endOfLine[2] = '\0';
+		_endOfLine[0] = '\0';
+		_endOfLine[1] = '\0';
+		_endOfLine[2] = '\0';
 		// Set default encoding
 		_encoding = NSISOLatin1StringEncoding;
 		// Set default verbosity
@@ -145,12 +145,12 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 
 	NSInteger n;
 	
-	if (fileMode) {
+	if (_fileMode) {
 		// Seek to the beginning of the file
-		lseek(fileHandle, 0, SEEK_SET);
+		lseek(_fileHandle, 0, SEEK_SET);
 
 		// Fill the buffer
-		n = read(fileHandle, buffer, _bufferSize);
+		n = read(_fileHandle, buffer, _bufferSize);
 	}
 	else {
 		assert(sizeof(uint8_t) == sizeof(char));
@@ -188,8 +188,8 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	char *buffer = malloc(sizeof(char) * bufferCapacity);
 	char *textp = NULL, *lastStop = NULL, *lineStart = NULL, *lastLineBuffer = NULL;
 	
-	if (fileMode) {
-		lseek(fileHandle, 0, SEEK_SET);
+	if (_fileMode) {
+		lseek(_fileHandle, 0, SEEK_SET);
 	}
 	else {
 		assert(sizeof(uint8_t) == sizeof(char));
@@ -240,8 +240,8 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			diff = 0;
 		}
 		
-		if (fileMode) {
-			n = read(fileHandle, (buffer + diff), _bufferSize);
+		if (_fileMode) {
+			n = read(_fileHandle, (buffer + diff), _bufferSize);
 		}
 		else {
 			n = [dataStream read:(uint8_t *)(buffer + diff) maxLength:_bufferSize];
@@ -331,10 +331,10 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			
 			if (firstLine) {
 				if ( (lineStart != NULL) && (lineStart-1 >= buffer) && EOL(lineStart-1) ) {
-					endOfLine[0] = *(lineStart-1);
+					_endOfLine[0] = *(lineStart-1);
 
 					if ( EOL(lineStart) ) {
-						endOfLine[1] = *(lineStart);
+						_endOfLine[1] = *(lineStart);
 					}
 				}
 				
@@ -349,7 +349,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	free(buffer);
 	buffer = NULL;
 
-	if (!fileMode) {
+	if (!_fileMode) {
 		[dataStream close];
 	}
 
@@ -362,7 +362,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
  *
  */
 -(NSMutableArray*)parseFile {
-	if (fileHandle <= 0)  return [NSMutableArray array];
+	if (_fileHandle <= 0)  return [NSMutableArray array];
 	
 	NSMutableArray *csvContent = [NSMutableArray array];
 
@@ -381,7 +381,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	
 	NSMutableArray *csvContent = [NSMutableArray array];
 	
-	fileMode = NO;
+	_fileMode = NO;
 	
 	
 	[self parseInto:csvContent];
@@ -398,7 +398,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 {
 	NSMutableArray *csvContent = [NSMutableArray array];
 
-	fileMode = NO;
+	_fileMode = NO;
 	
 	if (data != nil) {
 		[self setData:data];
@@ -415,15 +415,15 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 -(BOOL)openFile:(NSString*)fileName {
-	fileMode = YES;
-	fileHandle = open([fileName UTF8String], O_RDONLY);
-	return (fileHandle > 0);
+	_fileMode = YES;
+	_fileHandle = open([fileName UTF8String], O_RDONLY);
+	return (_fileHandle > 0);
 }
 
 -(void)closeFile {
-	if (fileHandle > 0) {
-		close(fileHandle);
-		fileHandle = 0;
+	if (_fileHandle > 0) {
+		close(_fileHandle);
+		_fileHandle = 0;
 	}
 }
 
@@ -434,7 +434,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 -(NSString *)endOfLine {
-    return [NSString stringWithCString:endOfLine encoding:_encoding];
+    return [NSString stringWithCString:_endOfLine encoding:_encoding];
 }
 
 @end
