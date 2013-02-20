@@ -86,10 +86,10 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 @implementation CSVParser {
 	int fileHandle;
 	size_t bufferSize;
-	char delimiter;
+	char _delimiter;
 	char endOfLine[3];
 	NSStringEncoding encoding;
-	BOOL verbose;
+	BOOL _verbose;
 	BOOL fileMode;
 	NSData *_data;
 }
@@ -109,7 +109,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		// Set fileHandle to an invalid value
 		fileHandle = 0;
 		// Set delimiter to 0
-		delimiter = '\0';
+		_delimiter = '\0';
 		// Set endOfLine to empty
 		endOfLine[0] = '\0';
 		endOfLine[1] = '\0';
@@ -117,7 +117,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		// Set default encoding
 		encoding = NSISOLatin1StringEncoding;
 		// Set default verbosity
-		verbose = NO;
+		_verbose = NO;
 		
 		_data = nil;
 	}
@@ -258,14 +258,14 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		
 		while (*textp != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
-			if (firstLine && delimiter == '\0') {
+			if (firstLine && _delimiter == '\0') {
 				//firstLine = false;
 				
 				// Check if a delimiter was found and set it
-				delimiter = searchDelimiter(textp);
-				if (delimiter != 0) {
-					if (verbose) {
-						printf("delim is %c / %d :-)\n", delimiter, delimiter);
+				_delimiter = searchDelimiter(textp);
+				if (_delimiter != 0) {
+					if (_verbose) {
+						printf("delim is %c / %d :-)\n", _delimiter, _delimiter);
 					}
 					//while (NOT_EOL(textp))
 					//	textp++;
@@ -291,7 +291,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 							quoteCount++;
 						}
 					} 
-					else if (*textp == delimiter && (quoteCount % 2) == 0) {
+					else if (*textp == _delimiter && (quoteCount % 2) == 0) {
 						// This is a delimiter which is not between an unmachted pair of quotes
 						[csvLine addObject:parseString(textp, lastStop, encoding)];
 						lastStop = textp + 1;
@@ -303,7 +303,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 				
 				addCurrentLineStartNew = false;
 				
-				if (lastStop == textp && *(textp-1) == delimiter) {
+				if (lastStop == textp && *(textp-1) == _delimiter) {
 					[csvLine addObject:@""];
 					
 					addCurrentLineStartNew = true;
@@ -427,17 +427,9 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	}
 }
 
--(char)delimiter {
-	return delimiter;
-}
-
--(void)setDelimiter:(char)newDelimiter {
-	delimiter = newDelimiter;
-}
-
 -(NSString *)delimiterString {
 	char delimiterCString[2] = {'\0', '\0'};
-	delimiterCString[0] = delimiter;
+	delimiterCString[0] = _delimiter;
     return [NSString stringWithCString:delimiterCString encoding:encoding];
 }
 
@@ -451,16 +443,6 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 
 -(void)setEncoding:(NSStringEncoding)newEncoding {
 	encoding = newEncoding;
-}
-
--(BOOL)verbose {
-    return verbose;
-}
-
--(void)setVerbose:(BOOL)value {
-    if (verbose != value) {
-        verbose = value;
-    }
 }
 
 @end

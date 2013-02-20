@@ -19,8 +19,6 @@
 -(BOOL)openFile:(NSString*)fileName;
 -(void)closeFile;
 -(char)autodetectDelimiter;
--(char)delimiter;
--(void)setDelimiter:(char)newDelimiter;
 -(NSString *)delimiterString;
 -(void)setBufferSize:(int)newBufferSize;
 -(NSString *)endOfLine;
@@ -28,6 +26,8 @@
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
 -(void)setEncoding:(NSStringEncoding)newEncoding;
--(BOOL)verbose;
--(void)setVerbose:(BOOL)value;
+
+@property (assign) char delimiter;
+@property (assign) BOOL verbose;
+
 @end
