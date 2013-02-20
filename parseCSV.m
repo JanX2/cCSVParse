@@ -91,14 +91,6 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	NSStringEncoding _encoding;
 	BOOL _verbose;
 	BOOL _fileMode;
-	NSData *_data;
-}
-
--(void)setData:(NSData *)value {
-    if (_data != value) {
-        [_data release];
-        _data = [value copy];
-    }
 }
 
 -(id)init {

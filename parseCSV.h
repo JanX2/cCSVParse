@@ -25,6 +25,8 @@
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
 
+@property (copy) NSData *data;
+
 @property (assign) char delimiter;
 @property (assign) NSStringEncoding encoding;
 
