@@ -16,11 +16,15 @@
 
 @interface CSVParser:NSObject 
 -(id)init;
+
 -(BOOL)openFile:(NSString*)fileName;
 -(void)closeFile;
+
 -(char)autodetectDelimiter;
+
 -(NSString *)delimiterString;
 -(NSString *)endOfLine;
+
 -(NSMutableArray*)parseFile;
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
