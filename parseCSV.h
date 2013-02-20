@@ -25,6 +25,7 @@
 -(void)setBufferSize:(int)newBufferSize;
 -(NSString *)endOfLine;
 -(NSMutableArray*)parseFile;
+-(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
 -(void)setEncoding:(NSStringEncoding)newEncoding;
 -(BOOL)verbose;

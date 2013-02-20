@@ -371,6 +371,25 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 }
 
 /*
+ * Parses the current data as CSV and return the result as an
+ * NSMutableArray.
+ *
+ */
+-(NSMutableArray *)parseData
+{
+	if (_data == nil)  return nil;
+	
+	NSMutableArray *csvContent = [NSMutableArray array];
+	
+	fileMode = NO;
+	
+	
+	[self parseInto:csvContent];
+	
+	return csvContent;
+}
+
+/*
  * Parses the data as CSV and return the result as an
  * NSMutableArray.
  *
