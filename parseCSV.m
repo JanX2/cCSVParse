@@ -85,11 +85,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 
 @implementation CSVParser {
 	int _fileHandle;
-	size_t _bufferSize;
-	char _delimiter;
 	char _endOfLine[3];
-	NSStringEncoding _encoding;
-	BOOL _verbose;
 	BOOL _fileMode;
 }
 
