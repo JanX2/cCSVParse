@@ -62,7 +62,7 @@ char searchDelimiter(char *textp) {
 	
 	// Check if a delimiter was found and set it
 	if (NOT_EOL(textp)) {
-		delimiter = *cstrstr((const char*)possibleDelimiters, *textp);
+		delimiter = *cstrstr(possibleDelimiters, *textp);
 		return delimiter;
 	}
 	else {
