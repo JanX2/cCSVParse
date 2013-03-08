@@ -25,6 +25,9 @@
 -(NSString *)delimiterString;
 -(NSString *)endOfLine;
 
++(NSArray *)supportedDelimiters;
++(NSArray *)supportedDelimiterLocalizedNames;
+
 -(NSMutableArray*)parseFile;
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;

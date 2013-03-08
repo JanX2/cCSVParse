@@ -21,8 +21,21 @@
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n') && *(x) != '\0')
 #define NOT_EOL(x) (*(x) != '\0' && *(x) != '\r' && *(x) != '\n')
 
-char possibleDelimiters[4] = ",;\t\0";
-//char possibleDelimiters[5] = ",;|\t\0";
+//char possibleDelimiters[4] = ",;\t\0";
+char possibleDelimiters[5] = ",;\t|\0";
+NSString *possibleDelimiterNames[] = {
+	@"Comma (,)",
+	@"Semicolon (;)",
+	@"Tab Symbol",
+	@"Pipe Symbol (|)"
+};
+/* For genstrings:
+ NSLocalizedString(@"Comma (,)", @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Semicolon (;)", @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Tab Symbol", @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Pipe Symbol (|)" @"cCSVParseDelimiterNames")
+ */
+
 
 /*
  * replacement for strstr() which does only check every char instead
@@ -415,14 +428,43 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	}
 }
 
+NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
+    char delimiterCString[2] = {'\0', '\0'};
+	delimiterCString[0] = delimiter;
+    return [NSString stringWithCString:delimiterCString encoding:encoding];
+}
+
 -(NSString *)delimiterString {
-	char delimiterCString[2] = {'\0', '\0'};
-	delimiterCString[0] = _delimiter;
-    return [NSString stringWithCString:delimiterCString encoding:_encoding];
+	return stringForDelimiter(_delimiter, _encoding);
 }
 
 -(NSString *)endOfLine {
     return [NSString stringWithCString:_endOfLine encoding:_encoding];
+}
+
+
++(NSArray *)supportedDelimiters {
+	NSMutableArray *delimitersArray = [NSMutableArray array];
+	char *delimiter = (char *)possibleDelimiters;
+	while (*delimiter != '\0') {
+		NSString *delimiterString = stringForDelimiter(*delimiter, NSASCIIStringEncoding);
+		[delimitersArray addObject:delimiterString];
+		
+		delimiter++;
+	}
+	
+	return delimitersArray;
+}
+
++(NSArray *)supportedDelimiterLocalizedNames {
+	NSUInteger possibleDelimiterNamesCount = sizeof(possibleDelimiterNames)/sizeof(possibleDelimiterNames[0]);
+	NSMutableArray *delimiterNamesArray = [NSMutableArray arrayWithCapacity:possibleDelimiterNamesCount];
+	for (NSUInteger i = 0; i < possibleDelimiterNamesCount; i++) {
+		NSString *delimiterName = NSLocalizedString(possibleDelimiterNames[i], @"cCSVParseDelimiterNames");
+		[delimiterNamesArray addObject:delimiterName];
+	}
+
+	return delimiterNamesArray;
 }
 
 @end
