@@ -28,6 +28,9 @@
 +(NSArray *)supportedDelimiters;
 +(NSArray *)supportedDelimiterLocalizedNames;
 
++(NSArray *)supportedLineEndings;
++(NSArray *)supportedLineEndingLocalizedNames;
+
 -(NSMutableArray*)parseFile;
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;

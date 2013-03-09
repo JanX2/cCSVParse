@@ -37,6 +37,24 @@ NSString *possibleDelimiterNames[] = {
  */
 
 
+NSString *supportedLineEndings[] = {
+	@"\n",
+	@"\r",
+	@"\r\n"
+};
+
+NSString *supportedLineEndingNames[] = {
+	@"Unix/Mac OS X Line Endings (LF)",
+	@"Classic Mac Line Endings (CR)",
+	@"Windows Line Endings (CRLF)"
+};
+/* For genstrings:
+ NSLocalizedString(@"Unix/Mac OS X Line Endings (LF)", @"cCSVParseLineEndingNames")
+ NSLocalizedString(@"Classic Mac Line Endings (CR)", @"cCSVParseLineEndingNames")
+ NSLocalizedString(@"Windows Line Endings (CRLF)", @"cCSVParseLineEndingNames")
+ */
+
+
 /*
  * replacement for strstr() which does only check every char instead
  * of complete strings
@@ -465,6 +483,29 @@ NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
 	}
 
 	return delimiterNamesArray;
+}
+
+
++(NSArray *)supportedLineEndings {
+	NSUInteger supportedLineEndingsCount = sizeof(supportedLineEndings)/sizeof(supportedLineEndings[0]);
+	NSMutableArray *lineEndingsArray = [NSMutableArray arrayWithCapacity:supportedLineEndingsCount];
+	for (NSUInteger i = 0; i < supportedLineEndingsCount; i++) {
+		NSString *lineEnding = supportedLineEndings[i];
+		[lineEndingsArray addObject:lineEnding];
+	}
+	
+	return lineEndingsArray;
+}
+
++(NSArray *)supportedLineEndingLocalizedNames {
+	NSUInteger supportedLineEndingNamesCount = sizeof(supportedLineEndingNames)/sizeof(supportedLineEndingNames[0]);
+	NSMutableArray *lineEndingNamesArray = [NSMutableArray arrayWithCapacity:supportedLineEndingNamesCount];
+	for (NSUInteger i = 0; i < supportedLineEndingNamesCount; i++) {
+		NSString *lineEndingName = NSLocalizedString(supportedLineEndingNames[i], @"cCSVParseLineEndingNames");
+		[lineEndingNamesArray addObject:lineEndingName];
+	}
+	
+	return lineEndingNamesArray;
 }
 
 @end
