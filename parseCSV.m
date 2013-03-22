@@ -263,7 +263,7 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 			break;
 		
 		// Terminate buffer correctly
-		if ((lastLineLength + n) <= (lastLineLength + blockCharCount))
+		if ((size_t)n <= blockCharCount)
 			buffer_p[lastLineLength + n] = '\0';
 		
 		text_p = buffer_p;
