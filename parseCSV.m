@@ -107,7 +107,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	
 	[tempString replaceOccurrencesOfString:@"\"\"" 
 								withString:@"\"" 
-								   options:0
+								   options:NSLiteralSearch
 									 range:NSMakeRange(0, [tempString length])];
 	
 	return [tempString autorelease];
