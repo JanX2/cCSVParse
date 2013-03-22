@@ -160,8 +160,9 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
  *
  */
 -(char)autodetectDelimiter {
-	char buffer[_bufferSize+1];
-
+	char buffer[_bufferSize];
+	size_t bufferCharCount = _bufferSize - 1;
+	
 	NSInteger n;
 	
 	if (_fileMode) {
@@ -169,14 +170,14 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		lseek(_fileHandle, 0, SEEK_SET);
 
 		// Fill the buffer
-		n = read(_fileHandle, buffer, _bufferSize);
+		n = read(_fileHandle, buffer, bufferCharCount);
 	}
 	else {
 		assert(sizeof(uint8_t) == sizeof(char));
 		NSInputStream *dataStream = [NSInputStream inputStreamWithData:_data];
 		[dataStream open];
 		
-		n = [dataStream read:(uint8_t *)buffer maxLength:_bufferSize];
+		n = [dataStream read:(uint8_t *)buffer maxLength:bufferCharCount];
 		
 		[dataStream close];
 	}
@@ -202,9 +203,9 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
 	bool addCurrentLineAndStartNew = false;
-	size_t bufferCapacity = _bufferSize + 1;
+	size_t bufferCharCount = _bufferSize - 1;
 	size_t necessaryCapacity = 0;
-	char *buffer = malloc(sizeof(char) * bufferCapacity);
+	char *buffer = malloc(sizeof(char) * _bufferSize);
 	char *textp = NULL, *lastStop = NULL, *lineStart = NULL, *lastLineBuffer = NULL;
 	
 	if (_fileMode) {
@@ -221,7 +222,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		if (lastLineBuffer != NULL) {
 			size_t lastLineBufferLength = strlen(lastLineBuffer);
 			
-			if (lastLineBufferLength == _bufferSize) {
+			if (lastLineBufferLength == bufferCharCount) {
 				// CHANGEME: Recover from this
 				[csvContent removeAllObjects];
 				[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Buffer too small"]];
@@ -242,15 +243,15 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			
 			// Increase the buffer size so that the buffer can hold 
 			// both lastLineBuffer and a block of bufferSize
-			necessaryCapacity = diff + _bufferSize;
-			if (bufferCapacity < necessaryCapacity) {
+			necessaryCapacity = diff + bufferCharCount;
+			if (bufferCharCount < necessaryCapacity) {
 				buffer = realloc(buffer, necessaryCapacity);
 				if (buffer == NULL) {
 					[csvContent removeAllObjects];
 					[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
 					return csvContent;
 				}
-				bufferCapacity = necessaryCapacity;
+				bufferCharCount = necessaryCapacity;
 			}
 			
 			lastLineBuffer = NULL;
@@ -261,17 +262,17 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		}
 		
 		if (_fileMode) {
-			n = read(_fileHandle, (buffer + diff), _bufferSize);
+			n = read(_fileHandle, (buffer + diff), bufferCharCount);
 		}
 		else {
-			n = [dataStream read:(uint8_t *)(buffer + diff) maxLength:_bufferSize];
+			n = [dataStream read:(uint8_t *)(buffer + diff) maxLength:bufferCharCount];
 		}
 
 		if (n <= 0)
 			break;
 		
 		// Terminate buffer correctly
-		if ((diff+n) <= (_bufferSize + diff))
+		if ((diff+n) <= (bufferCharCount + diff))
 			buffer[diff+n] = '\0';
 		
 		textp = (char *)buffer;
@@ -335,7 +336,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 				} 
 				
 				if (addCurrentLineAndStartNew) {
-					if ((int)(buffer + _bufferSize + diff - textp) > 0) {
+					if ((int)(buffer + bufferCharCount + diff - textp) > 0) {
 						lineStart = textp + 1;
 						[csvContent addObject:csvLine];
 						lastColumnCount = [csvLine count];
