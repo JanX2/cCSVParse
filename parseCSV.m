@@ -450,7 +450,11 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
     char delimiterCString[2] = {'\0', '\0'};
 	delimiterCString[0] = delimiter;
-    return [NSString stringWithCString:delimiterCString encoding:encoding];
+	if (delimiterCString[0] == '\0') {
+		return nil;
+	} else {
+		return [NSString stringWithCString:delimiterCString encoding:encoding];
+	}
 }
 
 -(NSString *)delimiterString {
@@ -458,7 +462,11 @@ NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
 }
 
 -(NSString *)endOfLine {
-    return [NSString stringWithCString:_endOfLine encoding:_encoding];
+	if (_endOfLine[0] == '\0') {
+		return nil;
+	} else {
+		return [NSString stringWithCString:_endOfLine encoding:_encoding];
+	}
 }
 
 
