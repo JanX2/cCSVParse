@@ -219,8 +219,9 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	while (n > 0) {
 		
 		if (lastLineBuffer != NULL) {
+			size_t lastLineBufferLength = strlen(lastLineBuffer);
 			
-			if (strlen(lastLineBuffer) == _bufferSize) {
+			if (lastLineBufferLength == _bufferSize) {
 				// CHANGEME: Recover from this
 				[csvContent removeAllObjects];
 				[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Buffer too small"]];
@@ -237,7 +238,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 			
 			// Copy lastLineBuffer to the beginning of the buffer
 			strcpy(buffer, lastLineBuffer);
-			diff = strlen(lastLineBuffer);
+			diff = lastLineBufferLength;
 			
 			// Increase the buffer size so that the buffer can hold 
 			// both lastLineBuffer and a block of bufferSize
