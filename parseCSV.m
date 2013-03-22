@@ -294,7 +294,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 				
 				// Parsing is split into parts till EOL
 				while (NOT_EOL(textp) || (*textp != '\0' && (quoteCount % 2) != 0)) {
-					// If we got two quotes and a delimiter before and after, this is an empty value
+					// If we have two quotes and a delimiter before and after, this is an empty value
 					if (*textp == '\"') { 
 						if (*(textp+1) == '\"') {
 							// we'll just skip this
