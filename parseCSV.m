@@ -267,7 +267,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 		if ((lastLineLength + n) <= (lastLineLength + blockCharCount))
 			buffer[lastLineLength + n] = '\0';
 		
-		textp = (char *)buffer;
+		textp = buffer;
 		
 		while (*textp != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
@@ -316,7 +316,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 				
 				addCurrentLineAndStartNew = false;
 				
-				if (lastStop == textp && *(textp-1) == _delimiter) {
+				if (lastStop == textp && *(textp - 1) == _delimiter) {
 					[csvLine addObject:@""];
 					
 					addCurrentLineAndStartNew = true;
