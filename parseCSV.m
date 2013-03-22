@@ -221,18 +221,15 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 		if (lastLineBuffer_p != NULL) {
 			lastLineLength = strlen(lastLineBuffer_p);
 			
-			// Take care of the quotes in lastLineBuffer!
-			text_p = lastLineBuffer_p;
-			while (*text_p != '\0') {
-				if (*text_p == '\"')
-					quoteCount++;
-				text_p++;
-			}
-			
-			// Increase the buffer size so that the buffer can hold 
-			// both lastLineBuffer and a block of blockCharCount size
-			size_t necessaryCapacity = (lastLineLength + blockCharCount) * sizeof(char);
+			// Increase the buffer size so that the buffer can hold
+			// both the last line and a block of blockCharCount size
+			size_t necessaryCapacity = (lastLineLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
+				// Preserve last line
+				char lastLine[lastLineLength + 1];
+				strncpy(lastLine, lastLineBuffer_p, lastLineLength);
+				lastLine[lastLineLength + 1] = '\0';
+				
 				buffer_p = realloc(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
 					[csvContent removeAllObjects];
@@ -240,10 +237,14 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 					return csvContent;
 				}
 				bufferSize = necessaryCapacity;
+				
+				// Copy lastLine to the beginning of the buffer.
+				strncpy(buffer_p, lastLine, lastLineLength);
 			}
-			
-			// Copy lastLineBuffer to the beginning of the buffer
-			strcpy(buffer_p, lastLineBuffer_p);
+			else {
+				// Copy lastLineBuffer_p to the beginning of the buffer.
+				strncpy(buffer_p, lastLineBuffer_p, lastLineLength);
+			}
 			
 			lastLineBuffer_p = NULL;
 			
@@ -261,6 +262,8 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 
 		if (n <= 0)
 			break;
+		
+		bool readEntireBlock = ((size_t)n == blockCharCount);
 		
 		// Terminate buffer correctly
 		if ((size_t)n <= blockCharCount)
@@ -315,12 +318,17 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 				addCurrentLineAndStartNew = false;
 				
 				if (lastStop_p == text_p && *(text_p - 1) == _delimiter) {
+					// Empty cell.
 					[csvLine addObject:@""];
 					
 					addCurrentLineAndStartNew = true;
 				}
-				else if (lastStop_p != text_p && (quoteCount % 2) == 0) {
-					[csvLine addObject:parseString(text_p, lastStop_p, _encoding)];
+				else if (lastStop_p != text_p &&
+						 (quoteCount % 2) == 0 &&
+						 (*text_p != '\0' || (*text_p == '\0' && readEntireBlock == false))) {
+					// Non-empty cell that with certainty was not split apart by the buffer size limit.
+					NSString *cellString = parseString(text_p, lastStop_p, _encoding);
+					[csvLine addObject:cellString];
 					
 					addCurrentLineAndStartNew = true;
 				} 
@@ -335,6 +343,7 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 				}
 				
 				if ((*text_p == '\0' || (quoteCount % 2) != 0) && lineStart_p != text_p) {
+					// Restart line parsing.
 					lastLineBuffer_p = lineStart_p;
 					csvLine = [NSMutableArray arrayWithCapacity:lastColumnCount];
 				}
