@@ -275,15 +275,14 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 				
 				// Check if a delimiter was found and set it
 				_delimiter = searchDelimiter(text_p);
-				if (_delimiter != 0) {
+				if (_delimiter != '\0') {
 					if (_verbose) {
-						printf("delim is %c / %d :-)\n", _delimiter, _delimiter);
+						printf("delimiter is %c / %d :-)\n", _delimiter, _delimiter);
 					}
-					//while (NOT_EOL(textp))
-					//	textp++;
 				}
 				
-				text_p = (char*)buffer_p;
+				// Reset to start.
+				text_p = buffer_p;
 			} 
 			
 			if (strlen(text_p) > 0) {
