@@ -124,7 +124,7 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 	self = [super init];
 	if (self) {
 		// Set default _bufferSize
-		_bufferSize = 2048;
+		_bufferSize = 2049;
 		// Set fileHandle to an invalid value
 		_fileHandle = 0;
 		// Set delimiter to 0
