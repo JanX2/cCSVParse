@@ -201,7 +201,7 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 	NSUInteger lastColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
-	bool addCurrentLineStartNew = false;
+	bool addCurrentLineAndStartNew = false;
 	size_t bufferCapacity = _bufferSize + 1;
 	size_t necessaryCapacity = 0;
 	char *buffer = malloc(sizeof(char) * bufferCapacity);
@@ -320,20 +320,20 @@ NSString * parseString(char *textp, char *laststop, NSStringEncoding encoding) {
 					textp++;
 				}
 				
-				addCurrentLineStartNew = false;
+				addCurrentLineAndStartNew = false;
 				
 				if (lastStop == textp && *(textp-1) == _delimiter) {
 					[csvLine addObject:@""];
 					
-					addCurrentLineStartNew = true;
+					addCurrentLineAndStartNew = true;
 				}
 				else if (lastStop != textp && (quoteCount % 2) == 0) {
 					[csvLine addObject:parseString(textp, lastStop, _encoding)];
 					
-					addCurrentLineStartNew = true;
+					addCurrentLineAndStartNew = true;
 				} 
 				
-				if (addCurrentLineStartNew) {
+				if (addCurrentLineAndStartNew) {
 					if ((int)(buffer + _bufferSize + diff - textp) > 0) {
 						lineStart = textp + 1;
 						[csvContent addObject:csvLine];
