@@ -268,6 +268,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			buffer_p[incompleteRowLength + n] = '\0';
 		}
 		else {
+			assert(false);
 			break; // Should not happen: would signify a logic error in this method.
 		}
 		
