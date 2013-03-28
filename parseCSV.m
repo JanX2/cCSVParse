@@ -228,7 +228,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				// Preserve previous row fragment.
 				char incompleteRow[incompleteRowLength + 1];
 				strncpy(incompleteRow, incompleteRow_p, incompleteRowLength);
-				incompleteRow[incompleteRowLength + 1] = '\0';
+				incompleteRow[incompleteRowLength] = '\0';
 				
 				buffer_p = realloc(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
