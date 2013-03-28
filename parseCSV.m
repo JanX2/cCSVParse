@@ -192,19 +192,19 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 
 -(NSMutableArray *)parseInto:(NSMutableArray *)csvContent
 {
-	NSMutableArray *csvLine = [NSMutableArray array];
+	NSMutableArray *csvRow = [NSMutableArray array];
 	NSInputStream *dataStream = nil;
 	
 	ssize_t n = 1;
-	size_t previousLineLength = 0;
+	size_t previousRowLength = 0;
 	NSUInteger previousColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
-	bool addCurrentLineAndStartNew = false;
+	bool addCurrentRowAndStartNew = false;
 	size_t bufferSize = _bufferSize;
 	size_t blockCharCount = bufferSize - 1;
 	char *buffer_p = malloc(sizeof(char) * bufferSize);
-	char *text_p = NULL, *previousStop_p = NULL, *lineStart_p = NULL, *previousLineBuffer_p = NULL;
+	char *text_p = NULL, *previousStop_p = NULL, *rowStart_p = NULL, *previousRowBuffer_p = NULL;
 	
 	if (_fileMode) {
 		lseek(_fileHandle, 0, SEEK_SET);
@@ -218,17 +218,17 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	// While there is data to be parsed…
 	while (n > 0) {
 		
-		if (previousLineBuffer_p != NULL) {
-			previousLineLength = strlen(previousLineBuffer_p);
+		if (previousRowBuffer_p != NULL) {
+			previousRowLength = strlen(previousRowBuffer_p);
 			
 			// Increase the buffer size so that the buffer can hold
-			// both the last line and a block of blockCharCount size.
-			size_t necessaryCapacity = (previousLineLength + blockCharCount + 1) * sizeof(char);
+			// both the previous row fragment and a block of blockCharCount size.
+			size_t necessaryCapacity = (previousRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
-				// Preserve last line.
-				char previousLine[previousLineLength + 1];
-				strncpy(previousLine, previousLineBuffer_p, previousLineLength);
-				previousLine[previousLineLength + 1] = '\0';
+				// Preserve previous row fragment.
+				char previousRow[previousRowLength + 1];
+				strncpy(previousRow, previousRowBuffer_p, previousRowLength);
+				previousRow[previousRowLength + 1] = '\0';
 				
 				buffer_p = realloc(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
@@ -238,25 +238,25 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 				bufferSize = necessaryCapacity;
 				
-				// Copy previousLine to the beginning of the buffer.
-				strncpy(buffer_p, previousLine, previousLineLength);
+				// Copy previousRow to the beginning of the buffer.
+				strncpy(buffer_p, previousRow, previousRowLength);
 			}
 			else {
-				// Copy previousLineBuffer_p to the beginning of the buffer.
-				strncpy(buffer_p, previousLineBuffer_p, previousLineLength);
+				// Copy previousRowBuffer_p to the beginning of the buffer.
+				strncpy(buffer_p, previousRowBuffer_p, previousRowLength);
 			}
 			
-			previousLineBuffer_p = NULL;
+			previousRowBuffer_p = NULL;
 		} 
 		else {
-			previousLineLength = 0;
+			previousRowLength = 0;
 		}
 		
 		if (_fileMode) {
-			n = read(_fileHandle, (buffer_p + previousLineLength), blockCharCount);
+			n = read(_fileHandle, (buffer_p + previousRowLength), blockCharCount);
 		}
 		else {
-			n = [dataStream read:(uint8_t *)(buffer_p + previousLineLength) maxLength:blockCharCount];
+			n = [dataStream read:(uint8_t *)(buffer_p + previousRowLength) maxLength:blockCharCount];
 		}
 
 		if (n <= 0)  break; // End of file or error while reading.
@@ -265,7 +265,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		// Terminate buffer correctly.
 		if ((size_t)n <= blockCharCount) {
-			buffer_p[previousLineLength + n] = '\0';
+			buffer_p[previousRowLength + n] = '\0';
 		}
 		else {
 			break; // Should not happen: would signify a logic error in this method.
@@ -291,11 +291,11 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			if (strlen(text_p) > 0) {
 				// This is data.
 				previousStop_p = text_p;
-				lineStart_p = text_p;
+				rowStart_p = text_p;
 				
-				// Parsing is split into lines.
-				// Find the end of the current CSV line.
-				// A line may contain end-of-line characters, but within cells only. 
+				// Parsing is split into rows.
+				// Find the end of the current CSV row.
+				// A row may contain end-of-line characters, but within cells only. 
 				while (NOT_EOL(text_p) || (*text_p != '\0' && (quoteCount % 2) != 0)) {
 					// If we have two quotes and a delimiter before and after, this is an empty value.
 					if (*text_p == '\"') { 
@@ -309,7 +309,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					} 
 					else if (*text_p == _delimiter && (quoteCount % 2) == 0) {
 						// This is a delimiter which is not between (an unmachted pair of) quotes.
-						[csvLine addObject:parseString(text_p, previousStop_p, _encoding)];
+						[csvRow addObject:parseString(text_p, previousStop_p, _encoding)];
 						previousStop_p = text_p + 1;
 					}
 					
@@ -317,46 +317,46 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					text_p++;
 				}
 				
-				addCurrentLineAndStartNew = false;
+				addCurrentRowAndStartNew = false;
 				
 				if (previousStop_p == text_p && *(text_p - 1) == _delimiter) {
 					// Empty cell.
-					[csvLine addObject:@""];
+					[csvRow addObject:@""];
 					
-					addCurrentLineAndStartNew = true;
+					addCurrentRowAndStartNew = true;
 				}
 				else if (previousStop_p != text_p &&
 						 (quoteCount % 2) == 0 &&
 						 (*text_p != '\0' || (*text_p == '\0' && readEntireBlock == false))) {
 					// Non-empty cell that with certainty was not split apart by the buffer size limit.
 					NSString *cellString = parseString(text_p, previousStop_p, _encoding);
-					[csvLine addObject:cellString];
+					[csvRow addObject:cellString];
 					
-					addCurrentLineAndStartNew = true;
+					addCurrentRowAndStartNew = true;
 				} 
 				
-				if (addCurrentLineAndStartNew) {
-					if ((size_t)(buffer_p + previousLineLength + blockCharCount - text_p) > 0) {
-						lineStart_p = text_p + 1;
-						[csvContent addObject:csvLine];
-						previousColumnCount = [csvLine count];
+				if (addCurrentRowAndStartNew) {
+					if ((size_t)(buffer_p + previousRowLength + blockCharCount - text_p) > 0) {
+						rowStart_p = text_p + 1;
+						[csvContent addObject:csvRow];
+						previousColumnCount = [csvRow count];
 					}
-					csvLine = [NSMutableArray arrayWithCapacity:previousColumnCount]; // convenience methods always autorelease
+					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount]; // convenience methods always autorelease
 				}
 				
-				if ((*text_p == '\0' || (quoteCount % 2) != 0) && lineStart_p != text_p) {
-					// Restart line parsing.
-					previousLineBuffer_p = lineStart_p;
-					csvLine = [NSMutableArray arrayWithCapacity:previousColumnCount];
+				if ((*text_p == '\0' || (quoteCount % 2) != 0) && rowStart_p != text_p) {
+					// Restart row parsing.
+					previousRowBuffer_p = rowStart_p;
+					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount];
 				}
 			}
 			
 			if (firstLine) {
-				if ( (lineStart_p != NULL) && (lineStart_p-1 >= buffer_p) && EOL(lineStart_p-1) ) {
-					_endOfLine[0] = *(lineStart_p-1);
+				if ( (rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1) ) {
+					_endOfLine[0] = *(rowStart_p-1);
 
-					if ( EOL(lineStart_p) ) {
-						_endOfLine[1] = *(lineStart_p);
+					if ( EOL(rowStart_p) ) {
+						_endOfLine[1] = *(rowStart_p);
 					}
 				}
 				
