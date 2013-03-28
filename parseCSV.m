@@ -288,7 +288,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				text_p = buffer_p;
 			} 
 			
-			if (strlen(text_p) > 0) {
+			if (*text_p != '\0') {
 				// This is data.
 				previousStop_p = text_p;
 				rowStart_p = text_p;
