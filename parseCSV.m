@@ -223,7 +223,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			
 			// Increase the buffer size so that the buffer can hold
 			// both the previous row fragment and a block of blockCharCount size.
-			size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
+			const size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
 				char incompleteRow[incompleteRowLength + 1];
@@ -261,7 +261,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 
 		if (n <= 0)  break; // End of file or error while reading.
 		
-		bool readEntireBlock = ((size_t)n == blockCharCount);
+		const bool readEntireBlock = ((size_t)n == blockCharCount);
 		
 		// Terminate buffer correctly.
 		if ((size_t)n <= blockCharCount) {
