@@ -196,7 +196,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	NSInputStream *dataStream = nil;
 	
 	ssize_t n = 1;
-	size_t previousRowLength = 0;
+	size_t incompleteRowLength = 0;
 	NSUInteger previousColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
@@ -204,7 +204,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	size_t bufferSize = _bufferSize;
 	size_t blockCharCount = bufferSize - 1;
 	char *buffer_p = malloc(sizeof(char) * bufferSize);
-	char *text_p = NULL, *previousStop_p = NULL, *rowStart_p = NULL, *previousRowBuffer_p = NULL;
+	char *text_p = NULL, *previousStop_p = NULL, *rowStart_p = NULL, *incompleteRow_p = NULL;
 	
 	if (_fileMode) {
 		lseek(_fileHandle, 0, SEEK_SET);
@@ -218,17 +218,17 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	// While there is data to be parsed…
 	while (n > 0) {
 		
-		if (previousRowBuffer_p != NULL) {
-			previousRowLength = strlen(previousRowBuffer_p);
+		if (incompleteRow_p != NULL) {
+			incompleteRowLength = strlen(incompleteRow_p);
 			
 			// Increase the buffer size so that the buffer can hold
 			// both the previous row fragment and a block of blockCharCount size.
-			size_t necessaryCapacity = (previousRowLength + blockCharCount + 1) * sizeof(char);
+			size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
-				char previousRow[previousRowLength + 1];
-				strncpy(previousRow, previousRowBuffer_p, previousRowLength);
-				previousRow[previousRowLength + 1] = '\0';
+				char incompleteRow[incompleteRowLength + 1];
+				strncpy(incompleteRow, incompleteRow_p, incompleteRowLength);
+				incompleteRow[incompleteRowLength + 1] = '\0';
 				
 				buffer_p = realloc(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
@@ -238,25 +238,25 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 				bufferSize = necessaryCapacity;
 				
-				// Copy previousRow to the beginning of the buffer.
-				strncpy(buffer_p, previousRow, previousRowLength);
+				// Copy incompleteRow to the beginning of the buffer.
+				strncpy(buffer_p, incompleteRow, incompleteRowLength);
 			}
 			else {
-				// Copy previousRowBuffer_p to the beginning of the buffer.
-				strncpy(buffer_p, previousRowBuffer_p, previousRowLength);
+				// Copy incompleteRow_p to the beginning of the buffer.
+				strncpy(buffer_p, incompleteRow_p, incompleteRowLength);
 			}
 			
-			previousRowBuffer_p = NULL;
+			incompleteRow_p = NULL;
 		} 
 		else {
-			previousRowLength = 0;
+			incompleteRowLength = 0;
 		}
 		
 		if (_fileMode) {
-			n = read(_fileHandle, (buffer_p + previousRowLength), blockCharCount);
+			n = read(_fileHandle, (buffer_p + incompleteRowLength), blockCharCount);
 		}
 		else {
-			n = [dataStream read:(uint8_t *)(buffer_p + previousRowLength) maxLength:blockCharCount];
+			n = [dataStream read:(uint8_t *)(buffer_p + incompleteRowLength) maxLength:blockCharCount];
 		}
 
 		if (n <= 0)  break; // End of file or error while reading.
@@ -265,7 +265,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		// Terminate buffer correctly.
 		if ((size_t)n <= blockCharCount) {
-			buffer_p[previousRowLength + n] = '\0';
+			buffer_p[incompleteRowLength + n] = '\0';
 		}
 		else {
 			break; // Should not happen: would signify a logic error in this method.
@@ -336,7 +336,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				} 
 				
 				if (addCurrentRowAndStartNew) {
-					if ((size_t)(buffer_p + previousRowLength + blockCharCount - text_p) > 0) {
+					if ((size_t)(buffer_p + incompleteRowLength + blockCharCount - text_p) > 0) {
 						rowStart_p = text_p + 1;
 						[csvContent addObject:csvRow];
 						previousColumnCount = [csvRow count];
@@ -346,7 +346,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				
 				if ((*text_p == '\0' || (quoteCount % 2) != 0) && rowStart_p != text_p) {
 					// Restart row parsing.
-					previousRowBuffer_p = rowStart_p;
+					incompleteRow_p = rowStart_p;
 					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount];
 				}
 			}
