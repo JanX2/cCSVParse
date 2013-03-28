@@ -264,8 +264,12 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		bool readEntireBlock = ((size_t)n == blockCharCount);
 		
 		// Terminate buffer correctly.
-		if ((size_t)n <= blockCharCount)
+		if ((size_t)n <= blockCharCount) {
 			buffer_p[previousLineLength + n] = '\0';
+		}
+		else {
+			break; // Should not happen: would signify a logic error in this method.
+		}
 		
 		text_p = buffer_p;
 		
