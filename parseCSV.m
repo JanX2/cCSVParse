@@ -195,7 +195,6 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 	NSMutableArray *csvLine = [NSMutableArray array];
 	NSInputStream *dataStream = nil;
 	
-
 	ssize_t n = 1;
 	size_t lastLineLength = 0;
 	NSUInteger lastColumnCount = 0;
@@ -216,13 +215,14 @@ NSString * parseString(char *text_p, char *laststop_p, NSStringEncoding encoding
 		[dataStream open];
 	}
 
+	// While there is data to be parsed…
 	while (n > 0) {
 		
 		if (lastLineBuffer_p != NULL) {
 			lastLineLength = strlen(lastLineBuffer_p);
 			
 			// Increase the buffer size so that the buffer can hold
-			// both the last line and a block of blockCharCount size
+			// both the last line and a block of blockCharCount size.
 			size_t necessaryCapacity = (lastLineLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
 				// Preserve last line
