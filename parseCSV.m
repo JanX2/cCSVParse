@@ -156,7 +156,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 
 /*
  * Gets the CSV-delimiter from the given filename using the first line
- * which should be the header-line. Returns 0 on error.
+ * which should be the header line. Returns 0 on error.
  *
  */
 -(char)autodetectDelimiter {
