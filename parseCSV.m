@@ -225,7 +225,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			// both the last line and a block of blockCharCount size.
 			size_t necessaryCapacity = (previousLineLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
-				// Preserve last line
+				// Preserve last line.
 				char previousLine[previousLineLength + 1];
 				strncpy(previousLine, previousLineBuffer_p, previousLineLength);
 				previousLine[previousLineLength + 1] = '\0';
@@ -247,7 +247,6 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			}
 			
 			previousLineBuffer_p = NULL;
-			
 		} 
 		else {
 			previousLineLength = 0;
@@ -260,12 +259,11 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			n = [dataStream read:(uint8_t *)(buffer_p + previousLineLength) maxLength:blockCharCount];
 		}
 
-		if (n <= 0)
-			break;
+		if (n <= 0)  break; // End of file or error while reading.
 		
 		bool readEntireBlock = ((size_t)n == blockCharCount);
 		
-		// Terminate buffer correctly
+		// Terminate buffer correctly.
 		if ((size_t)n <= blockCharCount)
 			buffer_p[previousLineLength + n] = '\0';
 		
@@ -274,8 +272,6 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		while (*text_p != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
 			if (firstLine && _delimiter == '\0') {
-				//firstLine = false;
-				
 				// Check if a delimiter was found and set it
 				_delimiter = searchDelimiter(text_p);
 				if (_delimiter != '\0') {
@@ -289,16 +285,18 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			} 
 			
 			if (strlen(text_p) > 0) {
-				// This is data
+				// This is data.
 				previousStop_p = text_p;
 				lineStart_p = text_p;
 				
-				// Parsing is split into parts till EOL
+				// Parsing is split into lines.
+				// Find the end of the current CSV line.
+				// A line may contain end-of-line characters, but within cells only. 
 				while (NOT_EOL(text_p) || (*text_p != '\0' && (quoteCount % 2) != 0)) {
-					// If we have two quotes and a delimiter before and after, this is an empty value
+					// If we have two quotes and a delimiter before and after, this is an empty value.
 					if (*text_p == '\"') { 
 						if (*(text_p + 1) == '\"') {
-							// we'll just skip this
+							// We'll just skip empty cells while searching for the end of the row.
 							text_p++;
 						} 
 						else {
@@ -306,12 +304,12 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						}
 					} 
 					else if (*text_p == _delimiter && (quoteCount % 2) == 0) {
-						// This is a delimiter which is not between an unmachted pair of quotes
+						// This is a delimiter which is not between (an unmachted pair of) quotes.
 						[csvLine addObject:parseString(text_p, previousStop_p, _encoding)];
 						previousStop_p = text_p + 1;
 					}
 					
-					// Go to the next character
+					// Go to the next character.
 					text_p++;
 				}
 				
@@ -361,8 +359,10 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				firstLine = false;
 			}
 			
-			while (EOL(text_p))
+			// Skip over empty lines.
+			while (EOL(text_p)) {
 				text_p++;
+			}
 		}
 	}
 	
