@@ -227,8 +227,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
 				char incompleteRow[incompleteRowLength + 1];
-				strncpy(incompleteRow, incompleteRow_p, incompleteRowLength);
-				incompleteRow[incompleteRowLength] = '\0';
+				strlcpy(incompleteRow, incompleteRow_p, incompleteRowLength + 1); // null-terminates!
 				
 				buffer_p = realloc(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
@@ -242,8 +241,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				strncpy(buffer_p, incompleteRow, incompleteRowLength);
 			}
 			else {
-				// Copy incompleteRow_p to the beginning of the buffer.
-				strncpy(buffer_p, incompleteRow_p, incompleteRowLength);
+				// Move data at incompleteRow_p to the beginning of the buffer.
+				memmove(buffer_p, incompleteRow_p, incompleteRowLength);
 			}
 			
 			incompleteRow_p = NULL;
