@@ -252,10 +252,10 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		}
 		
 		if (_fileMode) {
-			n = read(_fileHandle, (buffer_p + incompleteRowLength), blockCharCount);
+			n = read(_fileHandle, (buffer_p + incompleteRowLength), sizeof(char) * blockCharCount);
 		}
 		else {
-			n = [dataStream read:(uint8_t *)(buffer_p + incompleteRowLength) maxLength:blockCharCount];
+			n = [dataStream read:(uint8_t *)(buffer_p + incompleteRowLength) maxLength:(sizeof(char) * blockCharCount)];
 		}
 
 		if (n <= 0)  break; // End of file or error while reading.
