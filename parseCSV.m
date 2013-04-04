@@ -276,7 +276,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		while (*text_p != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
 			if (firstLine && _delimiter == '\0') {
-				// Check if a delimiter was found and set it
+				// Check if a delimiter was found and set it.
 				_delimiter = searchDelimiter(text_p);
 				if (_delimiter != '\0') {
 					if (_verbose) {
