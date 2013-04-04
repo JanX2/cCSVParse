@@ -242,7 +242,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			}
 			else {
 				// Move data at incompleteRow_p to the beginning of the buffer.
-				memmove(buffer_p, incompleteRow_p, incompleteRowLength);
+				memmove(buffer_p, incompleteRow_p, sizeof(char) * incompleteRowLength);
 			}
 			
 			incompleteRow_p = NULL;
