@@ -134,7 +134,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		_endOfLine[1] = '\0';
 		_endOfLine[2] = '\0';
 		// Set default encoding
-		_encoding = NSISOLatin1StringEncoding;
+		_encoding = NSUTF8StringEncoding;
 		// Set default verbosity
 		_verbose = NO;
 		
