@@ -74,11 +74,11 @@ static char *cstrstr(const char *haystack_p, const char needle) {
 char searchDelimiter(char *text_p) {
 	char delimiter = '\n';
 	
-	// ...we assume that this is the header which also contains the separation character
+	// We assume that this is the header row, which we check for separation characters.
 	while (NOT_EOL(text_p) && cstrstr(possibleDelimiters, *text_p) == NULL)
 		text_p++;
 	
-	// Check if a delimiter was found and set it
+	// Check if a delimiter was found and set it.
 	if (NOT_EOL(text_p)) {
 		delimiter = *cstrstr(possibleDelimiters, *text_p);
 		return delimiter;
