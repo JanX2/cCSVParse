@@ -56,9 +56,9 @@ NSString *supportedLineEndingNames[] = {
 
 
 /*
- * replacement for strstr() which does only check every char instead
+ * replacement for strstr() which checks every char instead
  * of complete strings
- * Warning: Do not call it with haystack == NULL || needle == NULL!
+ * Warning: Do not call it with haystack == NULL || needle == '\0'!
  *
  */
 static char *cstrstr(const char *haystack_p, const char needle) {
