@@ -63,11 +63,14 @@ NSString *supportedLineEndingNames[] = {
  */
 static char *cstrstr(const char *haystack_p, const char needle) {
 	char *text_p = (char *)haystack_p;
+	
 	while (*text_p != '\0') {
-		if (*text_p == needle)
+		if (*text_p == needle) {
 			return text_p;
+		}
 		text_p++;
 	}
+	
 	return NULL;
 }
 
@@ -75,8 +78,9 @@ char searchDelimiter(char *text_p) {
 	char delimiter = '\n';
 	
 	// We assume that this is the header row, which we check for separation characters.
-	while (NOT_EOL(text_p) && cstrstr(possibleDelimiters, *text_p) == NULL)
+	while (NOT_EOL(text_p) && cstrstr(possibleDelimiters, *text_p) == NULL) {
 		text_p++;
+	}
 	
 	// Check if a delimiter was found and set it.
 	if (NOT_EOL(text_p)) {
