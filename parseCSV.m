@@ -21,8 +21,8 @@
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n') && *(x) != '\0')
 #define NOT_EOL(x) (*(x) != '\0' && *(x) != '\r' && *(x) != '\n')
 
-//char possibleDelimiters[4] = ",;\t\0";
-char possibleDelimiters[5] = ",;\t|\0";
+//const char possibleDelimiters[] = ",;\t|. \0"; // FIXME: Needs testing; will probably fail in searchDelimiter()
+const char possibleDelimiters[] = ",;\t|\0";
 NSString *possibleDelimiterNames[] = {
 	@"Comma (,)",
 	@"Semicolon (;)",
@@ -34,6 +34,8 @@ NSString *possibleDelimiterNames[] = {
  NSLocalizedString(@"Semicolon (;)", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Tab Symbol", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Pipe Symbol (|)" @"cCSVParseDelimiterNames")
+ //NSLocalizedString(@"Period (.)" @"cCSVParseDelimiterNames")
+ //NSLocalizedString(@"Space ( )" @"cCSVParseDelimiterNames")
  */
 
 
