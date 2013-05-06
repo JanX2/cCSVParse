@@ -152,6 +152,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 
 -(id)init {
 	self = [super init];
+	
 	if (self) {
 		// Set default _bufferSize
 		_bufferSize = 2049;
@@ -170,6 +171,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		_data = nil;
 	}
+	
 	return self;
 }
 
