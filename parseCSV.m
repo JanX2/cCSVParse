@@ -17,6 +17,8 @@
 
 #import "parseCSV.h"
 
+static NSString *cellInvalidLabel = nil;
+
 /* Macros for determining if the given character is End Of Line or not */
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n') && *(x) != '\0')
 #define NOT_EOL(x) (*(x) != '\0' && *(x) != '\r' && *(x) != '\n')
@@ -107,9 +109,27 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		stringSize -= 2;
 	}
 	
-	NSMutableString *tempString = [[NSMutableString alloc] initWithBytes:previousStop_p
-																  length:stringSize
-																encoding:encoding];
+	NSMutableString *tempString = nil;
+
+	while (tempString == nil) {
+		tempString = [[NSMutableString alloc] initWithBytes:previousStop_p
+													 length:stringSize
+												   encoding:encoding];
+		
+		// We use NSMacOSRomanStringEncoding as an emergency fallback if the above fails.
+		// This can happen in case the bytes are invalid in the selected encoding.
+		// NSMacOSRomanStringEncoding is Apple recommended choice for this kind of scenario
+		// as it supports most of the 8-bit range.
+		if (encoding != NSMacOSRomanStringEncoding && tempString == nil) {
+			// Retry will fallback encoding.
+			encoding = NSMacOSRomanStringEncoding;
+		}
+		else if (encoding == NSMacOSRomanStringEncoding) {
+			// Fail more or less gracefully.
+			tempString = [[NSMutableString alloc] initWithString:cellInvalidLabel];
+			break;
+		}
+	}
 	
 	[tempString replaceOccurrencesOfString:@"\"\"" 
 								withString:@"\"" 
@@ -124,6 +144,10 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	int _fileHandle;
 	char _endOfLine[3];
 	BOOL _fileMode;
+}
+
++ (void)initialize {
+	cellInvalidLabel = [NSLocalizedString(@"**encoding or data invalid**", @"cell invalid label") retain];
 }
 
 -(id)init {
