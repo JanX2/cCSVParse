@@ -365,7 +365,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				
 				addCurrentRowAndStartNew = false;
 				
-				if (previousStop_p == text_p && *(text_p - 1) == _delimiter) { // Last cell of row is empty.
+				if (previousStop_p == text_p && ((buffer_p == text_p) || (buffer_p < text_p && *(text_p - 1) == _delimiter))) { // Last cell of row is empty.
 					// Empty cell.
 					[csvRow addObject:@""];
 					
@@ -386,12 +386,22 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				} 
 				
 				if (addCurrentRowAndStartNew) {
+					bool addCurrentRow = false;
+					
 					if (text_p < endChar_p) {
-						// There is more data in the buffer. -> Flush this row and process the next one.
+						// There is more data in the buffer. -> Process the next row.
 						rowStart_p = text_p + 1;
+						addCurrentRow = true;
+					}
+					else if (readingComplete) {
+						addCurrentRow = true;
+					}
+					
+					if (addCurrentRow) {
 						[csvContent addObject:csvRow];
 						previousColumnCount = [csvRow count];
 					}
+					
 					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount]; // convenience methods always autorelease
 				}
 				
