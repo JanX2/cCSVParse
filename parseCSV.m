@@ -302,7 +302,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		}
 		
 		text_p = buffer_p;
-		
+		quoteCount = 0;
+        
 		while (*text_p != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
 			if (firstLine && _delimiter == '\0') {
