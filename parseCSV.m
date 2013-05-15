@@ -246,7 +246,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	}
 
 	// While there is data to be parsed…
-	while (n > 0) {
+	while (n > 0 || incompleteRow_p != NULL) {
 		
 		if (incompleteRow_p != NULL) {
 			incompleteRowLength = strlen(incompleteRow_p);
@@ -288,18 +288,33 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 			n = [dataStream read:(uint8_t *)(buffer_p + incompleteRowLength) maxLength:(sizeof(char) * blockCharCount)];
 		}
 
-		if (n <= 0)  break; // End of file or error while reading.
-		
-		const bool readEntireBlock = ((size_t)n == blockCharCount);
+		if (n < 0) {
+			break; // Error while reading.
+		}
+		else if (n > 0) {
+			if ((size_t)n > blockCharCount) {
+				assert(false);
+				break; // Should not happen: would signify a logic error in this method.
+			}
+			else {
+				// Everything appears to be fine.
+			}
+		}
+		else /* n == 0 */ {
+			if (incompleteRowLength == 0) {
+				break; // End of file.
+			}
+			else {
+				// We still have data taken from the last incomplete row.
+			}
+		}
 		
 		// Terminate buffer correctly.
-		if ((size_t)n <= blockCharCount) {
-			buffer_p[incompleteRowLength + n] = '\0';
-		}
-		else {
-			assert(false);
-			break; // Should not happen: would signify a logic error in this method.
-		}
+		char *endChar_p = &(buffer_p[incompleteRowLength + n]);
+		*endChar_p = '\0';
+		
+		const bool readEntireBlock = ((size_t)n == blockCharCount);
+		const bool readingComplete = (readEntireBlock == false || n == 0);
 		
 		text_p = buffer_p;
 		
@@ -339,7 +354,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					} 
 					else if (*text_p == _delimiter && (quoteCount % 2) == 0) {
 						// This is a delimiter which is not between (an unmachted pair of) quotes.
-						[csvRow addObject:parseString(text_p, previousStop_p, _encoding)];
+						NSString *cellString = parseString(text_p, previousStop_p, _encoding);
+						[csvRow addObject:cellString];
 						previousStop_p = text_p + 1;
 					}
 					
@@ -349,7 +365,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				
 				addCurrentRowAndStartNew = false;
 				
-				if (previousStop_p == text_p && *(text_p - 1) == _delimiter) {
+				if (previousStop_p == text_p && *(text_p - 1) == _delimiter) { // Last cell of row is empty.
 					// Empty cell.
 					[csvRow addObject:@""];
 					
@@ -360,7 +376,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						  (quoteCount % 2) == 0) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
 						 ||
 						 (*text_p == '\0' &&
-						  readEntireBlock == false) // Cell that ends with the end of the file.
+						  readingComplete) // Cell that ends with the end of the file.
 						 ) {
 					// Non-empty cell that with certainty was not split apart by the buffer size limit.
 					NSString *cellString = parseString(text_p, previousStop_p, _encoding);
@@ -370,7 +386,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				} 
 				
 				if (addCurrentRowAndStartNew) {
-					if ((size_t)(buffer_p + incompleteRowLength + blockCharCount - text_p) > 0) {
+					if (text_p < endChar_p) {
+						// There is more data in the buffer. -> Flush this row and process the next one.
 						rowStart_p = text_p + 1;
 						[csvContent addObject:csvRow];
 						previousColumnCount = [csvRow count];
@@ -378,20 +395,28 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount]; // convenience methods always autorelease
 				}
 				
-				if ((*text_p == '\0' || (quoteCount % 2) != 0) && rowStart_p != text_p) {
+				if ((rowStart_p < endChar_p && rowStart_p != text_p) && // Check for valid row start.
+					((*text_p == '\0' && !readingComplete) // End of buffer, but not end of file.
+					 ||
+					 (*text_p != '\0' && (quoteCount % 2) != 0)) // There are still unclosed quotes.
+				 ) {
 					// Restart row parsing.
+					// If we get here when we are at the end of the buffer,
+					// it may be too small to contain the entire row.
+					quoteCount = 0;
 					incompleteRow_p = rowStart_p;
 					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount];
 				}
+				else {
+					incompleteRow_p = NULL;
+				}
 			}
 			
-			if (firstLine) {
-				if ( (rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1) ) {
-					_endOfLine[0] = *(rowStart_p-1);
-
-					if ( EOL(rowStart_p) ) {
-						_endOfLine[1] = *(rowStart_p);
-					}
+			if ((firstLine) && (rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1)) {
+				_endOfLine[0] = *(rowStart_p-1);
+				
+				if ( EOL(rowStart_p) ) {
+					_endOfLine[1] = *(rowStart_p);
 				}
 				
 				firstLine = false;
