@@ -355,9 +355,13 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					
 					addCurrentRowAndStartNew = true;
 				}
-				else if (previousStop_p != text_p &&
-						 (quoteCount % 2) == 0 &&
-						 (*text_p != '\0' || (*text_p == '\0' && readEntireBlock == false))) {
+				else if ((*text_p != '\0' &&
+						  previousStop_p != text_p &&
+						  (quoteCount % 2) == 0) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
+						 ||
+						 (*text_p == '\0' &&
+						  readEntireBlock == false) // Cell that ends with the end of the file.
+						 ) {
 					// Non-empty cell that with certainty was not split apart by the buffer size limit.
 					NSString *cellString = parseString(text_p, previousStop_p, _encoding);
 					[csvRow addObject:cellString];
