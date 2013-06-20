@@ -79,6 +79,11 @@ static char *cstrstr(const char *haystack_p, const char needle) {
 }
 
 char searchDelimiter(char *text_p) {
+	// We skip leading empty lines.
+	while (EOL(text_p)) {
+		text_p++;
+	}
+	
 	// We assume that this is the header row, which we check for separation characters.
 	while (NOT_EOL(text_p) && cstrstr(possibleDelimiters, *text_p) == NULL) {
 		text_p++;
