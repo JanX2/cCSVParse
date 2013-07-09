@@ -113,24 +113,37 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	}
 	
 	NSMutableString *tempString = nil;
+	int retryCount = 0;
 
 	while (tempString == nil) {
 		tempString = [[NSMutableString alloc] initWithBytes:previousStop_p
 													 length:stringSize
 												   encoding:encoding];
 		
-		// We use NSMacOSRomanStringEncoding as an emergency fallback if the above fails.
+		// We use fallbacks if the above fails.
 		// This can happen in case the bytes are invalid in the selected encoding.
-		// NSMacOSRomanStringEncoding is Apple recommended choice for this kind of scenario
-		// as it supports most of the 8-bit range.
-		if (encoding != NSMacOSRomanStringEncoding && tempString == nil) {
-			// Retry will fallback encoding.
-			encoding = NSMacOSRomanStringEncoding;
+		if (tempString == nil) {
+			// Retry with fallback encodings.
+			switch (retryCount) {
+				case 0:
+					encoding = NSISOLatin1StringEncoding;
+					break;
+					
+				case 1:
+					encoding = NSMacOSRomanStringEncoding;
+					break;
+					
+				default:
+					// Fail more or less gracefully.
+					tempString = [[NSMutableString alloc] initWithString:cellInvalidLabel];
+					break;
+			}
+			
+			retryCount++;
 		}
-		else if (encoding == NSMacOSRomanStringEncoding) {
-			// Fail more or less gracefully.
-			tempString = [[NSMutableString alloc] initWithString:cellInvalidLabel];
-			break;
+		
+		if (retryCount > 0 && retryCount <= 1) {
+			[tempString appendFormat:@" (%@)", cellInvalidLabel];
 		}
 	}
 	
