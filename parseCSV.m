@@ -113,36 +113,42 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	}
 	
 	NSMutableString *tempString = nil;
+	NSStringEncoding currentEncoding = encoding;
 	int retryCount = 0;
 
 	while (tempString == nil) {
 		tempString = [[NSMutableString alloc] initWithBytes:previousStop_p
 													 length:stringSize
-												   encoding:encoding];
+												   encoding:currentEncoding];
 		
 		// We use fallbacks if the above fails.
 		// This can happen in case the bytes are invalid in the selected encoding.
 		if (tempString == nil) {
-			// Retry with fallback encodings.
-			switch (retryCount) {
-				case 0:
-					encoding = NSISOLatin1StringEncoding;
-					break;
-					
-				case 1:
-					encoding = NSMacOSRomanStringEncoding;
-					break;
-					
-				default:
-					// Fail more or less gracefully.
-					tempString = [[NSMutableString alloc] initWithString:cellInvalidLabel];
-					break;
-			}
-			
-			retryCount++;
+			do {
+				// Retry with fallback encodings.
+				switch (retryCount) {
+					case 0:
+						currentEncoding = NSISOLatin1StringEncoding;
+						break;
+						
+					case 1:
+						currentEncoding = NSMacOSRomanStringEncoding;
+						break;
+						
+					default:
+						// Fail more or less gracefully.
+						currentEncoding = 0;
+						tempString = [[NSMutableString alloc] initWithString:cellInvalidLabel];
+						break;
+				}
+				
+				retryCount++;
+			} while (currentEncoding == encoding);
 		}
-		
-		if (retryCount > 0 && retryCount <= 1) {
+		else if (tempString != nil && retryCount > 0 && retryCount <= 1) {
+			// We tried again with one of the fallback encodings.
+			// Even if this was successful, we don’t know if the resulting string is valid.
+			// It probably is mangled and the user should know.
 			[tempString appendFormat:@" (%@)", cellInvalidLabel];
 		}
 	}
