@@ -210,10 +210,12 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 
 /*
  * Gets the CSV-delimiter from the given filename using the first line
- * which should be the header line. Returns 0 on error.
+ * which should be the header line. Returns a NUL byte on error.
  *
  */
 -(char)autodetectDelimiter {
+	if (_data == nil)  return '\0';
+	
 	char buffer[_bufferSize];
 	size_t bufferCharCount = _bufferSize - 1;
 	
@@ -235,13 +237,13 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		[dataStream close];
 	}
-
 	
 	if (n > 0) {
+		buffer[n] = '\0';
 		return searchDelimiter(buffer);
 	}
 
-	return 0;
+	return '\0';
 }
 
 -(NSMutableArray *)parseInto:(NSMutableArray *)csvContent
