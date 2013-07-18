@@ -17,6 +17,8 @@
 
 #import "parseCSV.h"
 
+#import "JXArcCompatibilityMacros.h"
+
 static NSString *cellInvalidLabel = nil;
 
 /* Macros for determining if the given character is End Of Line or not */
@@ -158,7 +160,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 								   options:NSLiteralSearch
 									 range:NSMakeRange(0, [tempString length])];
 	
-	return [tempString autorelease];
+	return JX_AUTORELEASE(tempString);
 }
 
 
@@ -169,7 +171,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 }
 
 + (void)initialize {
-	cellInvalidLabel = [NSLocalizedString(@"**encoding or data invalid**", @"cell invalid label") retain];
+	cellInvalidLabel = JX_RETAIN(NSLocalizedString(@"**encoding or data invalid**", @"cell invalid label"));
 }
 
 -(id)init {
@@ -200,9 +202,11 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 -(void)dealloc {
 	[self closeFile];
 	
-	[self setData:nil]; 
+#if !JX_HAS_ARC
+	[self setData:nil];
 	
 	[super dealloc];
+#endif
 }
 
 
