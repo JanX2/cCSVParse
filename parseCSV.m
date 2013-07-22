@@ -30,7 +30,7 @@ const char possibleDelimiters[] = ",;\t|\0";
 NSString *possibleDelimiterNames[] = {
 	@"Comma (,)",
 	@"Semicolon (;)",
-	@"Tab Symbol",
+	@"Tab Symbol (⇥)",
 	@"Pipe Symbol (|)"
 };
 /* For genstrings:
