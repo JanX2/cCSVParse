@@ -377,6 +377,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						if (*(text_p + 1) == '\"') {
 							// We'll just skip empty cells while searching for the end of the row.
 							text_p++;
+							//quoteCount += 2; // Currently this is unnecessary, but this way the quoteCount is correct.
 						} 
 						else {
 							quoteCount++;
