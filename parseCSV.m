@@ -348,6 +348,9 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		text_p = buffer_p;
 		
+#define MATCHED_QUOTES		((quoteCount % 2) == 0)
+#define UNMATCHED_QUOTES	((quoteCount % 2) != 0)
+		
 		while (*text_p != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
 			if (firstLine && _delimiter == '\0') {
@@ -371,7 +374,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				// Parsing is split into rows.
 				// Find the end of the current CSV row.
 				// A row may contain end-of-line characters, but within cells only. 
-				while (NOT_EOL(text_p) || (*text_p != '\0' && (quoteCount % 2) != 0)) {
+				while (NOT_EOL(text_p) || (*text_p != '\0' && UNMATCHED_QUOTES)) {
 					// If we have two quotes and a delimiter before and after, this is an empty value.
 					if (*text_p == '\"') { 
 						if (*(text_p + 1) == '\"') {
@@ -383,7 +386,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 							quoteCount++;
 						}
 					} 
-					else if (*text_p == _delimiter && (quoteCount % 2) == 0) {
+					else if (*text_p == _delimiter && MATCHED_QUOTES) {
 						// This is a delimiter which is not between (an unmachted pair of) quotes.
 						NSString *cellString = parseString(text_p, previousStop_p, _encoding);
 						[csvRow addObject:cellString];
@@ -404,7 +407,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 				else if ((*text_p != '\0' &&
 						  previousStop_p != text_p &&
-						  (quoteCount % 2) == 0) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
+						  MATCHED_QUOTES) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
 						 ||
 						 (*text_p == '\0' &&
 						  readingComplete) // Cell that ends with the end of the file.
@@ -439,7 +442,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				if ((rowStart_p < endChar_p && rowStart_p != text_p) && // Check for valid row start.
 					((*text_p == '\0' && !readingComplete) // End of buffer, but not end of file.
 					 ||
-					 (*text_p != '\0' && (quoteCount % 2) != 0)) // There are still unclosed quotes.
+					 (*text_p != '\0' && UNMATCHED_QUOTES)) // There are still unclosed quotes.
 				 ) {
 					// Restart row parsing.
 					// If we get here when we are at the end of the buffer,
