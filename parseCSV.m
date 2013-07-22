@@ -261,6 +261,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
 	bool addCurrentRowAndStartNew = false;
+	bool cellIsQuoted = false;
 	size_t bufferSize = _bufferSize;
 	size_t blockCharCount = bufferSize - 1;
 	char *buffer_p = malloc(sizeof(char) * bufferSize);
@@ -348,8 +349,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		
 		text_p = buffer_p;
 		
-#define MATCHED_QUOTES		((quoteCount % 2) == 0)
-#define UNMATCHED_QUOTES	((quoteCount % 2) != 0)
+#define MATCHED_QUOTES		((cellIsQuoted && ((quoteCount % 2) == 0)) || !cellIsQuoted)
+#define UNMATCHED_QUOTES	((cellIsQuoted && ((quoteCount % 2) != 0)) || (!cellIsQuoted && false))
 		
 		while (*text_p != '\0') {
 			// If we don't have a delimiter yet and this is the first line...
@@ -371,12 +372,14 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				previousStop_p = text_p;
 				rowStart_p = text_p;
 				
+				cellIsQuoted = (*previousStop_p == '\"');
+				
 				// Parsing is split into rows.
 				// Find the end of the current CSV row.
 				// A row may contain end-of-line characters, but within cells only. 
 				while (NOT_EOL(text_p) || (*text_p != '\0' && UNMATCHED_QUOTES)) {
 					// If we have two quotes and a delimiter before and after, this is an empty value.
-					if (*text_p == '\"') { 
+					if (cellIsQuoted && *text_p == '\"') { 
 						if (*(text_p + 1) == '\"') {
 							// We'll just skip empty cells while searching for the end of the row.
 							text_p++;
@@ -391,6 +394,13 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						NSString *cellString = parseString(text_p, previousStop_p, _encoding);
 						[csvRow addObject:cellString];
 						previousStop_p = text_p + 1;
+						
+						if (*previousStop_p != '\0') {
+							cellIsQuoted = (*previousStop_p == '\"');
+						}
+						else {
+							cellIsQuoted = false;
+						}
 					}
 					
 					// Go to the next character.
