@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string>country</string>
+		</array>
+		<array>
+			<string>name</string>
+		</array>
+		<array>
+			<string>suffix</string>
+		</array>
+		<array>
+			<string>delay</string>
+		</array>
+		<array>
+			<string>provider</string>
+		</array>
+	</array>
+	<key>endOfLine</key>
+	<string>\n</string>
+</dict>
+</plist>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string>Exp Date</string>
+			<string>Licensee</string>
+			<string>Trade Name</string>
+			<string>Corp Name</string>
+			<string>Premise Addr</string>
+			<string>Zip</string>
+			<string>Ald Dist</string>
+			<string>License Class</string>
+			<string>Geocode Type</string>
+			<string>Lat</string>
+			<string>Lng</string>
+		</array>
+		<array>
+			<string>2011-04-22</string>
+			<string>Stephen T Silber, Agent</string>
+			<string>Mortimers Pub</string>
+			<string>Rws Corporation</string>
+			<string>7023 W Adler St</string>
+			<string>53214</string>
+			<string>10</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.028222</string>
+			<string>-88.000696</string>
+		</array>
+		<array>
+			<string>2011-06-13</string>
+			<string>Karen A Miller</string>
+			<string>Rhino's</string>
+			<string></string>
+			<string>7964 W Appleton Av</string>
+			<string>53218</string>
+			<string>5</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.0999089</string>
+			<string>-88.011552</string>
+		</array>
+		<array>
+			<string>2010-07-05</string>
+			<string>Marco A Arteaga, Agt</string>
+			<string>Burrito Bueno</string>
+			<string>Burrito Bueno, Inc</string>
+			<string>8238 W Appleton Av</string>
+			<string>53218</string>
+			<string>5</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.103553</string>
+			<string>-88.014458</string>
+		</array>
+		<array>
+			<string>2011-02-08</string>
+			<string>Gus Gliatis, Agent</string>
+			<string>El Greco</string>
+			<string>El Greco, Inc</string>
+			<string>9143 W Appleton Av</string>
+			<string>53225</string>
+			<string>5</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.11289</string>
+			<string>-88.026953</string>
+		</array>
+		<array>
+			<string>2010-12-10</string>
+			<string>Mario V Kimbrough, Agent</string>
+			<string>Nostalgia Ii</string>
+			<string>Universal Estates, Llc</string>
+			<string>9316 W Appleton Av</string>
+			<string>53225</string>
+			<string>2</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.114824</string>
+			<string>-88.0280949</string>
+		</array>
+		<array>
+			<string>2011-05-18</string>
+			<string>Brent T Rock</string>
+			<string>Mitchell's Tavern</string>
+			<string></string>
+			<string>10433 W Appleton Av</string>
+			<string>53225</string>
+			<string>5</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.125331</string>
+			<string>-88.043618</string>
+		</array>
+		<array>
+			<string>2010-07-24</string>
+			<string>Leslie S Montemurro, Agent</string>
+			<string>Hi Hat Lounge &amp; Garage</string>
+			<string>Mje, Inc</string>
+			<string>1701 03 N Arlington Pl</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.05315</string>
+			<string>-87.895344</string>
+		</array>
+		<array>
+			<string>2010-07-25</string>
+			<string>Scott M Johnson, Agent</string>
+			<string>Balzac Wine Bar</string>
+			<string>Balzac, Inc</string>
+			<string>1716 N Arlington Pl</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>RANGE_INTERPOLATED</string>
+			<string>43.0532845</string>
+			<string>-87.8949249</string>
+		</array>
+		<array>
+			<string>2011-03-28</string>
+			<string>William F Lennon, Jr, Agt</string>
+			<string>Thurmans 15</string>
+			<string>Al Ligator, Inc</string>
+			<string>1731 N Arlington Pl</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.053675</string>
+			<string>-87.895231</string>
+		</array>
+		<array>
+			<string>2011-03-25</string>
+			<string>Jamison H Goll, Agt</string>
+			<string>Jamo's</string>
+			<string>Jamohead, Inc</string>
+			<string>1800 N Arlington Pl</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.054546</string>
+			<string>-87.894672</string>
+		</array>
+		<array>
+			<string>2010-11-25</string>
+			<string>Gwen C Benner, Agt</string>
+			<string>Milwaukee Art Museum</string>
+			<string>Art Museum, Llc</string>
+			<string>700 N Art Museum Dr</string>
+			<string>53202</string>
+			<string>4</string>
+			<string>Class "B" Tavern</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+		<array>
+			<string>2011-04-10</string>
+			<string>Monica J De Palma, Agent</string>
+			<string>Monica's On Astor</string>
+			<string>M De Palma, Llc</string>
+			<string>1228 N Astor St</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.046386</string>
+			<string>-87.8993519</string>
+		</array>
+		<array>
+			<string>2010-07-29</string>
+			<string>Gregory W Steffke, Agent</string>
+			<string>County Clare</string>
+			<string>County Clare, Ltd</string>
+			<string>1234 N Astor St</string>
+			<string>53202</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.046635</string>
+			<string>-87.899332</string>
+		</array>
+		<array>
+			<string>2010-10-10</string>
+			<string>Jessica P Stewart</string>
+			<string>Stewart's Rest Spot</string>
+			<string></string>
+			<string>1422 W Atkinson Av</string>
+			<string>53206</string>
+			<string>6</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.086653</string>
+			<string>-87.928887</string>
+		</array>
+		<array>
+			<string>2011-06-30</string>
+			<string>James C White</string>
+			<string>J &amp; J's Tap</string>
+			<string></string>
+			<string>1727 33 W Atkinson Av</string>
+			<string>53206</string>
+			<string>6</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.0878469</string>
+			<string>-87.932944</string>
+		</array>
+		<array>
+			<string>2011-06-21</string>
+			<string>Beverly C Driver</string>
+			<string>Bev's Place</string>
+			<string></string>
+			<string>2928 W Atkinson Av</string>
+			<string>53209</string>
+			<string>1</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.099417</string>
+			<string>-87.9498349</string>
+		</array>
+		<array>
+			<string>2010-12-16</string>
+			<string>Kevin J Strege, Agt</string>
+			<string>Riverwest Tavern</string>
+			<string>Riverwest Enterprises, Llc</string>
+			<string>900 E Auer Av</string>
+			<string>53212</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.076776</string>
+			<string>-87.900032</string>
+		</array>
+		<array>
+			<string>2011-01-19</string>
+			<string>Robert F Smith</string>
+			<string>Cadillac Jacks</string>
+			<string></string>
+			<string>906 S Barclay St</string>
+			<string>53204</string>
+			<string>12</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.021921</string>
+			<string>-87.909428</string>
+		</array>
+		<array>
+			<string>2011-06-29</string>
+			<string>Maire E Mills-greenya, Agt</string>
+			<string>Champion's Pub</string>
+			<string>Champion's Pub, Llc</string>
+			<string>2417 N Bartlett Av</string>
+			<string>53211</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.061701</string>
+			<string>-87.889568</string>
+		</array>
+		<array>
+			<string>2011-05-19</string>
+			<string>Martin A Beaudoin, Agent</string>
+			<string>The Red Dot Cafe</string>
+			<string>Cmr Foods, Llc</string>
+			<string>2498 N Bartlett Av</string>
+			<string>53211</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.063606</string>
+			<string>-87.888897</string>
+		</array>
+		<array>
+			<string>2010-07-31</string>
+			<string>Mitchell D Wakefield, Agt</string>
+			<string>Tess</string>
+			<string>Wv, Llc</string>
+			<string>2499 N Bartlett Av</string>
+			<string>53211</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.06357</string>
+			<string>-87.889614</string>
+		</array>
+		<array>
+			<string>2011-04-14</string>
+			<string>Mark R Paschal, Agent</string>
+			<string>Bay Street Pub</string>
+			<string>Bay Street Pub, Llc</string>
+			<string>338 E Bay St</string>
+			<string>53207</string>
+			<string>14</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.006285</string>
+			<string>-87.905689</string>
+		</array>
+		<array>
+			<string>2010-10-23</string>
+			<string>Luis Pacheco-sanchez, Agt</string>
+			<string>St Adalbert Congregation</string>
+			<string>St Adalbert Congreagation</string>
+			<string>1923 W Becher St</string>
+			<string>53215</string>
+			<string>13</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.006053</string>
+			<string>-87.937484</string>
+		</array>
+		<array>
+			<string>2011-05-29</string>
+			<string>Nader H Pakroo, Agent</string>
+			<string>Henry's Tavern</string>
+			<string>Henry's Tavern, Llc</string>
+			<string>2523 E Belleview Pl</string>
+			<string>53211</string>
+			<string>3</string>
+			<string>Class "B" Tavern</string>
+			<string>RANGE_INTERPOLATED</string>
+			<string>43.0660626</string>
+			<string>-87.8790394</string>
+		</array>
+		<array>
+			<string>2011-06-30</string>
+			<string>Mathew G Amann, Agent</string>
+			<string>Amann's</string>
+			<string>M Gus Amann, Inc</string>
+			<string>9131 W Beloit Rd</string>
+			<string>53227</string>
+			<string>11</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>42.986708</string>
+			<string>-88.026423</string>
+		</array>
+		<array>
+			<string>2011-06-30</string>
+			<string>Judith A Jablonski, Agt</string>
+			<string>Beloit Lanes</string>
+			<string>Beloit Lanes, Inc</string>
+			<string>9150 W Beloit Rd</string>
+			<string>53227</string>
+			<string>11</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>42.987125</string>
+			<string>-88.026987</string>
+		</array>
+		<array>
+			<string>2011-06-30</string>
+			<string>Gordon G Grouse, Agent</string>
+			<string>American Legion Post 537</string>
+			<string>Post #537 Corp</string>
+			<string>9159 W Beloit Rd</string>
+			<string>53227</string>
+			<string>11</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>42.986272</string>
+			<string>-88.026985</string>
+		</array>
+		<array>
+			<string>2010-12-12</string>
+			<string>Valdemar Escobar, Agent</string>
+			<string>Fiesta Garibaldi</string>
+			<string>Fiesta Garibaldi On Bluemound, Llc</string>
+			<string>5108 W Bluemound Rd</string>
+			<string>53208</string>
+			<string>10</string>
+			<string>Class "B" Tavern</string>
+			<string>RANGE_INTERPOLATED</string>
+			<string>43.0367527</string>
+			<string>-87.9777089</string>
+		</array>
+		<array>
+			<string>2010-10-01</string>
+			<string>Patrick R Guenther, Agent</string>
+			<string>Kelly's Bleachers</string>
+			<string>S &amp; V, Inc</string>
+			<string>5218 W Bluemound Rd</string>
+			<string>53208</string>
+			<string>10</string>
+			<string>Class "B" Tavern</string>
+			<string>RANGE_INTERPOLATED</string>
+			<string>43.0366753</string>
+			<string>-87.9793852</string>
+		</array>
+		<array>
+			<string>2011-04-10</string>
+			<string>Paul M Wong, Agt</string>
+			<string>Long Wong's</string>
+			<string>La Joy, Llc</string>
+			<string>5230 W Bluemound Rd</string>
+			<string>53208</string>
+			<string>10</string>
+			<string>Class "B" Tavern</string>
+			<string>ROOFTOP</string>
+			<string>43.036975</string>
+			<string>-87.979709</string>
+		</array>
+	</array>
+	<key>delimiterString</key>
+	<string>,</string>
+	<key>endOfLine</key>
+	<string>\r</string>
+</dict>
+</plist>

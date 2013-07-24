@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string>Header 1</string>
+			<string>Header 2</string>
+		</array>
+		<array>
+			<string>cell 1</string>
+			<string>cell 2</string>
+		</array>
+		<array>
+			<string>second row</string>
+			<string>second row 2</string>
+		</array>
+	</array>
+	<key>delimiterString</key>
+	<string>\t</string>
+	<key>endOfLine</key>
+	<string>\n</string>
+</dict>
+</plist>

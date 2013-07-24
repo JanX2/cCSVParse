@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string></string>
+			<string>non-empty</string>
+			<string></string>
+		</array>
+		<array>
+			<string>Hello 
+ World</string>
+			<string>Hey</string>
+			<string>"Good morning", she said</string>
+		</array>
+		<array>
+			<string>I can haz üñîçø∂é</string>
+			<string>...</string>
+			<string>New
+line</string>
+			<string></string>
+		</array>
+		<array>
+			<string>ÿÿÿÿÿ (**encoding or data invalid**)</string>
+		</array>
+	</array>
+	<key>delimiterString</key>
+	<string>,</string>
+	<key>endOfLine</key>
+	<string>\n</string>
+</dict>
+</plist>

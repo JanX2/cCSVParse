@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string>address</string>
+			<string>is_mailbox</string>
+			<string>forward</string>
+		</array>
+		<array>
+			<string>accounts@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+		<array>
+			<string>ad@me.com</string>
+			<string>1</string>
+			<string>agentscopy@me.com</string>
+		</array>
+		<array>
+			<string>admin@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+		<array>
+			<string>aftersales@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+		<array>
+			<string>agentscopy@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+		<array>
+			<string>careers@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+		<array>
+			<string>da5id@me.com</string>
+			<string>1</string>
+			<string>agentscopy@me.com</string>
+		</array>
+		<array>
+			<string>info@me.com</string>
+			<string>1</string>
+			<string></string>
+		</array>
+	</array>
+	<key>delimiterString</key>
+	<string>,</string>
+	<key>endOfLine</key>
+	<string>\r\n</string>
+</dict>
+</plist>

@@ -1,0 +1,128 @@
+ATP,Location,Tournament,Date,Series,Court,Surface,Round,Best of,Winner,Loser,WRank,LRank,WPts,LPts,W1,L1,W2,L2,W3,L3,W4,L4,W5,L5,Wsets,Lsets,Comment,B365W,B365L,EXW,EXL,LBW,LBL,PSW,PSL,SJW,SJL,MaxW,MaxL,AvgW,AvgL
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Przysiezny M.,Ljubicic I.,94,15,570,2190,7,5,7,6,6,3,,,,,3,0,Completed,5.5,1.12,4.25,1.2,4.5,1.17,4.88,1.23,4,1.2,5.7,1.26,4.67,1.18
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Lopez F.,Levine J.,30,115,1455,439,7,6,3,6,6,2,6,3,,,3,1,Completed,1.16,4.5,1.24,3.8,1.22,4,1.27,4.3,1.2,4,1.31,4.7,1.23,4.01
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Lu Y.H.,Zeballos H.,82,44,626,982,7,5,6,4,6,3,,,,,3,0,Completed,1.72,2,1.72,2.05,1.83,1.83,1.91,2.02,1.67,2.1,2.03,2.1,1.81,1.94
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Brands D.,Andreev I.,98,57,543,805,7,6,7,6,7,5,,,,,3,0,Completed,1.36,3,1.7,2.07,1.4,2.75,1.76,2.21,1.57,2.25,1.76,3.1,1.52,2.5
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Berankis R.,Ball C.,156,134,322,391,6,2,6,0,3,6,7,6,,,3,1,Completed,1.57,2.25,1.6,2.25,1.62,2.2,1.72,2.28,1.67,2.1,1.75,2.33,1.65,2.17
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Bozoljac I.,Massu N.,152,99,328,536,7,6,3,6,6,3,7,6,,,3,1,Completed,1.3,3.4,1.3,3.45,1.33,3.25,1.31,3.92,1.29,3.25,1.38,3.92,1.31,3.34
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Federer R.,Falla A.,2,60,8525,767,5,7,4,6,6,4,7,6,6,0,3,2,Completed,1.005,21,1.01,15,1.01,21,1.01,46,1.01,21,1.06,48.25,1.01,19.73
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Davydenko N.,Anderson K.,5,95,4785,560,3,6,6,7,7,6,7,5,9,7,3,2,Completed,1.36,3,1.4,2.8,1.4,2.75,1.41,3.22,1.44,2.63,1.47,3.22,1.38,2.95
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Hanescu V.,Kuznetsov A.,38,167,1070,278,6,7,7,6,6,3,1,6,7,5,3,2,Completed,1.44,2.62,1.55,2.35,1.44,2.63,1.5,2.82,1.4,2.75,1.57,2.82,1.48,2.57
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Fish M.,Tomic B.,73,246,696,186,6,3,7,6,6,2,,,,,3,0,Completed,1.14,5,1.18,4.5,1.17,4.5,1.2,5.37,1.2,4,1.26,5.8,1.18,4.66
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Monfils G.,Mayer L.,20,52,1905,837,6,1,7,6,6,2,,,,,3,0,Completed,1.44,2.62,1.5,2.5,1.44,2.63,1.48,2.92,1.44,2.63,1.58,2.92,1.49,2.55
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Melzer J.,Brown D.,16,102,2125,496,6,3,4,6,6,2,6,3,,,3,1,Completed,1.12,5.5,1.2,4.25,1.2,4.33,1.21,5.21,1.17,4.5,1.26,6,1.17,4.7
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Evans B.,Huta Galung J.,318,285,125,155,6,3,7,6,6,3,,,,,3,0,Completed,1.8,1.9,1.85,1.9,1.8,1.91,1.86,2.07,1.83,1.83,1.95,2.07,1.83,1.9
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Schuettler R.,Tursunov D.,85,371,622,97,6,2,6,2,6,3,,,,,3,0,Completed,1.36,3,1.4,2.8,1.44,2.63,1.45,3.05,1.44,2.63,1.51,3.1,1.41,2.81
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Ilhan M.,Daniel M.,118,108,432,456,6,7,4,6,6,2,6,3,6,1,3,2,Completed,1.16,4.5,1.2,4.25,1.22,4,1.21,5.12,1.2,4,1.28,5.4,1.19,4.45
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Mayer F.,Cilic M.,59,12,777,2945,6,2,6,4,7,6,,,,,3,0,Completed,7,1.08,6.25,1.1,6,1.11,6.35,1.16,6,1.1,7,1.2,5.84,1.12
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Montanes A.,Lorenzi P.,31,96,1405,560,6,3,7,6,6,2,,,,,3,0,Completed,1.4,2.75,1.4,2.8,1.4,2.75,1.47,2.95,1.4,2.75,1.51,3,1.41,2.8
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Troicki V.,Kunitsyn I.,42,104,1000,487,6,3,6,4,6,1,,,,,3,0,Completed,1.2,4.33,1.25,3.6,1.25,3.75,1.26,4.38,1.22,3.75,1.31,4.55,1.24,3.95
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Beck K.,Ventura S.,88,131,611,403,6,3,6,1,4,6,6,2,,,3,1,Completed,1.16,4.5,1.22,4,1.25,3.75,1.25,4.6,1.2,4,1.31,4.6,1.22,4.1
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Istomin D.,Wawrinka S.,70,23,715,1690,6,7,6,1,2,6,7,6,6,3,3,2,Completed,2.62,1.44,2.35,1.55,2.63,1.44,2.64,1.56,2.5,1.5,2.71,1.63,2.49,1.51
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Llodra M.,Witten J.,37,186,1119,257,6,4,6,4,6,7,6,3,,,3,1,Completed,1.11,6,1.12,5.5,1.11,6,1.15,6.65,1.13,5.5,1.2,6.65,1.13,5.59
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Korolev E.,Schwank E.,77,50,655,875,6,1,7,6,4,6,6,2,,,3,1,Completed,1.36,3,1.33,3.1,1.36,3,1.38,3.36,1.29,3.25,1.42,3.36,1.35,3.04
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Becker B.,Sweeting R.,71,119,712,430,5,7,6,2,6,2,6,4,,,3,1,Completed,1.16,4.5,1.25,3.6,1.25,3.75,1.24,4.68,1.25,3.5,1.28,4.84,1.21,4.13
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Dent T.,Chela J.I.,97,51,551,872,6,3,6,7,7,6,7,5,,,3,1,Completed,1.3,3.4,1.3,3.25,1.33,3.25,1.36,3.55,1.33,3,1.37,3.6,1.32,3.23
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Berdych T.,Golubev A.,13,81,2825,633,7,6,6,2,6,2,,,,,3,0,Completed,1.05,9,1.08,7,1.07,7.5,1.11,8.71,1.07,7,1.16,11.01,1.07,7.69
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Luczak P.,Robredo T.,83,36,626,1155,2,6,7,6,6,2,7,5,,,3,1,Completed,2.1,1.66,2.05,1.72,1.91,1.8,1.97,1.95,2,1.73,2.2,1.95,2.02,1.74
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Clement A.,Tipsarevic J.,86,45,620,965,6,3,3,6,6,4,7,5,,,3,1,Completed,3.25,1.33,3,1.35,3,1.36,3.41,1.38,2.75,1.4,3.5,1.4,3.02,1.36
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Gabashvili T.,Delgado R.,84,143,624,362,2,6,6,4,6,4,6,2,,,3,1,Completed,1.53,2.37,1.6,2.25,1.62,2.2,1.65,2.41,1.67,2.1,1.69,2.45,1.63,2.22
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Roddick A.,Ram R.,7,93,4510,582,6,3,6,2,6,2,,,,,3,0,Completed,1.01,15,1.02,12,1.02,13,1.03,19,1.02,13,1.07,23,1.02,14.36
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Djokovic N.,Rochus O.,3,68,6545,730,4,6,6,2,3,6,6,4,6,2,3,2,Completed,1.11,6,1.16,4.75,1.11,6,1.16,6.39,1.17,4.5,1.17,7,1.13,5.61
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Hewitt L.,Gonzalez M.,26,159,1565,304,5,7,6,0,6,2,6,2,,,3,1,Completed,1.01,15,1.03,10,1.01,17,1.03,21,1.03,11,1.03,25,1.02,14.34
+36,London,Wimbledon,21/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Kohlschreiber P.,Starace P.,35,58,1230,782,6,3,3,6,6,3,6,0,,,3,1,Completed,1.06,8,1.1,6.25,1.08,7,1.1,9.35,1.07,7,1.13,9.55,1.09,7.14
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Querrey S.,Stakhovsky S.,21,47,1775,935,7,6,6,3,2,1,,,,,2,0,Retired,1.36,3,1.4,2.8,1.36,3,1.45,3.05,1.33,3,1.45,3.2,1.38,2.92
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Kamke T.,Garcia-Lopez G.,126,39,419,1060,5,7,2,6,7,5,6,4,6,4,3,2,Completed,3,1.36,3,1.35,3.25,1.33,3.1,1.43,3,1.36,3.75,1.43,3.05,1.36
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Mathieu P.H.,Gicquel M.,66,128,740,409,6,1,7,5,3,6,6,1,,,3,1,Completed,2.37,1.53,2.5,1.5,2.25,1.57,2.65,1.56,2.38,1.53,2.65,1.62,2.4,1.54
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Marchenko I.,Berrer M.,74,46,672,942,6,3,7,5,,,,,,,2,0,Retired,1.57,2.25,1.65,2.2,1.67,2.1,1.64,2.45,1.67,2.1,1.8,2.45,1.66,2.16
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Dodig I.,Hernandez O.,193,125,240,419,6,1,6,3,6,3,,,,,3,0,Completed,1.12,5.5,1.12,5.5,1.13,5.5,1.14,6.84,1.14,5,1.19,6.84,1.14,5.43
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Youzhny M.,Sela D.,14,65,2665,745,6,3,6,4,4,6,7,6,,,3,1,Completed,1.36,3,1.4,2.8,1.4,2.75,1.39,3.32,1.33,3,1.44,3.32,1.38,2.94
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Simon G.,Alcaide G.,32,238,1305,197,6,3,6,4,7,6,,,,,3,0,Completed,1.16,4.5,1.22,4,1.22,4,1.21,5.13,1.17,4.5,1.26,5.3,1.2,4.37
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Fischer M.,Soeda G.,164,124,294,422,6,4,6,3,6,1,,,,,3,0,Completed,1.5,2.5,1.55,2.35,1.57,2.25,1.54,2.7,1.53,2.38,1.8,2.75,1.54,2.42
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Tsonga J.W.,Kendrick R.,10,161,3185,297,7,6,7,6,3,6,6,4,,,3,1,Completed,1.1,6.5,1.12,5.5,1.11,6,1.13,7.65,1.1,6,1.17,7.84,1.12,5.97
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Seppi A.,Almagro N.,69,18,720,1960,7,6,7,6,6,2,,,,,3,0,Completed,2.37,1.53,1.9,1.8,2.2,1.62,2.53,1.61,2.38,1.53,2.7,1.9,2.31,1.58
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Haase R.,Blake J.,151,109,330,450,6,2,6,4,6,4,,,,,3,0,Completed,2.37,1.53,2.5,1.5,2.5,1.5,2.44,1.65,2.5,1.5,2.75,1.65,2.4,1.54
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Serra F.,Greul S.,64,62,750,753,7,6,6,3,6,2,,,,,3,0,Completed,1.83,1.83,1.85,1.9,1.83,1.83,1.85,2.08,2,1.73,2.06,2.1,1.86,1.87
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Benneteau J.,Vliegen K.,40,174,1059,266,2,6,6,7,6,1,6,2,7,5,3,2,Completed,1.16,4.5,1.2,4.25,1.2,4.33,1.22,4.96,1.2,4,1.24,5.1,1.19,4.46
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Dolgopolov O.,Chiudinelli M.,43,61,996,762,6,4,6,3,6,3,,,,,3,0,Completed,1.57,2.25,1.6,2.25,1.57,2.25,1.67,2.37,1.53,2.38,1.71,2.38,1.61,2.23
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Bellucci T.,Mello R.,24,92,1652,586,6,4,6,4,6,4,,,,,3,0,Completed,1.36,3,1.4,2.8,1.36,3,1.4,3.25,1.4,2.75,1.42,3.27,1.37,2.96
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Ferrer D.,Kiefer N.,11,178,3010,262,6,4,6,2,6,3,,,,,3,0,Completed,1.44,2.62,1.5,2.5,1.53,2.38,1.57,2.63,1.5,2.5,1.57,2.65,1.51,2.5
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Nadal R.,Nishikori K.,1,189,8745,247,6,2,6,4,6,4,,,,,3,0,Completed,1.01,15,1.01,15,1.03,10,1.03,19,1.02,13,1.05,26,1.02,13.52
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Beck A.,Baker J.,79,253,645,182,7,6,6,3,6,4,,,,,3,0,Completed,1.14,5,1.2,4.25,1.2,4.33,1.17,6.04,1.17,4.5,1.22,6.04,1.17,4.81
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Lacko L.,Baghdatis M.,75,27,671,1545,6,3,2,6,6,3,6,1,,,3,1,Completed,3.75,1.25,3.25,1.3,3.4,1.3,3.85,1.32,3.25,1.29,3.85,1.37,3.38,1.3
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Nieminen J.,Koubek S.,67,121,736,424,6,4,7,6,5,7,6,2,,,3,1,Completed,1.36,3,1.4,2.8,1.4,2.75,1.39,3.35,1.36,2.88,1.47,3.35,1.4,2.83
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Chardy J.,Gimeno-Traver D.,55,72,820,698,6,3,6,3,6,1,,,,,3,0,Completed,1.25,3.75,1.3,3.3,1.25,3.75,1.33,3.71,1.22,3.75,1.34,3.75,1.28,3.47
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Petzschner P.,Robert S.,41,76,1055,666,6,4,7,6,4,6,2,6,6,4,3,2,Completed,1.2,4.33,1.25,3.75,1.29,3.5,1.24,4.64,1.2,4,1.29,4.64,1.23,3.91
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Murray A.,Hajek J.,4,90,5155,594,7,5,6,1,6,2,,,,,3,0,Completed,1.01,15,1.01,15,1.02,13,1.03,21,1.02,13,1.05,25,1.02,14.4
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Kubot L.,Kavcic B.,53,120,825,427,4,6,6,2,6,2,6,3,,,3,1,Completed,1.4,2.75,1.45,2.6,1.4,2.75,1.47,2.97,1.36,2.88,1.48,3,1.41,2.78
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Soderling R.,Ginepri R.,6,72,4755,698,6,2,6,2,6,3,,,,,3,0,Completed,1.11,6,1.16,4.75,1.11,6,1.16,6.42,1.14,5,1.19,6.5,1.14,5.5
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Fognini F.,Verdasco F.,80,9,635,3645,7,6,6,2,6,7,6,4,,,3,1,Completed,10,1.04,8.5,1.05,8.5,1.05,12,1.07,8,1.05,12.7,1.11,9.53,1.05
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Russell M.,Riba-Madrid P.,101,78,519,654,6,3,7,6,2,6,7,6,,,3,1,Completed,1.4,2.75,1.4,2.8,1.44,2.63,1.48,2.89,1.4,2.75,1.53,2.9,1.44,2.69
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Malisse X.,Ferrero J.C.,63,17,751,2095,6,2,6,7,7,6,4,6,6,1,3,2,Completed,2,1.72,1.85,1.9,1.83,1.83,2.03,1.9,1.83,1.83,2.1,2.05,1.91,1.83
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Reister J.,De Voest R.,129,257,409,179,6,4,7,5,3,6,6,2,,,3,1,Completed,2,1.72,2,1.75,2,1.73,1.97,1.95,2.1,1.67,2.13,1.95,1.98,1.77
+36,London,Wimbledon,22/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Granollers M.,Gil F.,87,89,613,608,6,3,6,0,6,4,,,,,3,0,Completed,1.33,3.25,1.35,3,1.36,3,1.34,3.62,1.33,3,1.41,3.62,1.34,3.12
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,1st Round,5,De Bakker T.,Giraldo S.,49,54,928,823,6,7,6,4,6,3,5,7,16,14,3,2,Completed,2,1.72,1.85,1.9,1.83,1.83,2.12,1.83,1.83,1.83,2.12,1.92,1.9,1.84
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,1st Round,5,Isner J.,Mahut N.,19,148,1925,339,6,4,3,6,6,7,7,6,70,68,3,2,Completed,1.66,2.1,1.75,2,1.67,2.1,1.9,2.03,1.67,2.1,1.9,2.25,1.7,2.09
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Melzer J.,Troicki V.,16,42,2125,1000,6,7,4,6,6,3,7,6,6,3,3,2,Completed,1.4,2.75,1.45,2.65,1.44,2.63,1.43,3.1,1.4,2.75,1.52,3.25,1.42,2.77
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Lu Y.H.,Przysiezny M.,82,94,626,570,6,4,7,6,6,3,,,,,3,0,Completed,1.53,2.37,1.6,2.25,1.57,2.25,1.65,2.42,1.67,2.1,1.75,2.5,1.62,2.24
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Mayer F.,Fish M.,59,73,777,696,6,7,6,3,6,4,6,4,,,3,1,Completed,3.4,1.3,3,1.35,3.25,1.33,3.55,1.36,3.25,1.29,3.64,1.4,3.28,1.32
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Roddick A.,Llodra M.,7,37,4510,1119,4,6,6,4,6,1,7,6,,,3,1,Completed,1.2,4.33,1.25,3.75,1.17,4.5,1.26,4.45,1.2,4,1.31,5.5,1.21,4.24
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Monfils G.,Beck K.,20,88,1905,611,6,4,6,4,6,7,6,4,,,3,1,Completed,1.22,4,1.25,3.75,1.22,4,1.24,4.76,1.29,3.25,1.31,5,1.24,3.92
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Lopez F.,Berankis R.,30,156,1455,322,7,5,4,6,6,3,6,4,,,3,1,Completed,1.53,2.37,1.6,2.25,1.53,2.38,1.6,2.53,1.53,2.38,1.68,2.65,1.54,2.4
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Kohlschreiber P.,Gabashvili T.,35,84,1230,624,7,6,5,7,2,6,7,6,9,7,3,2,Completed,1.16,4.5,1.2,4.25,1.22,4,1.22,4.96,1.2,4,1.31,4.96,1.21,4.2
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Hewitt L.,Korolev E.,26,77,1565,655,6,4,6,4,3,0,,,,,2,0,Retired,1.06,8,1.1,6.5,1.08,7,1.11,8.71,1.08,7,1.17,8.71,1.09,6.93
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Federer R.,Bozoljac I.,2,152,8525,328,6,3,6,7,6,4,7,6,,,3,1,Completed,1.05,21,1.01,11,1.01,17,1.02,31,1.01,17,1.07,31,1.01,16.73
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Clement A.,Luczak P.,86,83,620,626,6,7,6,3,6,3,6,4,,,3,1,Completed,1.5,2.5,1.55,2.35,1.57,2.25,1.55,2.66,1.62,2.2,1.63,2.69,1.54,2.4
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Hanescu V.,Ilhan M.,38,118,1070,432,6,4,6,4,3,6,6,3,,,3,1,Completed,1.53,2.37,1.65,2.15,1.53,2.38,1.71,2.29,1.62,2.2,1.78,2.55,1.59,2.29
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Berdych T.,Becker B.,13,71,2825,712,7,5,6,3,6,4,,,,,3,0,Completed,1.22,4,1.22,4,1.2,4.33,1.24,4.72,1.25,3.5,1.31,4.72,1.23,3.98
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Montanes A.,Evans B.,31,318,1405,125,3,6,6,3,6,7,6,1,6,4,3,2,Completed,1.61,2.2,1.7,2.05,1.67,2.1,1.69,2.33,1.67,2.1,1.89,2.33,1.69,2.1
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Djokovic N.,Dent T.,3,97,6545,551,7,6,6,1,6,4,,,,,3,0,Completed,1.14,5,1.18,4.5,1.2,4.33,1.19,5.49,1.14,5,1.26,5.8,1.17,4.72
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Istomin D.,Schuettler R.,70,85,715,622,6,3,7,6,4,6,4,6,6,1,3,2,Completed,1.53,2.37,1.55,2.35,1.57,2.25,1.65,2.41,1.62,2.2,1.65,2.5,1.58,2.31
+36,London,Wimbledon,23/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Brands D.,Davydenko N.,98,5,543,4785,1,6,7,6,7,6,6,1,,,3,1,Completed,2.62,1.44,2.25,1.6,2.5,1.5,2.77,1.52,2.5,1.5,2.77,1.63,2.51,1.51
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Simon G.,Marchenko I.,32,74,1305,672,,,,,,,,,,,,,Walkover,1.44,2.62,1.5,2.45,1.44,2.63,1.58,2.57,1.44,2.63,1.58,2.7,1.49,2.55
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Tsonga J.W.,Dolgopolov O.,10,43,3185,996,6,4,6,4,6,7,5,7,10,8,3,2,Completed,1.25,3.75,1.28,3.45,1.25,3.75,1.27,4.26,1.22,3.75,1.3,4.26,1.25,3.78
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Kamke T.,Seppi A.,126,69,419,720,3,6,6,2,6,3,6,4,,,3,1,Completed,2.37,1.53,2.25,1.6,2.25,1.57,2.41,1.65,2.2,1.62,2.47,1.65,2.3,1.59
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Bellucci T.,Fischer M.,24,164,1652,294,6,7,7,6,7,6,6,2,,,3,1,Completed,1.57,2.25,1.62,2.2,1.67,2.1,1.7,2.32,1.67,2.1,1.7,2.52,1.64,2.2
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Benneteau J.,Beck A.,40,79,1059,645,3,6,6,2,4,6,7,6,6,3,3,2,Completed,1.66,2.1,1.75,2,1.73,2,1.77,2.2,1.67,2.1,1.8,2.22,1.71,2.06
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Chardy J.,Lacko L.,55,75,820,671,6,3,7,6,4,6,6,7,8,6,3,2,Completed,1.83,1.83,1.9,1.85,1.83,1.83,2.04,1.88,1.83,1.83,2.05,1.95,1.91,1.83
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Murray A.,Nieminen J.,4,67,5155,736,6,3,6,4,6,2,,,,,3,0,Completed,1.04,10,1.08,6.75,1.08,7,1.08,11,1.07,7,1.09,11.5,1.06,8.42
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Fognini F.,Russell M.,80,101,635,519,3,6,5,7,7,5,7,6,6,3,3,2,Completed,1.8,1.9,1.8,1.95,1.73,2,1.95,1.97,1.83,1.83,1.95,2.1,1.81,1.94
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Malisse X.,Reister J.,63,129,751,409,6,7,6,4,6,1,6,4,,,3,1,Completed,1.25,3.75,1.25,3.65,1.3,3.4,1.26,4.47,1.2,4,1.33,4.47,1.26,3.68
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Soderling R.,Granollers M.,6,87,4755,613,7,5,6,1,6,4,,,,,3,0,Completed,1.07,7.5,1.08,6.75,1.06,8,1.09,9.95,1.04,9,1.1,11.5,1.07,8.15
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Ferrer D.,Serra F.,11,64,3010,750,6,4,7,5,6,7,6,3,,,3,1,Completed,1.22,4,1.3,3.3,1.29,3.5,1.25,4.51,1.25,3.5,1.3,4.51,1.26,3.74
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Querrey S.,Dodig I.,21,193,1775,240,6,2,5,7,6,3,7,6,,,3,1,Completed,1.1,6.5,1.12,5.75,1.08,7,1.1,9.05,1.07,7,1.13,9.05,1.09,6.85
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Nadal R.,Haase R.,1,151,8745,330,5,7,6,2,3,6,6,0,6,3,3,2,Completed,1.01,13,1.02,10,1.02,13,1.03,21,1.01,15,1.04,21,1.02,13.84
+36,London,Wimbledon,24/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Petzschner P.,Kubot L.,41,53,1055,825,6,4,3,6,4,6,6,3,6,2,3,2,Completed,1.25,3.75,1.3,3.3,1.33,3.25,1.29,4.05,1.29,3.25,1.33,4.1,1.28,3.54
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,Mathieu P.H.,Youzhny M.,66,14,740,2665,6,4,2,6,2,6,6,3,6,4,3,2,Completed,4.33,1.2,4.25,1.2,3.75,1.25,4.71,1.24,3.5,1.25,4.71,1.26,4.01,1.23
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,2nd Round,5,De Bakker T.,Isner J.,49,19,928,1925,6,0,6,3,6,2,,,,,3,0,Completed,1.8,1.9,1.7,2.05,1.67,2.1,1.81,2.15,1.62,2.2,1.81,2.3,1.7,2.1
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Djokovic N.,Montanes A.,3,31,6545,1405,6,1,6,4,6,4,,,,,3,0,Completed,1.03,11,1.07,7.5,1.06,8,1.06,12,1.05,9,1.09,12,1.06,8.7
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Hewitt L.,Monfils G.,26,20,1565,1905,6,3,7,6,6,4,,,,,3,0,Completed,1.36,3,1.4,2.8,1.36,3,1.41,3.23,1.33,3,1.43,3.6,1.36,3.05
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Melzer J.,Lopez F.,16,30,2125,1455,4,6,6,3,6,2,6,4,,,3,1,Completed,1.66,2.1,1.65,2.15,1.67,2.1,1.8,2.15,1.62,2.2,1.8,2.25,1.68,2.13
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Berdych T.,Istomin D.,13,70,2825,715,6,7,7,6,6,7,6,3,6,4,3,2,Completed,1.14,5,1.22,4,1.2,4.33,1.2,5.29,1.2,4,1.22,5.35,1.19,4.47
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Lu Y.H.,Mayer F.,82,59,626,777,6,4,6,4,2,1,,,,,2,0,Retired,3.75,1.25,3.1,1.33,3,1.36,3.8,1.32,3,1.33,4,1.45,3.34,1.31
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Federer R.,Clement A.,2,86,8525,620,6,2,6,4,6,2,,,,,3,0,Completed,1.02,12,1.02,12,1.02,11,1.04,17,1.03,10,1.05,21,1.03,11.98
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Roddick A.,Kohlschreiber P.,7,35,4510,1230,7,5,6,7,6,3,6,3,,,3,1,Completed,1.14,5,1.18,4.5,1.13,5.5,1.23,4.8,1.17,5,1.23,5.5,1.17,4.72
+36,London,Wimbledon,25/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Brands D.,Hanescu V.,98,38,543,1070,6,7,6,7,7,6,6,3,3,0,2,2,Retired,1.83,1.83,1.87,1.87,1.83,1.83,1.82,2.13,1.83,1.83,2.1,2.2,1.83,1.92
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Ferrer D.,Chardy J.,11,55,3010,820,7,5,6,3,4,6,3,6,7,5,3,2,Completed,1.25,3.75,1.25,3.75,1.29,3.5,1.29,4.09,1.29,3.5,1.33,4.09,1.28,3.61
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Soderling R.,Bellucci T.,6,24,4755,1652,6,4,6,2,7,5,,,,,3,0,Completed,1.05,9,1.07,7.5,1.07,7.5,1.06,12,1.07,8,1.12,12,1.07,8.42
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Mathieu P.H.,De Bakker T.,66,49,740,928,7,6,7,6,6,7,6,4,,,3,1,Completed,2.1,1.66,2.35,1.55,2.25,1.57,2.54,1.6,2.38,1.57,2.54,1.7,2.33,1.57
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Nadal R.,Petzschner P.,1,41,8745,1055,6,4,4,6,6,7,6,2,6,3,3,2,Completed,1.03,11,1.03,10,1.04,9,1.06,12,1.04,10,1.1,15,1.05,9.96
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Benneteau J.,Fognini F.,40,80,1059,635,6,4,6,1,4,6,6,3,,,3,1,Completed,1.3,3.4,1.35,3,1.36,3,1.33,3.71,1.36,3,1.45,3.71,1.33,3.19
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Tsonga J.W.,Kamke T.,10,126,3185,419,6,1,6,4,7,6,,,,,3,0,Completed,1.16,4.5,1.22,4,1.2,4.33,1.22,5.09,1.22,4,1.27,5.1,1.21,4.27
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,5,Querrey S.,Malisse X.,21,63,1775,751,6,7,6,4,6,2,5,7,9,7,3,2,Completed,1.33,3.25,1.35,3,1.33,3.25,1.39,3.32,1.33,3.25,1.41,3.4,1.35,3.1
+36,London,Wimbledon,26/06/10,Grand Slam,Outdoor,Grass,3rd Round,3,Murray A.,Simon G.,4,32,5155,1305,6,1,6,4,6,4,,,,,3,0,Completed,1.05,9,1.08,6.75,1.08,7,1.07,11.5,1.07,8,1.12,11.77,1.07,8.11
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Federer R.,Melzer J.,2,16,8525,2125,6,3,6,2,6,3,,,,,3,0,Completed,1.06,8,1.11,6,1.07,7.5,1.12,7.83,1.11,6.5,1.13,9,1.09,7.26
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Tsonga J.W.,Benneteau J.,10,40,3185,1059,6,1,6,4,3,6,6,1,,,3,1,Completed,1.25,3.75,1.25,3.75,1.25,3.75,1.3,3.97,1.25,3.75,1.35,4,1.26,3.69
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Berdych T.,Brands D.,13,98,2825,543,4,6,7,6,7,5,6,3,,,3,1,Completed,1.08,7,1.12,5.75,1.13,5.5,1.13,7.43,1.13,6,1.13,7.5,1.11,6.09
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Djokovic N.,Hewitt L.,3,26,6545,1565,7,5,6,4,3,6,6,4,,,3,1,Completed,1.8,1.9,1.8,1.95,1.8,1.91,1.84,2.1,1.8,2,2,2.1,1.8,1.95
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Lu Y.H.,Roddick A.,82,7,626,4510,4,6,7,6,7,6,6,7,9,7,3,2,Completed,12,1.02,8.5,1.05,8.5,1.05,15.5,1.05,10,1.04,16,1.07,10.65,1.04
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Soderling R.,Ferrer D.,6,11,4755,3010,6,2,5,7,6,2,3,6,7,5,3,2,Completed,1.08,7,1.12,5.75,1.11,6,1.14,6.92,1.13,6,1.14,7,1.11,6.18
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Murray A.,Querrey S.,4,21,5155,1775,7,5,6,3,6,4,,,,,3,0,Completed,1.14,5,1.18,4.5,1.17,4.5,1.2,5.37,1.22,4,1.3,5.5,1.19,4.49
+36,London,Wimbledon,28/06/10,Grand Slam,Outdoor,Grass,4th Round,5,Nadal R.,Mathieu P.H.,1,66,8745,740,6,4,6,2,6,2,,,,,3,0,Completed,1.08,7,1.12,5.75,1.1,6.5,1.17,6.16,1.13,6,1.2,7.5,1.12,5.97
+36,London,Wimbledon,30/06/10,Grand Slam,Outdoor,Grass,Quarterfinals,5,Berdych T.,Federer R.,13,2,2825,8525,6,4,3,6,6,1,6,4,,,3,1,Completed,5,1.16,4,1.22,5,1.14,4.68,1.24,4.5,1.2,5.1,1.25,4.47,1.19
+36,London,Wimbledon,30/06/10,Grand Slam,Outdoor,Grass,Quarterfinals,5,Djokovic N.,Lu Y.H.,3,82,6545,626,6,3,6,2,6,2,,,,,3,0,Completed,1.12,6,1.15,5,1.14,5,1.19,5.69,1.17,5,1.2,6.05,1.16,5.12
+36,London,Wimbledon,30/06/10,Grand Slam,Outdoor,Grass,Quarterfinals,5,Nadal R.,Soderling R.,1,6,8745,4755,3,6,6,3,7,6,6,1,,,3,1,Completed,1.66,2.2,1.65,2.15,1.53,2.38,1.72,2.27,1.57,2.38,1.72,2.55,1.62,2.26
+36,London,Wimbledon,30/06/10,Grand Slam,Outdoor,Grass,Quarterfinals,5,Murray A.,Tsonga J.W.,4,10,5155,3185,6,7,7,6,6,2,6,2,,,3,1,Completed,1.22,4.33,1.28,3.5,1.25,3.75,1.27,4.25,1.25,3.75,1.38,4.33,1.26,3.78
+36,London,Wimbledon,02/07/10,Grand Slam,Outdoor,Grass,Semifinals,5,Berdych T.,Djokovic N.,13,3,2825,6545,6,3,7,6,6,3,,,,,3,0,Completed,2,1.8,1.9,1.85,2,1.73,2.01,1.92,2,1.8,2.1,1.91,1.96,1.82
+36,London,Wimbledon,02/07/10,Grand Slam,Outdoor,Grass,Semifinals,5,Nadal R.,Murray A.,1,4,8745,5155,6,4,7,6,6,4,,,,,3,0,Completed,1.57,2.37,1.52,2.31,1.53,2.38,1.63,2.47,1.57,2.38,1.67,2.5,1.57,2.38
+36,London,Wimbledon,04/07/10,Grand Slam,Outdoor,Grass,The Final,5,Nadal R.,Berdych T.,1,13,8745,2825,6,3,7,5,6,4,,,,,3,0,Completed,1.3,3.5,1.35,3,1.33,3.25,1.37,3.45,1.3,3.5,1.36,4.25,1.31,3.43

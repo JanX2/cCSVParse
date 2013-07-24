@@ -12,6 +12,57 @@
 		3DC89F32179FF51D0019B093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F30179FF51D0019B093 /* InfoPlist.strings */; };
 		3DC89F35179FF51D0019B093 /* cCSVParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89F34179FF51D0019B093 /* cCSVParserTests.m */; };
 		3DC89F43179FF6830019B093 /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89F3F179FF6830019B093 /* parseCSV.m */; };
+		3DC89F6117A003F70019B093 /* buffer bug 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4717A003F70019B093 /* buffer bug 1.csv */; };
+		3DC89F6217A003F70019B093 /* buffer bug 2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4817A003F70019B093 /* buffer bug 2.csv */; };
+		3DC89F6317A003F70019B093 /* correctly quoted nightmare.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4917A003F70019B093 /* correctly quoted nightmare.csv */; };
+		3DC89F6417A003F70019B093 /* empty file.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4A17A003F70019B093 /* empty file.csv */; };
+		3DC89F6517A003F70019B093 /* extremely long single cell.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4B17A003F70019B093 /* extremely long single cell.csv */; };
+		3DC89F6617A003F70019B093 /* leading LF in CRLF.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4C17A003F70019B093 /* leading LF in CRLF.csv */; };
+		3DC89F6717A003F80019B093 /* leading LF removed.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4D17A003F70019B093 /* leading LF removed.csv */; };
+		3DC89F6817A003F80019B093 /* milwaukee-CR.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4E17A003F70019B093 /* milwaukee-CR.csv */; };
+		3DC89F6917A003F80019B093 /* ObjC code.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F4F17A003F70019B093 /* ObjC code.csv */; };
+		3DC89F6A17A003F80019B093 /* single cell with unescaped quotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5017A003F70019B093 /* single cell with unescaped quotes.csv */; };
+		3DC89F6B17A003F80019B093 /* single character cell.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5117A003F70019B093 /* single character cell.csv */; };
+		3DC89F6C17A003F80019B093 /* single column.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5217A003F70019B093 /* single column.csv */; };
+		3DC89F6D17A003F80019B093 /* single long cell.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5317A003F70019B093 /* single long cell.csv */; };
+		3DC89F6E17A003F80019B093 /* single quoted cell without line break.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5417A003F70019B093 /* single quoted cell without line break.csv */; };
+		3DC89F6F17A003F80019B093 /* six empty cells.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5517A003F70019B093 /* six empty cells.csv */; };
+		3DC89F7017A003F80019B093 /* three cells, first two containing seperator.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5617A003F70019B093 /* three cells, first two containing seperator.csv */; };
+		3DC89F7117A003F80019B093 /* trailing empty cell.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5717A003F70019B093 /* trailing empty cell.csv */; };
+		3DC89F7217A003F80019B093 /* trailing opening quote.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5817A003F70019B093 /* trailing opening quote.csv */; };
+		3DC89F7317A003F80019B093 /* TSV with CSV file name extension.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5917A003F70019B093 /* TSV with CSV file name extension.csv */; };
+		3DC89F7417A003F80019B093 /* unicode-CRLF-test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5A17A003F70019B093 /* unicode-CRLF-test.csv */; };
+		3DC89F7517A003F80019B093 /* unicode-CRLF.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5B17A003F70019B093 /* unicode-CRLF.csv */; };
+		3DC89F7617A003F80019B093 /* unicode-invalid.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5C17A003F70019B093 /* unicode-invalid.csv */; };
+		3DC89F7717A003F80019B093 /* unicode.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5D17A003F70019B093 /* unicode.csv */; };
+		3DC89F7817A003F80019B093 /* whitespace only.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5E17A003F70019B093 /* whitespace only.csv */; };
+		3DC89F7917A003F80019B093 /* wimbledon-CRLF.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F5F17A003F70019B093 /* wimbledon-CRLF.csv */; };
+		3DC89F9417A00CAC0019B093 /* buffer bug 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F7B17A00CAC0019B093 /* buffer bug 1.plist */; };
+		3DC89F9517A00CAC0019B093 /* buffer bug 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F7C17A00CAC0019B093 /* buffer bug 2.plist */; };
+		3DC89F9617A00CAC0019B093 /* correctly quoted nightmare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F7D17A00CAC0019B093 /* correctly quoted nightmare.plist */; };
+		3DC89F9717A00CAC0019B093 /* empty file.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F7E17A00CAC0019B093 /* empty file.plist */; };
+		3DC89F9817A00CAC0019B093 /* extremely long single cell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F7F17A00CAC0019B093 /* extremely long single cell.plist */; };
+		3DC89F9917A00CAC0019B093 /* leading LF in CRLF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8017A00CAC0019B093 /* leading LF in CRLF.plist */; };
+		3DC89F9A17A00CAC0019B093 /* leading LF removed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8117A00CAC0019B093 /* leading LF removed.plist */; };
+		3DC89F9B17A00CAC0019B093 /* milwaukee-CR.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8217A00CAC0019B093 /* milwaukee-CR.plist */; };
+		3DC89F9C17A00CAC0019B093 /* ObjC code.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8317A00CAC0019B093 /* ObjC code.plist */; };
+		3DC89F9D17A00CAC0019B093 /* single cell with unescaped quotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8417A00CAC0019B093 /* single cell with unescaped quotes.plist */; };
+		3DC89F9E17A00CAC0019B093 /* single character cell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8517A00CAC0019B093 /* single character cell.plist */; };
+		3DC89F9F17A00CAC0019B093 /* single column.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8617A00CAC0019B093 /* single column.plist */; };
+		3DC89FA017A00CAC0019B093 /* single long cell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8717A00CAC0019B093 /* single long cell.plist */; };
+		3DC89FA117A00CAC0019B093 /* single quoted cell without line break.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8817A00CAC0019B093 /* single quoted cell without line break.plist */; };
+		3DC89FA217A00CAC0019B093 /* six empty cells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8917A00CAC0019B093 /* six empty cells.plist */; };
+		3DC89FA317A00CAC0019B093 /* three cells, first two containing seperator.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8A17A00CAC0019B093 /* three cells, first two containing seperator.plist */; };
+		3DC89FA417A00CAC0019B093 /* trailing empty cell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8B17A00CAC0019B093 /* trailing empty cell.plist */; };
+		3DC89FA517A00CAC0019B093 /* trailing opening quote.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8C17A00CAC0019B093 /* trailing opening quote.plist */; };
+		3DC89FA617A00CAC0019B093 /* TSV with CSV file name extension.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8D17A00CAC0019B093 /* TSV with CSV file name extension.plist */; };
+		3DC89FA717A00CAC0019B093 /* unicode-CRLF-test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8E17A00CAC0019B093 /* unicode-CRLF-test.plist */; };
+		3DC89FA817A00CAC0019B093 /* unicode-CRLF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F8F17A00CAC0019B093 /* unicode-CRLF.plist */; };
+		3DC89FA917A00CAC0019B093 /* unicode-invalid.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9017A00CAC0019B093 /* unicode-invalid.plist */; };
+		3DC89FAA17A00CAC0019B093 /* unicode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9117A00CAC0019B093 /* unicode.plist */; };
+		3DC89FAB17A00CAC0019B093 /* whitespace only.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9217A00CAC0019B093 /* whitespace only.plist */; };
+		3DC89FAC17A00CAC0019B093 /* wimbledon-CRLF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */; };
+		3DC89FAF17A02FF20019B093 /* NSString+EscapingForCCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +80,58 @@
 		3DC89F40179FF6830019B093 /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
 		3DC89F41179FF6830019B093 /* JXArcCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXArcCompatibilityMacros.h; sourceTree = "<group>"; };
 		3DC89F42179FF6830019B093 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3DC89F4717A003F70019B093 /* buffer bug 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "buffer bug 1.csv"; sourceTree = "<group>"; };
+		3DC89F4817A003F70019B093 /* buffer bug 2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "buffer bug 2.csv"; sourceTree = "<group>"; };
+		3DC89F4917A003F70019B093 /* correctly quoted nightmare.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "correctly quoted nightmare.csv"; sourceTree = "<group>"; };
+		3DC89F4A17A003F70019B093 /* empty file.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "empty file.csv"; sourceTree = "<group>"; };
+		3DC89F4B17A003F70019B093 /* extremely long single cell.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "extremely long single cell.csv"; sourceTree = "<group>"; };
+		3DC89F4C17A003F70019B093 /* leading LF in CRLF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "leading LF in CRLF.csv"; sourceTree = "<group>"; };
+		3DC89F4D17A003F70019B093 /* leading LF removed.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "leading LF removed.csv"; sourceTree = "<group>"; };
+		3DC89F4E17A003F70019B093 /* milwaukee-CR.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "milwaukee-CR.csv"; sourceTree = "<group>"; };
+		3DC89F4F17A003F70019B093 /* ObjC code.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ObjC code.csv"; sourceTree = "<group>"; };
+		3DC89F5017A003F70019B093 /* single cell with unescaped quotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "single cell with unescaped quotes.csv"; sourceTree = "<group>"; };
+		3DC89F5117A003F70019B093 /* single character cell.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "single character cell.csv"; sourceTree = "<group>"; };
+		3DC89F5217A003F70019B093 /* single column.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "single column.csv"; sourceTree = "<group>"; };
+		3DC89F5317A003F70019B093 /* single long cell.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "single long cell.csv"; sourceTree = "<group>"; };
+		3DC89F5417A003F70019B093 /* single quoted cell without line break.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "single quoted cell without line break.csv"; sourceTree = "<group>"; };
+		3DC89F5517A003F70019B093 /* six empty cells.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "six empty cells.csv"; sourceTree = "<group>"; };
+		3DC89F5617A003F70019B093 /* three cells, first two containing seperator.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "three cells, first two containing seperator.csv"; sourceTree = "<group>"; };
+		3DC89F5717A003F70019B093 /* trailing empty cell.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "trailing empty cell.csv"; sourceTree = "<group>"; };
+		3DC89F5817A003F70019B093 /* trailing opening quote.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "trailing opening quote.csv"; sourceTree = "<group>"; };
+		3DC89F5917A003F70019B093 /* TSV with CSV file name extension.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TSV with CSV file name extension.csv"; sourceTree = "<group>"; };
+		3DC89F5A17A003F70019B093 /* unicode-CRLF-test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unicode-CRLF-test.csv"; sourceTree = "<group>"; };
+		3DC89F5B17A003F70019B093 /* unicode-CRLF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unicode-CRLF.csv"; sourceTree = "<group>"; };
+		3DC89F5C17A003F70019B093 /* unicode-invalid.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unicode-invalid.csv"; sourceTree = "<group>"; };
+		3DC89F5D17A003F70019B093 /* unicode.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode.csv; sourceTree = "<group>"; };
+		3DC89F5E17A003F70019B093 /* whitespace only.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "whitespace only.csv"; sourceTree = "<group>"; };
+		3DC89F5F17A003F70019B093 /* wimbledon-CRLF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wimbledon-CRLF.csv"; sourceTree = "<group>"; };
+		3DC89F7B17A00CAC0019B093 /* buffer bug 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "buffer bug 1.plist"; sourceTree = "<group>"; };
+		3DC89F7C17A00CAC0019B093 /* buffer bug 2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "buffer bug 2.plist"; sourceTree = "<group>"; };
+		3DC89F7D17A00CAC0019B093 /* correctly quoted nightmare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "correctly quoted nightmare.plist"; sourceTree = "<group>"; };
+		3DC89F7E17A00CAC0019B093 /* empty file.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "empty file.plist"; sourceTree = "<group>"; };
+		3DC89F7F17A00CAC0019B093 /* extremely long single cell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "extremely long single cell.plist"; sourceTree = "<group>"; };
+		3DC89F8017A00CAC0019B093 /* leading LF in CRLF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "leading LF in CRLF.plist"; sourceTree = "<group>"; };
+		3DC89F8117A00CAC0019B093 /* leading LF removed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "leading LF removed.plist"; sourceTree = "<group>"; };
+		3DC89F8217A00CAC0019B093 /* milwaukee-CR.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "milwaukee-CR.plist"; sourceTree = "<group>"; };
+		3DC89F8317A00CAC0019B093 /* ObjC code.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ObjC code.plist"; sourceTree = "<group>"; };
+		3DC89F8417A00CAC0019B093 /* single cell with unescaped quotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "single cell with unescaped quotes.plist"; sourceTree = "<group>"; };
+		3DC89F8517A00CAC0019B093 /* single character cell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "single character cell.plist"; sourceTree = "<group>"; };
+		3DC89F8617A00CAC0019B093 /* single column.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "single column.plist"; sourceTree = "<group>"; };
+		3DC89F8717A00CAC0019B093 /* single long cell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "single long cell.plist"; sourceTree = "<group>"; };
+		3DC89F8817A00CAC0019B093 /* single quoted cell without line break.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "single quoted cell without line break.plist"; sourceTree = "<group>"; };
+		3DC89F8917A00CAC0019B093 /* six empty cells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "six empty cells.plist"; sourceTree = "<group>"; };
+		3DC89F8A17A00CAC0019B093 /* three cells, first two containing seperator.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "three cells, first two containing seperator.plist"; sourceTree = "<group>"; };
+		3DC89F8B17A00CAC0019B093 /* trailing empty cell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "trailing empty cell.plist"; sourceTree = "<group>"; };
+		3DC89F8C17A00CAC0019B093 /* trailing opening quote.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "trailing opening quote.plist"; sourceTree = "<group>"; };
+		3DC89F8D17A00CAC0019B093 /* TSV with CSV file name extension.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TSV with CSV file name extension.plist"; sourceTree = "<group>"; };
+		3DC89F8E17A00CAC0019B093 /* unicode-CRLF-test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "unicode-CRLF-test.plist"; sourceTree = "<group>"; };
+		3DC89F8F17A00CAC0019B093 /* unicode-CRLF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "unicode-CRLF.plist"; sourceTree = "<group>"; };
+		3DC89F9017A00CAC0019B093 /* unicode-invalid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "unicode-invalid.plist"; sourceTree = "<group>"; };
+		3DC89F9117A00CAC0019B093 /* unicode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = unicode.plist; sourceTree = "<group>"; };
+		3DC89F9217A00CAC0019B093 /* whitespace only.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "whitespace only.plist"; sourceTree = "<group>"; };
+		3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "wimbledon-CRLF.plist"; sourceTree = "<group>"; };
+		3DC89FAD17A02FF20019B093 /* NSString+EscapingForCCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EscapingForCCode.h"; sourceTree = "<group>"; };
+		3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EscapingForCCode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +152,8 @@
 			children = (
 				3DC89F3E179FF6770019B093 /* cCSVParse */,
 				3DC89F2D179FF51D0019B093 /* cCSVParserTests */,
+				3DC89F4517A003F70019B093 /* CSV Test Files */,
+				3DC89F7A17A00CAC0019B093 /* Expected Results */,
 				3DC89F10179FF51C0019B093 /* Frameworks */,
 				3DC89F0F179FF51C0019B093 /* Products */,
 			);
@@ -87,6 +192,8 @@
 			children = (
 				3DC89F33179FF51D0019B093 /* cCSVParserTests.h */,
 				3DC89F34179FF51D0019B093 /* cCSVParserTests.m */,
+				3DC89FAD17A02FF20019B093 /* NSString+EscapingForCCode.h */,
+				3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */,
 				3DC89F2E179FF51D0019B093 /* Supporting Files */,
 			);
 			path = cCSVParserTests;
@@ -110,6 +217,72 @@
 				3DC89F42179FF6830019B093 /* LICENSE */,
 			);
 			name = cCSVParse;
+			sourceTree = "<group>";
+		};
+		3DC89F4517A003F70019B093 /* CSV Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DC89F4717A003F70019B093 /* buffer bug 1.csv */,
+				3DC89F4817A003F70019B093 /* buffer bug 2.csv */,
+				3DC89F4917A003F70019B093 /* correctly quoted nightmare.csv */,
+				3DC89F4A17A003F70019B093 /* empty file.csv */,
+				3DC89F4B17A003F70019B093 /* extremely long single cell.csv */,
+				3DC89F4C17A003F70019B093 /* leading LF in CRLF.csv */,
+				3DC89F4D17A003F70019B093 /* leading LF removed.csv */,
+				3DC89F4E17A003F70019B093 /* milwaukee-CR.csv */,
+				3DC89F4F17A003F70019B093 /* ObjC code.csv */,
+				3DC89F5017A003F70019B093 /* single cell with unescaped quotes.csv */,
+				3DC89F5117A003F70019B093 /* single character cell.csv */,
+				3DC89F5217A003F70019B093 /* single column.csv */,
+				3DC89F5317A003F70019B093 /* single long cell.csv */,
+				3DC89F5417A003F70019B093 /* single quoted cell without line break.csv */,
+				3DC89F5517A003F70019B093 /* six empty cells.csv */,
+				3DC89F5617A003F70019B093 /* three cells, first two containing seperator.csv */,
+				3DC89F5717A003F70019B093 /* trailing empty cell.csv */,
+				3DC89F5817A003F70019B093 /* trailing opening quote.csv */,
+				3DC89F5917A003F70019B093 /* TSV with CSV file name extension.csv */,
+				3DC89F5A17A003F70019B093 /* unicode-CRLF-test.csv */,
+				3DC89F5B17A003F70019B093 /* unicode-CRLF.csv */,
+				3DC89F5C17A003F70019B093 /* unicode-invalid.csv */,
+				3DC89F5D17A003F70019B093 /* unicode.csv */,
+				3DC89F5E17A003F70019B093 /* whitespace only.csv */,
+				3DC89F5F17A003F70019B093 /* wimbledon-CRLF.csv */,
+			);
+			name = "CSV Test Files";
+			path = "cCSVParserTests/CSV Test Files";
+			sourceTree = "<group>";
+		};
+		3DC89F7A17A00CAC0019B093 /* Expected Results */ = {
+			isa = PBXGroup;
+			children = (
+				3DC89F7B17A00CAC0019B093 /* buffer bug 1.plist */,
+				3DC89F7C17A00CAC0019B093 /* buffer bug 2.plist */,
+				3DC89F7D17A00CAC0019B093 /* correctly quoted nightmare.plist */,
+				3DC89F7E17A00CAC0019B093 /* empty file.plist */,
+				3DC89F7F17A00CAC0019B093 /* extremely long single cell.plist */,
+				3DC89F8017A00CAC0019B093 /* leading LF in CRLF.plist */,
+				3DC89F8117A00CAC0019B093 /* leading LF removed.plist */,
+				3DC89F8217A00CAC0019B093 /* milwaukee-CR.plist */,
+				3DC89F8317A00CAC0019B093 /* ObjC code.plist */,
+				3DC89F8417A00CAC0019B093 /* single cell with unescaped quotes.plist */,
+				3DC89F8517A00CAC0019B093 /* single character cell.plist */,
+				3DC89F8617A00CAC0019B093 /* single column.plist */,
+				3DC89F8717A00CAC0019B093 /* single long cell.plist */,
+				3DC89F8817A00CAC0019B093 /* single quoted cell without line break.plist */,
+				3DC89F8917A00CAC0019B093 /* six empty cells.plist */,
+				3DC89F8A17A00CAC0019B093 /* three cells, first two containing seperator.plist */,
+				3DC89F8B17A00CAC0019B093 /* trailing empty cell.plist */,
+				3DC89F8C17A00CAC0019B093 /* trailing opening quote.plist */,
+				3DC89F8D17A00CAC0019B093 /* TSV with CSV file name extension.plist */,
+				3DC89F8E17A00CAC0019B093 /* unicode-CRLF-test.plist */,
+				3DC89F8F17A00CAC0019B093 /* unicode-CRLF.plist */,
+				3DC89F9017A00CAC0019B093 /* unicode-invalid.plist */,
+				3DC89F9117A00CAC0019B093 /* unicode.plist */,
+				3DC89F9217A00CAC0019B093 /* whitespace only.plist */,
+				3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */,
+			);
+			name = "Expected Results";
+			path = "cCSVParserTests/Expected Results";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +338,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC89F32179FF51D0019B093 /* InfoPlist.strings in Resources */,
+				3DC89F6117A003F70019B093 /* buffer bug 1.csv in Resources */,
+				3DC89F6217A003F70019B093 /* buffer bug 2.csv in Resources */,
+				3DC89F6317A003F70019B093 /* correctly quoted nightmare.csv in Resources */,
+				3DC89F6417A003F70019B093 /* empty file.csv in Resources */,
+				3DC89F6517A003F70019B093 /* extremely long single cell.csv in Resources */,
+				3DC89F6617A003F70019B093 /* leading LF in CRLF.csv in Resources */,
+				3DC89F6717A003F80019B093 /* leading LF removed.csv in Resources */,
+				3DC89F6817A003F80019B093 /* milwaukee-CR.csv in Resources */,
+				3DC89F6917A003F80019B093 /* ObjC code.csv in Resources */,
+				3DC89F6A17A003F80019B093 /* single cell with unescaped quotes.csv in Resources */,
+				3DC89F6B17A003F80019B093 /* single character cell.csv in Resources */,
+				3DC89F6C17A003F80019B093 /* single column.csv in Resources */,
+				3DC89F6D17A003F80019B093 /* single long cell.csv in Resources */,
+				3DC89F6E17A003F80019B093 /* single quoted cell without line break.csv in Resources */,
+				3DC89F6F17A003F80019B093 /* six empty cells.csv in Resources */,
+				3DC89F7017A003F80019B093 /* three cells, first two containing seperator.csv in Resources */,
+				3DC89F7117A003F80019B093 /* trailing empty cell.csv in Resources */,
+				3DC89F7217A003F80019B093 /* trailing opening quote.csv in Resources */,
+				3DC89F7317A003F80019B093 /* TSV with CSV file name extension.csv in Resources */,
+				3DC89F7417A003F80019B093 /* unicode-CRLF-test.csv in Resources */,
+				3DC89F7517A003F80019B093 /* unicode-CRLF.csv in Resources */,
+				3DC89F7617A003F80019B093 /* unicode-invalid.csv in Resources */,
+				3DC89F7717A003F80019B093 /* unicode.csv in Resources */,
+				3DC89F7817A003F80019B093 /* whitespace only.csv in Resources */,
+				3DC89F7917A003F80019B093 /* wimbledon-CRLF.csv in Resources */,
+				3DC89F9417A00CAC0019B093 /* buffer bug 1.plist in Resources */,
+				3DC89F9517A00CAC0019B093 /* buffer bug 2.plist in Resources */,
+				3DC89F9617A00CAC0019B093 /* correctly quoted nightmare.plist in Resources */,
+				3DC89F9717A00CAC0019B093 /* empty file.plist in Resources */,
+				3DC89F9817A00CAC0019B093 /* extremely long single cell.plist in Resources */,
+				3DC89F9917A00CAC0019B093 /* leading LF in CRLF.plist in Resources */,
+				3DC89F9A17A00CAC0019B093 /* leading LF removed.plist in Resources */,
+				3DC89F9B17A00CAC0019B093 /* milwaukee-CR.plist in Resources */,
+				3DC89F9C17A00CAC0019B093 /* ObjC code.plist in Resources */,
+				3DC89F9D17A00CAC0019B093 /* single cell with unescaped quotes.plist in Resources */,
+				3DC89F9E17A00CAC0019B093 /* single character cell.plist in Resources */,
+				3DC89F9F17A00CAC0019B093 /* single column.plist in Resources */,
+				3DC89FA017A00CAC0019B093 /* single long cell.plist in Resources */,
+				3DC89FA117A00CAC0019B093 /* single quoted cell without line break.plist in Resources */,
+				3DC89FA217A00CAC0019B093 /* six empty cells.plist in Resources */,
+				3DC89FA317A00CAC0019B093 /* three cells, first two containing seperator.plist in Resources */,
+				3DC89FA417A00CAC0019B093 /* trailing empty cell.plist in Resources */,
+				3DC89FA517A00CAC0019B093 /* trailing opening quote.plist in Resources */,
+				3DC89FA617A00CAC0019B093 /* TSV with CSV file name extension.plist in Resources */,
+				3DC89FA717A00CAC0019B093 /* unicode-CRLF-test.plist in Resources */,
+				3DC89FA817A00CAC0019B093 /* unicode-CRLF.plist in Resources */,
+				3DC89FA917A00CAC0019B093 /* unicode-invalid.plist in Resources */,
+				3DC89FAA17A00CAC0019B093 /* unicode.plist in Resources */,
+				3DC89FAB17A00CAC0019B093 /* whitespace only.plist in Resources */,
+				3DC89FAC17A00CAC0019B093 /* wimbledon-CRLF.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +416,7 @@
 			files = (
 				3DC89F35179FF51D0019B093 /* cCSVParserTests.m in Sources */,
 				3DC89F43179FF6830019B093 /* parseCSV.m in Sources */,
+				3DC89FAF17A02FF20019B093 /* NSString+EscapingForCCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
