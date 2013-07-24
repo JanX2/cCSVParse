@@ -357,6 +357,13 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						printf("delimiter is %c / %d :-)\n", _delimiter, _delimiter);
 					}
 				}
+				else {
+					// Request retry with larger buffer, if there is is more data available.
+					if (readingComplete == false) {
+						incompleteRow_p = buffer_p;
+						break;
+					}
+				}
 				
 				// Reset to start.
 				text_p = buffer_p;
