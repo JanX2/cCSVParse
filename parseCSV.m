@@ -81,18 +81,13 @@ static char *cstrstr(const char *haystack_p, const char needle) {
 }
 
 char searchDelimiter(char *text_p) {
-	// We skip leading empty lines.
-	while (EOL(text_p)) {
-		text_p++;
-	}
-	
-	// We assume that this is the header row, which we check for separation characters.
-	while (NOT_EOL(text_p) && cstrstr(possibleDelimiters, *text_p) == NULL) {
+	// We check the entire buffer for separation characters. The first one we find wins.
+	while ((*text_p != '\0') && cstrstr(possibleDelimiters, *text_p) == NULL) {
 		text_p++;
 	}
 	
 	// Check if a delimiter was found and set it.
-	if (NOT_EOL(text_p)) {
+	if (*text_p != '\0') {
 		char delimiter = *cstrstr(possibleDelimiters, *text_p);
 		return delimiter;
 	}
