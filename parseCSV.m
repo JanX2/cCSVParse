@@ -466,11 +466,22 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 			}
 			
-			if ((firstLine) && (rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1)) {
-				_endOfLine[0] = *(rowStart_p-1);
-				
-				if ( EOL(rowStart_p) ) {
-					_endOfLine[1] = *(rowStart_p);
+			// EOL detection.
+			if (incompleteRow_p == NULL && firstLine) { // We don’t try, if the row is truncated by the buffer size. 
+				if ((rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1)) {
+					_endOfLine[0] = *(rowStart_p-1);
+					
+					if (EOL(rowStart_p) && (*rowStart_p != _endOfLine[0])) { // We ignore repeating EOLs. They signify empty lines.
+						_endOfLine[1] = *(rowStart_p);
+					}
+					else {
+						_endOfLine[1] = '\0';
+					}
+				}
+				else {
+					// We couldn’t find an EOL.
+					_endOfLine[0] = '\0';
+					_endOfLine[1] = '\0';
 				}
 				
 				firstLine = false;
