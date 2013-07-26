@@ -77,6 +77,12 @@ static NSMutableDictionary *_expectedResultsDict;
 	
 	if (parser == nil)  return;
 	
+#define DEBUG_FILE		1
+
+#if DEBUG_FILE
+	NSString *fileBaseNameForDebugging = @"whitespace only";
+#endif
+	
 	[_testDataDict enumerateKeysAndObjectsUsingBlock:^(NSString *fileBaseName, NSData *data, BOOL *stop) {
 		NSMutableDictionary *expectedProperties = [_expectedResultsDict objectForKey:fileBaseName];
 		
@@ -86,6 +92,12 @@ static NSMutableDictionary *_expectedResultsDict;
 			CFStringEncoding cfStringEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)charsetName);
 			encoding = CFStringConvertEncodingToNSStringEncoding(cfStringEncoding);
 		}
+		
+#if DEBUG_FILE
+		if ([fileBaseName isEqualToString:fileBaseNameForDebugging]) {
+			NSLog(@"%@", fileBaseNameForDebugging);
+		}
+#endif
 		
 		[parser setEncoding:encoding];
 		[parser setData:data];
