@@ -262,6 +262,9 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	char *buffer_p = malloc(sizeof(char) * bufferSize);
 	char *text_p = NULL, *previousStop_p = NULL, *rowStart_p = NULL, *incompleteRow_p = NULL;
 	
+	_endOfLine[0] = '\0';
+	_endOfLine[1] = '\0';
+
 	if (_fileMode) {
 		lseek(_fileHandle, 0, SEEK_SET);
 	}
@@ -482,8 +485,6 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 				else {
 					// We couldn’t find an EOL.
-					_endOfLine[0] = '\0';
-					_endOfLine[1] = '\0';
 				}
 				
 				firstLine = false;
