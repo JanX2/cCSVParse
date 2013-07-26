@@ -142,22 +142,24 @@ static NSMutableDictionary *_expectedResultsDict;
 #endif
 
 #if VERIFY_EXPECTATIONS
-		NSMutableArray *expectedContent = [expectedProperties objectForKey:@"csvContent"];
-		NSString *expectedEndOfLine = [expectedProperties objectForKey:@"endOfLine"];
-		NSString *expectedDelimiterString = [expectedProperties objectForKey:@"delimiterString"];
-		
-		STAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
-
-		if (expectedEndOfLine == nil) {
-			STAssertNil(endOfLine, @"endOfLine for “%@” is supposed to be nil.", fileBaseName);
-		} else {
-			STAssertEqualObjects(endOfLine, expectedEndOfLine, @"endOfLine for “%@” is not as expected.", fileBaseName);
-		}
-
-		if (expectedDelimiterString == nil) {
-			STAssertNil(delimiterString, @"Delimiter for “%@” is supposed to be nil.", fileBaseName);
-		} else {
-			STAssertEqualObjects(delimiterString, expectedDelimiterString, @"Delimiter for “%@” is not as expected.", fileBaseName);
+		if (expectedProperties != nil) {
+			NSMutableArray *expectedContent = [expectedProperties objectForKey:@"csvContent"];
+			NSString *expectedEndOfLine = [expectedProperties objectForKey:@"endOfLine"];
+			NSString *expectedDelimiterString = [expectedProperties objectForKey:@"delimiterString"];
+			
+			STAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
+			
+			if (expectedEndOfLine == nil) {
+				STAssertNil(endOfLine, @"endOfLine for “%@” is supposed to be nil.", fileBaseName);
+			} else {
+				STAssertEqualObjects(endOfLine, expectedEndOfLine, @"endOfLine for “%@” is not as expected.", fileBaseName);
+			}
+			
+			if (expectedDelimiterString == nil) {
+				STAssertNil(delimiterString, @"Delimiter for “%@” is supposed to be nil.", fileBaseName);
+			} else {
+				STAssertEqualObjects(delimiterString, expectedDelimiterString, @"Delimiter for “%@” is not as expected.", fileBaseName);
+			}
 		}
 #endif
 	}];
