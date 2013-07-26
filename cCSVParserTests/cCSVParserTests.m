@@ -110,8 +110,9 @@ static NSMutableDictionary *_expectedResultsDict;
 		NSString *endOfLine = [[parser endOfLine] jx_stringByEscapingForCCode];
 		NSString *delimiterString = [[parser delimiterString] jx_stringByEscapingForCCode];
 
-#define VERIFY_EXPECTATIONS	1
-#define DUMP_TO_PLIST		!VERIFY_EXPECTATIONS
+#define VERIFY_EXPECTATIONS					1
+#define VERIFY_EXPECTATIONS_FAILURE_CASE	1
+#define DUMP_TO_PLIST						!VERIFY_EXPECTATIONS
 		
 #if DUMP_TO_PLIST
 		NSMutableDictionary *plistDict = nil;
@@ -147,7 +148,37 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSString *expectedEndOfLine = [expectedProperties objectForKey:@"endOfLine"];
 			NSString *expectedDelimiterString = [expectedProperties objectForKey:@"delimiterString"];
 			
+#if !VERIFY_EXPECTATIONS_FAILURE_CASE
 			STAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
+#else
+			BOOL contentIsAsExpected = [csvContent isEqualToArray:expectedContent];
+			STAssertTrue(contentIsAsExpected, @"Content for “%@” is not as expected.", fileBaseName);
+			if (contentIsAsExpected == NO) {
+				STAssertEquals(csvContent.count, expectedContent.count, @"Row counts for “%@” differ.", fileBaseName);
+				
+				if (csvContent.count == expectedContent.count) {
+					for (NSUInteger i = 0; i < csvContent.count; i++) {
+						NSArray *colArray = [csvContent objectAtIndex:i];
+						NSArray *expectedColArray = [expectedContent objectAtIndex:i];
+						
+						BOOL rowIsAsExpected = [colArray isEqualToArray:expectedColArray];
+						STAssertTrue(rowIsAsExpected, @"Row %lu for “%@” is not as expected.", (unsigned long)i, fileBaseName);
+						if (rowIsAsExpected == NO) {
+							STAssertEquals(colArray.count, expectedColArray.count, @"Column counts for row %lu of “%@” differ.", (unsigned long)i, fileBaseName);
+							
+							NSUInteger minColCount = MIN(colArray.count, expectedColArray.count);
+							for (NSUInteger j = 0; j < minColCount; j++) {
+								NSString *cell = [colArray objectAtIndex:j];
+								NSString *expectedCell = [expectedColArray objectAtIndex:j];
+								
+								STAssertEqualObjects(cell, expectedCell, @"Cell in row %lu, column %lu of “%@” is not as expected.", (unsigned long)i, (unsigned long)j, fileBaseName);
+								if ([cell isEqualToString:expectedCell] == NO)  break; // We stop after the first mismatch.
+							}
+						}
+					}
+				}
+			}
+#endif
 			
 			if (expectedEndOfLine == nil) {
 				STAssertNil(endOfLine, @"endOfLine for “%@” is supposed to be nil.", fileBaseName);
