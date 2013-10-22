@@ -21,6 +21,15 @@
 
 static NSString *cellInvalidLabel = nil;
 
+const ssize_t UTF8BOMSize = 3;
+const char UTF8BOM[UTF8BOMSize] = {0xEF, 0xBB, 0xBF};
+
+const ssize_t UTF16BEBOMSize = 2;
+const char UTF16BEBOM[UTF16BEBOMSize] = {0xFE, 0xFF};
+
+const ssize_t UTF16LEBOMSize = 2;
+const char UTF16LEBOM[UTF16LEBOMSize] = {0xFF, 0xFE};
+
 /* Macros for determining if the given character is End Of Line or not */
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n') && *(x) != '\0')
 #define NOT_EOL(x) (*(x) != '\0' && *(x) != '\r' && *(x) != '\n')
@@ -258,6 +267,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 	bool addCurrentRowAndStartNew = false;
 	bool cellIsQuoted = false;
 	size_t bufferSize = _bufferSize;
+	size_t garbageOffset = 0;
 	size_t blockCharCount = bufferSize - 1;
 	char *buffer_p = malloc(sizeof(char) * bufferSize);
 	char *text_p = NULL, *previousStop_p = NULL, *rowStart_p = NULL, *incompleteRow_p = NULL;
@@ -345,8 +355,28 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 		const bool readEntireBlock = ((size_t)n == blockCharCount);
 		const bool readingComplete = (readEntireBlock == false || n == 0);
 		
-		text_p = buffer_p;
+		// Skip over BOM
+		if (firstLine && _encoding == NSUTF8StringEncoding) {
+			if (n >= UTF8BOMSize &&
+				strncmp(buffer_p, UTF8BOM, UTF8BOMSize) == 0) {
+				garbageOffset = UTF8BOMSize;
+			} else if (n >= UTF16BEBOMSize &&
+					   strncmp(buffer_p, UTF16BEBOM, UTF16BEBOMSize) == 0) {
+				garbageOffset = UTF16BEBOMSize;
+			} else if (n >= UTF16LEBOMSize &&
+					   strncmp(buffer_p, UTF16LEBOM, UTF16LEBOMSize) == 0) {
+				garbageOffset = UTF16LEBOMSize;
+			}
+			else {
+				garbageOffset = 0;
+			}
+		}
+		else {
+			garbageOffset = 0;
+		}
 		
+		text_p = buffer_p + garbageOffset;
+	
 #define MATCHED_QUOTES		((cellIsQuoted && ((quoteCount % 2) == 0)) || !cellIsQuoted)
 #define UNMATCHED_QUOTES	((cellIsQuoted && ((quoteCount % 2) != 0)) || (!cellIsQuoted && false))
 		
@@ -369,7 +399,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 				}
 				
 				// Reset to start.
-				text_p = buffer_p;
+				text_p = buffer_p + garbageOffset;
 			} 
 			
 			if (*text_p != '\0') {

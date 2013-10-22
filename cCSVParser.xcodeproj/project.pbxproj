@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D818FD31817CEEA00906A9D /* UTF8-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD01817CEE900906A9D /* UTF8-BOM.plist */; };
+		3D818FD41817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */; };
+		3D818FD51817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */; };
 		3DC89F28179FF51D0019B093 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC89F27179FF51D0019B093 /* SenTestingKit.framework */; };
 		3DC89F29179FF51D0019B093 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC89F11179FF51C0019B093 /* Cocoa.framework */; };
 		3DC89F32179FF51D0019B093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F30179FF51D0019B093 /* InfoPlist.strings */; };
@@ -63,9 +66,15 @@
 		3DC89FAB17A00CAC0019B093 /* whitespace only.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9217A00CAC0019B093 /* whitespace only.plist */; };
 		3DC89FAC17A00CAC0019B093 /* wimbledon-CRLF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */; };
 		3DC89FAF17A02FF20019B093 /* NSString+EscapingForCCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */; };
+		3DE37CEB1816DB3200AAFD49 /* UTF8-BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DE37CE81816DB3200AAFD49 /* UTF8-BOM.csv */; };
+		3DE37CEC1816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DE37CE91816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv */; };
+		3DE37CED1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DE37CEA1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D818FD01817CEE900906A9D /* UTF8-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-BOM.plist"; sourceTree = "<group>"; };
+		3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16BE-BOM.plist"; sourceTree = "<group>"; };
+		3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16LE-BOM.plist"; sourceTree = "<group>"; };
 		3DC89F11179FF51C0019B093 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3DC89F14179FF51C0019B093 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3DC89F15179FF51C0019B093 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -132,6 +141,9 @@
 		3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "wimbledon-CRLF.plist"; sourceTree = "<group>"; };
 		3DC89FAD17A02FF20019B093 /* NSString+EscapingForCCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EscapingForCCode.h"; sourceTree = "<group>"; };
 		3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EscapingForCCode.m"; sourceTree = "<group>"; };
+		3DE37CE81816DB3200AAFD49 /* UTF8-BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "UTF8-BOM.csv"; path = "cCSVParserTests/CSV Test Files/UTF8-BOM.csv"; sourceTree = SOURCE_ROOT; };
+		3DE37CE91816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "UTF8-UTF-16BE-BOM.csv"; path = "cCSVParserTests/CSV Test Files/UTF8-UTF-16BE-BOM.csv"; sourceTree = SOURCE_ROOT; };
+		3DE37CEA1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "UTF8-UTF-16LE-BOM.csv"; path = "cCSVParserTests/CSV Test Files/UTF8-UTF-16LE-BOM.csv"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +257,9 @@
 				3DC89F5B17A003F70019B093 /* unicode-CRLF.csv */,
 				3DC89F5C17A003F70019B093 /* unicode-invalid.csv */,
 				3DC89F5D17A003F70019B093 /* unicode.csv */,
+				3DE37CE81816DB3200AAFD49 /* UTF8-BOM.csv */,
+				3DE37CE91816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv */,
+				3DE37CEA1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv */,
 				3DC89F5E17A003F70019B093 /* whitespace only.csv */,
 				3DC89F5F17A003F70019B093 /* wimbledon-CRLF.csv */,
 			);
@@ -278,6 +293,9 @@
 				3DC89F8F17A00CAC0019B093 /* unicode-CRLF.plist */,
 				3DC89F9017A00CAC0019B093 /* unicode-invalid.plist */,
 				3DC89F9117A00CAC0019B093 /* unicode.plist */,
+				3D818FD01817CEE900906A9D /* UTF8-BOM.plist */,
+				3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */,
+				3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */,
 				3DC89F9217A00CAC0019B093 /* whitespace only.plist */,
 				3DC89F9317A00CAC0019B093 /* wimbledon-CRLF.plist */,
 			);
@@ -374,15 +392,21 @@
 				3DC89F9C17A00CAC0019B093 /* ObjC code.plist in Resources */,
 				3DC89F9D17A00CAC0019B093 /* single cell with unescaped quotes.plist in Resources */,
 				3DC89F9E17A00CAC0019B093 /* single character cell.plist in Resources */,
+				3D818FD31817CEEA00906A9D /* UTF8-BOM.plist in Resources */,
 				3DC89F9F17A00CAC0019B093 /* single column.plist in Resources */,
 				3DC89FA017A00CAC0019B093 /* single long cell.plist in Resources */,
 				3DC89FA117A00CAC0019B093 /* single quoted cell without line break.plist in Resources */,
+				3DE37CEB1816DB3200AAFD49 /* UTF8-BOM.csv in Resources */,
+				3DE37CEC1816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv in Resources */,
+				3DE37CED1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv in Resources */,
 				3DC89FA217A00CAC0019B093 /* six empty cells.plist in Resources */,
+				3D818FD51817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist in Resources */,
 				3DC89FA317A00CAC0019B093 /* three cells, first two containing seperator.plist in Resources */,
 				3DC89FA417A00CAC0019B093 /* trailing empty cell.plist in Resources */,
 				3DC89FA517A00CAC0019B093 /* trailing opening quote.plist in Resources */,
 				3DC89FA617A00CAC0019B093 /* TSV with CSV file name extension.plist in Resources */,
 				3DC89FA717A00CAC0019B093 /* unicode-CRLF-test.plist in Resources */,
+				3D818FD41817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist in Resources */,
 				3DC89FA817A00CAC0019B093 /* unicode-CRLF.plist in Resources */,
 				3DC89FA917A00CAC0019B093 /* unicode-invalid.plist in Resources */,
 				3DC89FAA17A00CAC0019B093 /* unicode.plist in Resources */,
