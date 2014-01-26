@@ -22,7 +22,7 @@ static NSMutableDictionary *_expectedResultsDict;
     
 	NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
 	
-	_testDataDict = [[NSMutableDictionary dictionary] retain];
+	_testDataDict = [NSMutableDictionary dictionary];
 	
 	NSArray *csvFileURLs = [testBundle URLsForResourcesWithExtension:@"csv"
 														subdirectory:nil];
@@ -41,7 +41,7 @@ static NSMutableDictionary *_expectedResultsDict;
 		}
 	}
 	
-	_expectedResultsDict = [[NSMutableDictionary dictionary] retain];
+	_expectedResultsDict = [NSMutableDictionary dictionary];
 	
 	NSArray *plistFileURLs = [testBundle URLsForResourcesWithExtension:@"plist"
 														  subdirectory:nil];
@@ -62,8 +62,6 @@ static NSMutableDictionary *_expectedResultsDict;
 
 - (void)tearDown
 {
-	[_testDataDict release];
-	[_expectedResultsDict release];
     
     [super tearDown];
 }
@@ -195,7 +193,6 @@ static NSMutableDictionary *_expectedResultsDict;
 	 
 	
 
-	[parser release];
 }
 
 @end
