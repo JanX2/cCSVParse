@@ -16,9 +16,9 @@ static NSMutableDictionary *_expectedResultsDict;
 
 @implementation cCSVParserTests
 
-- (void)setUp
++ (void)initialize
 {
-    [super setUp];
+    if (self == [cCSVParserTests class]) {
     
 	NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
 	
@@ -58,11 +58,17 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSLog(@"Error opening file “%@”", fileName);
 		}
 	}
+	}
+}
+
+- (void)setUp
+{
+    [super setUp];
+    
 }
 
 - (void)tearDown
 {
-    
     [super tearDown];
 }
 
