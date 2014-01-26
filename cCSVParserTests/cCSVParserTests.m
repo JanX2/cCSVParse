@@ -73,7 +73,7 @@ static NSMutableDictionary *_expectedResultsDict;
 - (void)testBundleFiles
 {
 	CSVParser *parser = [CSVParser new];
-	STAssertNotNil(parser, @"CSVParser instance creation failed.");
+	XCTAssertNotNil(parser, @"CSVParser instance creation failed.");
 	
 	if (parser == nil)  return;
 	
@@ -149,12 +149,12 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSString *expectedDelimiterString = [expectedProperties objectForKey:@"delimiterString"];
 			
 #if !VERIFY_EXPECTATIONS_FAILURE_CASE
-			STAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
+			XCTAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
 #else
 			BOOL contentIsAsExpected = [csvContent isEqualToArray:expectedContent];
-			STAssertTrue(contentIsAsExpected, @"Content for “%@” is not as expected.", fileBaseName);
+			XCTAssertTrue(contentIsAsExpected, @"Content for “%@” is not as expected.", fileBaseName);
 			if (contentIsAsExpected == NO) {
-				STAssertEquals(csvContent.count, expectedContent.count, @"Row counts for “%@” differ.", fileBaseName);
+				XCTAssertEqual(csvContent.count, expectedContent.count, @"Row counts for “%@” differ.", fileBaseName);
 				
 				if (csvContent.count == expectedContent.count) {
 					for (NSUInteger i = 0; i < csvContent.count; i++) {
@@ -162,16 +162,16 @@ static NSMutableDictionary *_expectedResultsDict;
 						NSArray *expectedColArray = [expectedContent objectAtIndex:i];
 						
 						BOOL rowIsAsExpected = [colArray isEqualToArray:expectedColArray];
-						STAssertTrue(rowIsAsExpected, @"Row %lu for “%@” is not as expected.", (unsigned long)i, fileBaseName);
+						XCTAssertTrue(rowIsAsExpected, @"Row %lu for “%@” is not as expected.", (unsigned long)i, fileBaseName);
 						if (rowIsAsExpected == NO) {
-							STAssertEquals(colArray.count, expectedColArray.count, @"Column counts for row %lu of “%@” differ.", (unsigned long)i, fileBaseName);
+							XCTAssertEqual(colArray.count, expectedColArray.count, @"Column counts for row %lu of “%@” differ.", (unsigned long)i, fileBaseName);
 							
 							NSUInteger minColCount = MIN(colArray.count, expectedColArray.count);
 							for (NSUInteger j = 0; j < minColCount; j++) {
 								NSString *cell = [colArray objectAtIndex:j];
 								NSString *expectedCell = [expectedColArray objectAtIndex:j];
 								
-								STAssertEqualObjects(cell, expectedCell, @"Cell in row %lu, column %lu of “%@” is not as expected.", (unsigned long)i, (unsigned long)j, fileBaseName);
+								XCTAssertEqualObjects(cell, expectedCell, @"Cell in row %lu, column %lu of “%@” is not as expected.", (unsigned long)i, (unsigned long)j, fileBaseName);
 								if ([cell isEqualToString:expectedCell] == NO)  break; // We stop after the first mismatch.
 							}
 						}
@@ -181,15 +181,15 @@ static NSMutableDictionary *_expectedResultsDict;
 #endif
 			
 			if (expectedEndOfLine == nil) {
-				STAssertNil(endOfLine, @"endOfLine for “%@” is supposed to be nil.", fileBaseName);
+				XCTAssertNil(endOfLine, @"endOfLine for “%@” is supposed to be nil.", fileBaseName);
 			} else {
-				STAssertEqualObjects(endOfLine, expectedEndOfLine, @"endOfLine for “%@” is not as expected.", fileBaseName);
+				XCTAssertEqualObjects(endOfLine, expectedEndOfLine, @"endOfLine for “%@” is not as expected.", fileBaseName);
 			}
 			
 			if (expectedDelimiterString == nil) {
-				STAssertNil(delimiterString, @"Delimiter for “%@” is supposed to be nil.", fileBaseName);
+				XCTAssertNil(delimiterString, @"Delimiter for “%@” is supposed to be nil.", fileBaseName);
 			} else {
-				STAssertEqualObjects(delimiterString, expectedDelimiterString, @"Delimiter for “%@” is not as expected.", fileBaseName);
+				XCTAssertEqualObjects(delimiterString, expectedDelimiterString, @"Delimiter for “%@” is not as expected.", fileBaseName);
 			}
 		}
 #endif

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Jan Weiß. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface cCSVParserTests : SenTestCase
+@interface cCSVParserTests : XCTestCase
 
 @end

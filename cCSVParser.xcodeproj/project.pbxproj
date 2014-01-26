@@ -10,7 +10,6 @@
 		3D818FD31817CEEA00906A9D /* UTF8-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD01817CEE900906A9D /* UTF8-BOM.plist */; };
 		3D818FD41817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */; };
 		3D818FD51817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */; };
-		3DC89F28179FF51D0019B093 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC89F27179FF51D0019B093 /* SenTestingKit.framework */; };
 		3DC89F29179FF51D0019B093 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC89F11179FF51C0019B093 /* Cocoa.framework */; };
 		3DC89F32179FF51D0019B093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F30179FF51D0019B093 /* InfoPlist.strings */; };
 		3DC89F35179FF51D0019B093 /* cCSVParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89F34179FF51D0019B093 /* cCSVParserTests.m */; };
@@ -79,8 +78,7 @@
 		3DC89F14179FF51C0019B093 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3DC89F15179FF51C0019B093 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3DC89F16179FF51C0019B093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3DC89F26179FF51D0019B093 /* cCSVParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cCSVParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DC89F27179FF51D0019B093 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3DC89F26179FF51D0019B093 /* cCSVParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cCSVParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC89F2F179FF51D0019B093 /* cCSVParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cCSVParserTests-Info.plist"; sourceTree = "<group>"; };
 		3DC89F31179FF51D0019B093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DC89F33179FF51D0019B093 /* cCSVParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cCSVParserTests.h; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC89F28179FF51D0019B093 /* SenTestingKit.framework in Frameworks */,
 				3DC89F29179FF51D0019B093 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +171,7 @@
 		3DC89F0F179FF51C0019B093 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DC89F26179FF51D0019B093 /* cCSVParserTests.octest */,
+				3DC89F26179FF51D0019B093 /* cCSVParserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				3DC89F11179FF51C0019B093 /* Cocoa.framework */,
-				3DC89F27179FF51D0019B093 /* SenTestingKit.framework */,
 				3DC89F13179FF51C0019B093 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -321,8 +317,8 @@
 			);
 			name = cCSVParserTests;
 			productName = cCSVParserTests;
-			productReference = 3DC89F26179FF51D0019B093 /* cCSVParserTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 3DC89F26179FF51D0019B093 /* cCSVParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -517,12 +513,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks/\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -530,12 +528,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks/\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
