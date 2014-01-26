@@ -19,45 +19,45 @@ static NSMutableDictionary *_expectedResultsDict;
 + (void)initialize
 {
     if (self == [cCSVParserTests class]) {
-    
-	NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
-	
-	_testDataDict = [NSMutableDictionary dictionary];
-	
-	NSArray *csvFileURLs = [testBundle URLsForResourcesWithExtension:@"csv"
-														subdirectory:nil];
-	
-	for (NSURL *testFileURL in csvFileURLs) {
-		NSString *fileName = [testFileURL lastPathComponent];
-		NSString *fileBaseName = [fileName stringByDeletingPathExtension];
 		
-		NSData *testFileData = [NSData dataWithContentsOfURL:testFileURL];
+		NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
 		
-		if (testFileData != nil) {
-			_testDataDict[fileBaseName] = testFileData;
-		}
-		else {
-			NSLog(@"Error opening file “%@”", fileName);
-		}
-	}
-	
-	_expectedResultsDict = [NSMutableDictionary dictionary];
-	
-	NSArray *plistFileURLs = [testBundle URLsForResourcesWithExtension:@"plist"
-														  subdirectory:nil];
-	
-	for (NSURL *resultFileURL in plistFileURLs) {
-		NSString *fileName = [resultFileURL lastPathComponent];
-		NSString *fileBaseName = [fileName stringByDeletingPathExtension];
+		_testDataDict = [NSMutableDictionary dictionary];
 		
-		NSData *resultFileDict = [NSDictionary dictionaryWithContentsOfURL:resultFileURL];
-		if (resultFileDict != nil) {
-			_expectedResultsDict[fileBaseName] = resultFileDict;
+		NSArray *csvFileURLs = [testBundle URLsForResourcesWithExtension:@"csv"
+															subdirectory:nil];
+		
+		for (NSURL *testFileURL in csvFileURLs) {
+			NSString *fileName = [testFileURL lastPathComponent];
+			NSString *fileBaseName = [fileName stringByDeletingPathExtension];
+			
+			NSData *testFileData = [NSData dataWithContentsOfURL:testFileURL];
+			
+			if (testFileData != nil) {
+				_testDataDict[fileBaseName] = testFileData;
+			}
+			else {
+				NSLog(@"Error opening file “%@”", fileName);
+			}
 		}
-		else {
-			NSLog(@"Error opening file “%@”", fileName);
+		
+		_expectedResultsDict = [NSMutableDictionary dictionary];
+		
+		NSArray *plistFileURLs = [testBundle URLsForResourcesWithExtension:@"plist"
+															  subdirectory:nil];
+		
+		for (NSURL *resultFileURL in plistFileURLs) {
+			NSString *fileName = [resultFileURL lastPathComponent];
+			NSString *fileBaseName = [fileName stringByDeletingPathExtension];
+			
+			NSData *resultFileDict = [NSDictionary dictionaryWithContentsOfURL:resultFileURL];
+			if (resultFileDict != nil) {
+				_expectedResultsDict[fileBaseName] = resultFileDict;
+			}
+			else {
+				NSLog(@"Error opening file “%@”", fileName);
+			}
 		}
-	}
 	}
 }
 
