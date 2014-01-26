@@ -31,7 +31,7 @@
 		}
 	}
 	
-	NSString *result = [NSString stringWithUTF8String:output];
+	NSString *result = @(output);
 	free(output);
 	
 	return result;

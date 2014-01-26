@@ -520,6 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -535,6 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

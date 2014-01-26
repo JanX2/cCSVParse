@@ -34,8 +34,7 @@ static NSMutableDictionary *_expectedResultsDict;
 		NSData *testFileData = [NSData dataWithContentsOfURL:testFileURL];
 		
 		if (testFileData != nil) {
-			[_testDataDict setObject:testFileData
-							  forKey:fileBaseName];
+			_testDataDict[fileBaseName] = testFileData;
 		}
 		else {
 			NSLog(@"Error opening file “%@”", fileName);
@@ -53,8 +52,7 @@ static NSMutableDictionary *_expectedResultsDict;
 		
 		NSData *resultFileDict = [NSDictionary dictionaryWithContentsOfURL:resultFileURL];
 		if (resultFileDict != nil) {
-			[_expectedResultsDict setObject:resultFileDict
-									 forKey:fileBaseName];
+			_expectedResultsDict[fileBaseName] = resultFileDict;
 		}
 		else {
 			NSLog(@"Error opening file “%@”", fileName);
@@ -84,10 +82,10 @@ static NSMutableDictionary *_expectedResultsDict;
 #endif
 	
 	[_testDataDict enumerateKeysAndObjectsUsingBlock:^(NSString *fileBaseName, NSData *data, BOOL *stop) {
-		NSMutableDictionary *expectedProperties = [_expectedResultsDict objectForKey:fileBaseName];
+		NSMutableDictionary *expectedProperties = _expectedResultsDict[fileBaseName];
 		
 		NSStringEncoding encoding = NSUTF8StringEncoding;
-		NSString *charsetName = [expectedProperties objectForKey:@"charsetName"];
+		NSString *charsetName = expectedProperties[@"charsetName"];
 		if (charsetName != nil) {
 			CFStringEncoding cfStringEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)charsetName);
 			encoding = CFStringConvertEncodingToNSStringEncoding(cfStringEncoding);
@@ -144,9 +142,9 @@ static NSMutableDictionary *_expectedResultsDict;
 
 #if VERIFY_EXPECTATIONS
 		if (expectedProperties != nil) {
-			NSMutableArray *expectedContent = [expectedProperties objectForKey:@"csvContent"];
-			NSString *expectedEndOfLine = [expectedProperties objectForKey:@"endOfLine"];
-			NSString *expectedDelimiterString = [expectedProperties objectForKey:@"delimiterString"];
+			NSMutableArray *expectedContent = expectedProperties[@"csvContent"];
+			NSString *expectedEndOfLine = expectedProperties[@"endOfLine"];
+			NSString *expectedDelimiterString = expectedProperties[@"delimiterString"];
 			
 #if !VERIFY_EXPECTATIONS_FAILURE_CASE
 			XCTAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
@@ -158,8 +156,8 @@ static NSMutableDictionary *_expectedResultsDict;
 				
 				if (csvContent.count == expectedContent.count) {
 					for (NSUInteger i = 0; i < csvContent.count; i++) {
-						NSArray *colArray = [csvContent objectAtIndex:i];
-						NSArray *expectedColArray = [expectedContent objectAtIndex:i];
+						NSArray *colArray = csvContent[i];
+						NSArray *expectedColArray = expectedContent[i];
 						
 						BOOL rowIsAsExpected = [colArray isEqualToArray:expectedColArray];
 						XCTAssertTrue(rowIsAsExpected, @"Row %lu for “%@” is not as expected.", (unsigned long)i, fileBaseName);
@@ -168,8 +166,8 @@ static NSMutableDictionary *_expectedResultsDict;
 							
 							NSUInteger minColCount = MIN(colArray.count, expectedColArray.count);
 							for (NSUInteger j = 0; j < minColCount; j++) {
-								NSString *cell = [colArray objectAtIndex:j];
-								NSString *expectedCell = [expectedColArray objectAtIndex:j];
+								NSString *cell = colArray[j];
+								NSString *expectedCell = expectedColArray[j];
 								
 								XCTAssertEqualObjects(cell, expectedCell, @"Cell in row %lu, column %lu of “%@” is not as expected.", (unsigned long)i, (unsigned long)j, fileBaseName);
 								if ([cell isEqualToString:expectedCell] == NO)  break; // We stop after the first mismatch.
