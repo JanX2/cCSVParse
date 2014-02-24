@@ -481,7 +481,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 					}
 					
 					addCurrentRowAndStartNew = true;
-				} 
+				}
 				
 				if (addCurrentRowAndStartNew) {
 					bool addCurrentRow = false;
