@@ -383,7 +383,8 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 		
 		text_p = buffer_p + garbageOffset;
 	
-#define MATCHED_QUOTES		((cellIsQuoted && ((quoteCount % 2) == 0)) || !cellIsQuoted)
+#define VALID_QUOTES		(cellIsQuoted && ((quoteCount % 2) == 0))
+#define MATCHED_QUOTES		(VALID_QUOTES || !cellIsQuoted)
 #define UNMATCHED_QUOTES	((cellIsQuoted && ((quoteCount % 2) != 0)) || (!cellIsQuoted && false))
 		
 		while (*text_p != '\0') {
