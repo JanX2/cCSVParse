@@ -31,8 +31,8 @@ const ssize_t UTF16LEBOMSize = 2;
 const char UTF16LEBOM[UTF16LEBOMSize] = {0xFF, 0xFE};
 
 /* Macros for determining if the given character is End Of Line or not */
-#define EOL(x) ((*(x) == '\r' || *(x) == '\n') && *(x) != '\0')
-#define NOT_EOL(x) (*(x) != '\0' && *(x) != '\r' && *(x) != '\n')
+#define EOL(x) ((*(x) == '\r' || *(x) == '\n'))
+#define NOT_EOL(x) (*(x) != '\r' && *(x) != '\n')
 
 //const char possibleDelimiters[] = ",;\t|. \0"; // FIXME: Needs testing; will probably fail in searchDelimiter()
 const char possibleDelimiters[] = ",;\t|\0";
@@ -389,7 +389,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 #define MATCHED_QUOTES		(VALID_QUOTES || !cellIsQuoted)
 #define UNMATCHED_QUOTES	((cellIsQuoted && ((quoteCount % 2) != 0)) || (!cellIsQuoted && false))
 		
-		while (*text_p != '\0') {
+		while (text_p < endChar_p) {
 			// If we don't have a delimiter yet and this is the first line...
 			if (firstLine && _delimiter == '\0') {
 				// Check if a delimiter was found and set it.
@@ -411,7 +411,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 				text_p = buffer_p + garbageOffset;
 			} 
 			
-			if (*text_p != '\0') {
+			if (text_p < endChar_p) {
 				// This is data.
 				previousStop_p = text_p;
 				rowStart_p = text_p;
@@ -421,7 +421,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 				// Parsing is split into rows.
 				// Find the end of the current CSV row.
 				// A row may contain end-of-line characters, but within cells only. 
-				while (NOT_EOL(text_p) || (*text_p != '\0' && UNMATCHED_QUOTES)) {
+				while (text_p < endChar_p && (NOT_EOL(text_p) || UNMATCHED_QUOTES)) {
 					// If we have two quotes and a delimiter before and after, this is an empty value.
 					if (cellIsQuoted && *text_p == '\"') { 
 						if (*(text_p + 1) == '\"') {
@@ -445,7 +445,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 							_foundQuotedCell = YES;
 						}
 						
-						if (*previousStop_p != '\0') {
+						if (previousStop_p < endChar_p) {
 							cellIsQuoted = (*previousStop_p == '\"');
 						}
 						else {
@@ -465,11 +465,11 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 					
 					addCurrentRowAndStartNew = true;
 				} 
-				else if ((*text_p != '\0' &&
+				else if ((text_p < endChar_p &&
 						  previousStop_p != text_p &&
 						  MATCHED_QUOTES) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
 						 ||
-						 (*text_p == '\0' &&
+						 (text_p == endChar_p &&
 						  readingComplete) // Cell that ends with the end of the file.
 						 ) {
 					// Non-empty cell that with certainty was not split apart by the buffer size limit.
@@ -506,9 +506,9 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 				}
 				
 				if ((rowStart_p < endChar_p && rowStart_p != text_p) && // Check for valid row start.
-					((*text_p == '\0' && !readingComplete) // End of buffer, but not end of file.
+					((text_p == endChar_p && !readingComplete) // End of buffer, but not end of file.
 					 ||
-					 (*text_p != '\0' && UNMATCHED_QUOTES)) // There are still unclosed quotes.
+					 (text_p < endChar_p && UNMATCHED_QUOTES)) // There are still unclosed quotes.
 				 ) {
 					// Restart row parsing.
 					// If we get here when we are at the end of the buffer,
@@ -524,10 +524,10 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 			
 			// EOL detection.
 			if (incompleteRow_p == NULL && firstLine) { // We don’t try, if the row is truncated by the buffer size. 
-				if ((rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1)) {
+				if ((text_p < endChar_p) && (rowStart_p != NULL) && (rowStart_p-1 >= buffer_p) && EOL(rowStart_p-1)) {
 					_endOfLine[0] = *(rowStart_p-1);
 					
-					if (EOL(rowStart_p) && (*rowStart_p != _endOfLine[0])) { // We ignore repeating EOLs. They signify empty lines.
+					if ((text_p < endChar_p) && EOL(rowStart_p) && (*rowStart_p != _endOfLine[0])) { // We ignore repeating EOLs. They signify empty lines.
 						_endOfLine[1] = *(rowStart_p);
 					}
 					else {
