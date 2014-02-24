@@ -56,5 +56,7 @@
 	<string>,</string>
 	<key>endOfLine</key>
 	<string>\r\n</string>
+	<key>foundQuotedCell</key>
+	<false/>
 </dict>
 </plist>

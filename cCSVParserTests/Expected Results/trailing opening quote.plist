@@ -12,11 +12,13 @@
 			<string>Foo</string>
 			<string>bar</string>
 			<string>morebar</string>
-			<string>"
+			<string>&quot;
 </string>
 		</array>
 	</array>
 	<key>delimiterString</key>
 	<string>,</string>
+	<key>foundQuotedCell</key>
+	<false/>
 </dict>
 </plist>

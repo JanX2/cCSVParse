@@ -10,5 +10,7 @@
 			<string>Campaign Name</string>
 		</array>
 	</array>
+	<key>foundQuotedCell</key>
+	<false/>
 </dict>
 </plist>

@@ -18,5 +18,7 @@
 	<string>,</string>
 	<key>endOfLine</key>
 	<string>\n</string>
+	<key>foundQuotedCell</key>
+	<true/>
 </dict>
 </plist>

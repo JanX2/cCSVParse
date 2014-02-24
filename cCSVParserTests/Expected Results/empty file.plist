@@ -6,5 +6,7 @@
 	<string>utf-8</string>
 	<key>csvContent</key>
 	<array/>
+	<key>foundQuotedCell</key>
+	<false/>
 </dict>
 </plist>

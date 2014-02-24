@@ -414,5 +414,7 @@
 	<string>,</string>
 	<key>endOfLine</key>
 	<string>\r</string>
+	<key>foundQuotedCell</key>
+	<true/>
 </dict>
 </plist>

@@ -108,14 +108,18 @@ char searchDelimiter(char *text_p) {
 /*
  * Copies a string without beginning- and end-quotes if there are
  * any and returns a pointer to the string or NULL if malloc() failed
- *
+ * also returns by reference whether we found quotes around the cell
  */
-NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding encoding) {
+NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, NSStringEncoding encoding) {
 	NSUInteger stringSize = (size_t)(text_p - previousStop_p);
 	
 	if (*previousStop_p == '\"' && *(previousStop_p + 1) != '\0' && *(previousStop_p + stringSize - 1) == '\"') {
 		previousStop_p++;
 		stringSize -= 2;
+		*foundQuotes_p = YES;
+	}
+	else {
+		*foundQuotes_p = NO;
 	}
 	
 	NSMutableString *tempString = nil;
@@ -258,6 +262,8 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 {
 	NSMutableArray *csvRow = [NSMutableArray array];
 	NSInputStream *dataStream = nil;
+	
+	_foundQuotedCell = NO;
 	
 	ssize_t n = 1;
 	size_t incompleteRowLength = 0;
@@ -426,9 +432,15 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					} 
 					else if (*text_p == _delimiter && MATCHED_QUOTES) {
 						// This is a delimiter which is not between (an unmachted pair of) quotes.
-						NSString *cellString = parseString(text_p, previousStop_p, _encoding);
+						BOOL foundQuotes;
+						
+						NSString *cellString = parseString(text_p, previousStop_p, &foundQuotes, _encoding);
 						[csvRow addObject:cellString];
 						previousStop_p = text_p + 1;
+						
+						if (foundQuotes && _foundQuotedCell == NO) {
+							_foundQuotedCell = YES;
+						}
 						
 						if (*previousStop_p != '\0') {
 							cellIsQuoted = (*previousStop_p == '\"');
@@ -449,7 +461,7 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 					[csvRow addObject:@""];
 					
 					addCurrentRowAndStartNew = true;
-				}
+				} 
 				else if ((*text_p != '\0' &&
 						  previousStop_p != text_p &&
 						  MATCHED_QUOTES) // Non-empty, unquoted or correctly quoted cell that doesn’t end at the buffer boundary.
@@ -458,8 +470,14 @@ NSString * parseString(char *text_p, char *previousStop_p, NSStringEncoding enco
 						  readingComplete) // Cell that ends with the end of the file.
 						 ) {
 					// Non-empty cell that with certainty was not split apart by the buffer size limit.
-					NSString *cellString = parseString(text_p, previousStop_p, _encoding);
+					BOOL foundQuotes;
+					
+					NSString *cellString = parseString(text_p, previousStop_p, &foundQuotes, _encoding);
 					[csvRow addObject:cellString];
+					
+					if (foundQuotes && _foundQuotedCell == NO) {
+						_foundQuotedCell = YES;
+					}
 					
 					addCurrentRowAndStartNew = true;
 				} 

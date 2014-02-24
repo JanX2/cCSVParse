@@ -111,6 +111,7 @@ static NSMutableDictionary *_expectedResultsDict;
 		
 		NSString *endOfLine = [[parser endOfLine] jx_stringByEscapingForCCode];
 		NSString *delimiterString = [[parser delimiterString] jx_stringByEscapingForCCode];
+		BOOL foundQuotedCell = [parser foundQuotedCell];
 
 #define VERIFY_EXPECTATIONS					1
 #define VERIFY_EXPECTATIONS_FAILURE_CASE	1
@@ -133,6 +134,9 @@ static NSMutableDictionary *_expectedResultsDict;
 						  forKey:@"delimiterString"];
 		}
 		
+		[plistDict setObject:@(foundQuotedCell)
+					  forKey:@"foundQuotedCell"];
+		
 		CFStringEncoding cfStringEncoding = CFStringConvertNSStringEncodingToEncoding(encoding);
 		NSString *encodingName = (NSString *)CFStringConvertEncodingToIANACharSetName(cfStringEncoding);
 		[plistDict setObject:encodingName
@@ -149,6 +153,7 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSMutableArray *expectedContent = expectedProperties[@"csvContent"];
 			NSString *expectedEndOfLine = expectedProperties[@"endOfLine"];
 			NSString *expectedDelimiterString = expectedProperties[@"delimiterString"];
+			BOOL expectedFoundQuotedCell = [expectedProperties[@"foundQuotedCell"] boolValue];
 			
 #if !VERIFY_EXPECTATIONS_FAILURE_CASE
 			XCTAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
@@ -193,6 +198,8 @@ static NSMutableDictionary *_expectedResultsDict;
 			} else {
 				XCTAssertEqualObjects(delimiterString, expectedDelimiterString, @"Delimiter for “%@” is not as expected.", fileBaseName);
 			}
+			
+			XCTAssertEqual(foundQuotedCell, expectedFoundQuotedCell, @"foundQuotedCell for “%@” is not as expected.", fileBaseName);
 		}
 #endif
 	}];

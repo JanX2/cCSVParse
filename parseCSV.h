@@ -39,6 +39,7 @@
 
 @property (assign) char delimiter;
 @property (assign) NSStringEncoding encoding;
+@property (assign) BOOL foundQuotedCell;
 
 @property (assign) size_t bufferSize;
 

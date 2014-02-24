@@ -10,5 +10,7 @@
 			<string>abc</string>
 		</array>
 	</array>
+	<key>foundQuotedCell</key>
+	<true/>
 </dict>
 </plist>
