@@ -163,10 +163,12 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 		}
 	}
 	
-	[tempString replaceOccurrencesOfString:@"\"\"" 
-								withString:@"\"" 
-								   options:NSLiteralSearch
-									 range:NSMakeRange(0, [tempString length])];
+	if (*foundQuotes_p == YES) {
+		[tempString replaceOccurrencesOfString:@"\"\""
+									withString:@"\""
+									   options:NSLiteralSearch
+										 range:NSMakeRange(0, [tempString length])];
+	}
 	
 	return JX_AUTORELEASE(tempString);
 }
