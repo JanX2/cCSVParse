@@ -111,9 +111,18 @@ char searchDelimiter(char *text_p) {
  * also returns by reference whether we found quotes around the cell
  */
 NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, NSStringEncoding encoding) {
-	NSUInteger stringSize = (size_t)(text_p - previousStop_p);
+	char *cellEnd_p = text_p;
 	
-	if (*previousStop_p == '\"' && *(previousStop_p + 1) != '\0' && *(previousStop_p + stringSize - 1) == '\"') {
+	// Scan backwards until cellEnd_p points to the last NUL in the cell should there be one.
+	// In the extreme case of a cell consisting of only NUL bytes
+	// previousStop_p == cellEnd_p afterwards.
+	while (previousStop_p < cellEnd_p && *(cellEnd_p - 1) == '\0') {
+		cellEnd_p--;
+	}
+	
+	NSUInteger stringSize = (size_t)(cellEnd_p - previousStop_p);
+	
+	if (*previousStop_p == '\"' && *(previousStop_p + 1) != '\0' && *(cellEnd_p - 1) == '\"') {
 		previousStop_p++;
 		stringSize -= 2;
 		*foundQuotes_p = YES;
