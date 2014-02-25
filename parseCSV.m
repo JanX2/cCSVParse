@@ -131,6 +131,10 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 		*foundQuotes_p = NO;
 	}
 	
+	if (stringSize == 0) {
+		return [NSMutableString stringWithString:@""];
+	}
+	
 	NSMutableString *tempString = nil;
 	NSStringEncoding currentEncoding = encoding;
 	int retryCount = 0;
