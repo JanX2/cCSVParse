@@ -110,20 +110,20 @@ char searchDelimiter(char *text_p) {
  * any and returns a pointer to the string or NULL if malloc() failed
  * also returns by reference whether we found quotes around the cell
  */
-NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, NSStringEncoding encoding) {
+NSString * parseString(char *text_p, char *cellStart_p, BOOL *foundQuotes_p, NSStringEncoding encoding) {
 	char *cellEnd_p = text_p;
 	
 	// Scan backwards until cellEnd_p points to the last NUL in the cell should there be one.
 	// In the extreme case of a cell consisting of only NUL bytes
 	// previousStop_p == cellEnd_p afterwards.
-	while (previousStop_p < cellEnd_p && *(cellEnd_p - 1) == '\0') {
+	while (cellStart_p < cellEnd_p && *(cellEnd_p - 1) == '\0') {
 		cellEnd_p--;
 	}
 	
-	NSUInteger stringSize = (size_t)(cellEnd_p - previousStop_p);
+	NSUInteger stringSize = (size_t)(cellEnd_p - cellStart_p);
 	
-	if (*previousStop_p == '\"' && *(previousStop_p + 1) != '\0' && *(cellEnd_p - 1) == '\"') {
-		previousStop_p++;
+	if (*cellStart_p == '\"' && *(cellStart_p + 1) != '\0' && *(cellEnd_p - 1) == '\"') {
+		cellStart_p++;
 		stringSize -= 2;
 		*foundQuotes_p = YES;
 	}
@@ -140,7 +140,7 @@ NSString * parseString(char *text_p, char *previousStop_p, BOOL *foundQuotes_p, 
 	int retryCount = 0;
 
 	while (tempString == nil) {
-		tempString = [[NSMutableString alloc] initWithBytes:previousStop_p
+		tempString = [[NSMutableString alloc] initWithBytes:cellStart_p
 													 length:stringSize
 												   encoding:currentEncoding];
 		
