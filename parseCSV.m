@@ -319,7 +319,7 @@ NSString * parseString(char *text_p, char *cellStart_p, BOOL *foundQuotes_p, NSS
 				char incompleteRow[incompleteRowLength + 1];
 				strlcpy(incompleteRow, incompleteRow_p, incompleteRowLength + 1); // null-terminates!
 				
-				buffer_p = realloc(buffer_p, necessaryCapacity);
+				buffer_p = reallocf(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
 					[csvContent removeAllObjects];
 					[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
