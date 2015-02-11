@@ -11,6 +11,9 @@
 #import "parseCSV.h"
 #import "NSString+EscapingForCCode.h"
 
+#import "XCTestCase+JXDynamicTests.h"
+
+//static NSMutableDictionary *_testCaseToFileBaseNameDict;
 static NSMutableDictionary *_testDataDict;
 static NSMutableDictionary *_expectedResultsDict;
 
@@ -20,13 +23,22 @@ static NSMutableDictionary *_expectedResultsDict;
 {
     if (self == [cCSVParserTests class]) {
 		
+#define DEBUG_FILE		0
+			
+#if DEBUG_FILE
+		NSString *fileBaseNameForDebugging = @"whitespace only";
+#endif
+			
 		NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+		
+		//_testCaseToFileBaseNameDict = [NSMutableDictionary dictionary];
 		
 		_testDataDict = [NSMutableDictionary dictionary];
 		
 		NSArray *csvFileURLs = [testBundle URLsForResourcesWithExtension:@"csv"
 															subdirectory:nil];
-		
+		CSVParser *parser = [CSVParser new];
+
 		for (NSURL *testFileURL in csvFileURLs) {
 			NSString *fileName = [testFileURL lastPathComponent];
 			NSString *fileBaseName = [fileName stringByDeletingPathExtension];
@@ -34,7 +46,23 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSData *testFileData = [NSData dataWithContentsOfURL:testFileURL];
 			
 			if (testFileData != nil) {
+#if DEBUG_FILE
+				if (![fileBaseName isEqualToString:fileBaseNameForDebugging]) {
+					continue;
+				}
+#endif
+				
 				_testDataDict[fileBaseName] = testFileData;
+				
+				//NSString *selectorName =
+				[self addDynamicTestForIdentifier:fileBaseName
+							  implementationBlock:^(cCSVParserTests *test) {
+					[test internalTestCaseWithParser:parser
+										fileBaseName:fileBaseName
+											  testFileData:testFileData];
+				}];
+				
+				//_testCaseToFileBaseNameDict[selectorName] = fileBaseName;
 			}
 			else {
 				NSLog(@"Error opening file “%@”", fileName);
@@ -59,6 +87,8 @@ static NSMutableDictionary *_expectedResultsDict;
 			}
 		}
 	}
+	
+	//NSLog(@"%@", _testCaseToFileBaseNameDict);
 }
 
 - (void)setUp
@@ -72,20 +102,11 @@ static NSMutableDictionary *_expectedResultsDict;
     [super tearDown];
 }
 
-- (void)testBundleFiles
+- (void)internalTestCaseWithParser:(CSVParser *)parser
+					  fileBaseName:(NSString *)fileBaseName
+					  testFileData:(NSData *)data;
 {
-	CSVParser *parser = [CSVParser new];
-	XCTAssertNotNil(parser, @"CSVParser instance creation failed.");
-	
-	if (parser == nil)  return;
-	
-#define DEBUG_FILE		1
-
-#if DEBUG_FILE
-	NSString *fileBaseNameForDebugging = @"whitespace only";
-#endif
-	
-	[_testDataDict enumerateKeysAndObjectsUsingBlock:^(NSString *fileBaseName, NSData *data, BOOL *stop) {
+	{
 		NSMutableDictionary *expectedProperties = _expectedResultsDict[fileBaseName];
 		
 		NSStringEncoding encoding = NSUTF8StringEncoding;
@@ -94,12 +115,6 @@ static NSMutableDictionary *_expectedResultsDict;
 			CFStringEncoding cfStringEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)charsetName);
 			encoding = CFStringConvertEncodingToNSStringEncoding(cfStringEncoding);
 		}
-		
-#if DEBUG_FILE
-		if ([fileBaseName isEqualToString:fileBaseNameForDebugging]) {
-			NSLog(@"%@", fileBaseNameForDebugging);
-		}
-#endif
 		
 		[parser setEncoding:encoding];
 		[parser setData:data];
@@ -202,8 +217,7 @@ static NSMutableDictionary *_expectedResultsDict;
 			XCTAssertEqual(foundQuotedCell, expectedFoundQuotedCell, @"foundQuotedCell for “%@” is not as expected.", fileBaseName);
 		}
 #endif
-	}];
-
+	}
 }
 
 @end

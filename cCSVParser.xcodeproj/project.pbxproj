@@ -14,6 +14,7 @@
 		3D818FD31817CEEA00906A9D /* UTF8-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD01817CEE900906A9D /* UTF8-BOM.plist */; };
 		3D818FD41817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */; };
 		3D818FD51817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */; };
+		3DC5EFC41A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC5EFC31A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.m */; };
 		3DC89F29179FF51D0019B093 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC89F11179FF51C0019B093 /* Cocoa.framework */; };
 		3DC89F32179FF51D0019B093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC89F30179FF51D0019B093 /* InfoPlist.strings */; };
 		3DC89F35179FF51D0019B093 /* cCSVParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC89F34179FF51D0019B093 /* cCSVParserTests.m */; };
@@ -82,6 +83,8 @@
 		3D818FD01817CEE900906A9D /* UTF8-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-BOM.plist"; sourceTree = "<group>"; };
 		3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16BE-BOM.plist"; sourceTree = "<group>"; };
 		3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16LE-BOM.plist"; sourceTree = "<group>"; };
+		3DC5EFC21A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+JXDynamicTests.h"; sourceTree = "<group>"; };
+		3DC5EFC31A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+JXDynamicTests.m"; sourceTree = "<group>"; };
 		3DC89F11179FF51C0019B093 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3DC89F14179FF51C0019B093 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3DC89F15179FF51C0019B093 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 				3DC89F34179FF51D0019B093 /* cCSVParserTests.m */,
 				3DC89FAD17A02FF20019B093 /* NSString+EscapingForCCode.h */,
 				3DC89FAE17A02FF20019B093 /* NSString+EscapingForCCode.m */,
+				3DC5EFC21A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.h */,
+				3DC5EFC31A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.m */,
 				3DC89F2E179FF51D0019B093 /* Supporting Files */,
 			);
 			path = cCSVParserTests;
@@ -452,6 +457,7 @@
 			files = (
 				3DC89F35179FF51D0019B093 /* cCSVParserTests.m in Sources */,
 				3DC89F43179FF6830019B093 /* parseCSV.m in Sources */,
+				3DC5EFC41A8BBB3600B4B9AA /* XCTestCase+JXDynamicTests.m in Sources */,
 				3DC89FAF17A02FF20019B093 /* NSString+EscapingForCCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
