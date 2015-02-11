@@ -50,7 +50,7 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSString *fileName = [resultFileURL lastPathComponent];
 			NSString *fileBaseName = [fileName stringByDeletingPathExtension];
 			
-			NSData *resultFileDict = [NSDictionary dictionaryWithContentsOfURL:resultFileURL];
+			NSDictionary *resultFileDict = [NSDictionary dictionaryWithContentsOfURL:resultFileURL];
 			if (resultFileDict != nil) {
 				_expectedResultsDict[fileBaseName] = resultFileDict;
 			}
