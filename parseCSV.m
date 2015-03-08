@@ -34,21 +34,22 @@ const char UTF16LEBOM[UTF16LEBOMSize] = {0xFF, 0xFE};
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n'))
 #define NOT_EOL(x) (*(x) != '\r' && *(x) != '\n')
 
-//const char possibleDelimiters[] = ",;\t|. \0"; // FIXME: Needs testing; will probably fail in searchDelimiter()
-const char possibleDelimiters[] = ",;\t|\0";
+const char possibleDelimiters[] = ",;\t|. \0";
 NSString *possibleDelimiterNames[] = {
 	@"Comma (,)",
 	@"Semicolon (;)",
 	@"Tab Symbol (⇥)",
-	@"Pipe Symbol (|)"
+	@"Pipe Symbol (|)",
+	@"Period Character (.)",
+	@"Space Character ( )"
 };
 /* For genstrings:
  NSLocalizedString(@"Comma (,)", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Semicolon (;)", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Tab Symbol", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Pipe Symbol (|)" @"cCSVParseDelimiterNames")
- //NSLocalizedString(@"Period (.)" @"cCSVParseDelimiterNames")
- //NSLocalizedString(@"Space ( )" @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Period Character (.)" @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Space Character ( )" @"cCSVParseDelimiterNames")
  */
 
 const char autodetectedDelimiters[] = ",;\t|\0";
