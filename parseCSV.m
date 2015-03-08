@@ -51,6 +51,8 @@ NSString *possibleDelimiterNames[] = {
  //NSLocalizedString(@"Space ( )" @"cCSVParseDelimiterNames")
  */
 
+const char autodetectedDelimiters[] = ",;\t|\0";
+
 
 NSString *supportedLineEndings[] = {
 	@"\n",
@@ -91,13 +93,13 @@ static char *cstrstr(const char *haystack_p, const char needle) {
 
 char searchDelimiter(char *text_p) {
 	// We check the entire buffer for separation characters. The first one we find wins.
-	while ((*text_p != '\0') && cstrstr(possibleDelimiters, *text_p) == NULL) {
+	while ((*text_p != '\0') && cstrstr(autodetectedDelimiters, *text_p) == NULL) {
 		text_p++;
 	}
 	
 	// Check if a delimiter was found and set it.
 	if (*text_p != '\0') {
-		char delimiter = *cstrstr(possibleDelimiters, *text_p);
+		char delimiter = *cstrstr(autodetectedDelimiters, *text_p);
 		return delimiter;
 	}
 	else {
