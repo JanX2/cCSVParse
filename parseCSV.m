@@ -645,25 +645,25 @@ NSString * parseString(char *text_p, char *cellStart_p, BOOL *foundQuotes_p, NSS
 	}
 }
 
-NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
+NSString * stringForDelimiter(char delimiter) {
     char delimiterCString[2] = {'\0', '\0'};
 	delimiterCString[0] = delimiter;
 	if (delimiterCString[0] == '\0') {
 		return nil;
 	} else {
-		return [NSString stringWithCString:delimiterCString encoding:encoding];
+		return @(delimiterCString);
 	}
 }
 
 -(NSString *)delimiterString {
-	return stringForDelimiter(_delimiter, _encoding);
+	return stringForDelimiter(_delimiter);
 }
 
 -(NSString *)endOfLine {
 	if (_endOfLine[0] == '\0') {
 		return nil;
 	} else {
-		return [NSString stringWithCString:_endOfLine encoding:_encoding];
+		return @(_endOfLine);
 	}
 }
 
@@ -672,7 +672,7 @@ NSString * stringForDelimiter(char delimiter, NSStringEncoding encoding) {
 	NSMutableArray *delimitersArray = [NSMutableArray array];
 	char *delimiter = (char *)possibleDelimiters;
 	while (*delimiter != '\0') {
-		NSString *delimiterString = stringForDelimiter(*delimiter, NSASCIIStringEncoding);
+		NSString *delimiterString = stringForDelimiter(*delimiter);
 		[delimitersArray addObject:delimiterString];
 		
 		delimiter++;
