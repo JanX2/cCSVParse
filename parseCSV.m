@@ -200,6 +200,12 @@ NSString * parseString(char *text_p, char *cellStart_p, BOOL *foundQuotes_p, NSS
 	cellInvalidLabel = JX_RETAIN(NSLocalizedString(@"**encoding or data invalid**", @"cell invalid label"));
 }
 
+static void clearEndOfLine(char *endOfLine) {
+	endOfLine[0] = '\0';
+	endOfLine[1] = '\0';
+	endOfLine[2] = '\0';
+}
+
 -(id)init {
 	self = [super init];
 	
@@ -211,9 +217,7 @@ NSString * parseString(char *text_p, char *cellStart_p, BOOL *foundQuotes_p, NSS
 		// Set delimiter to 0
 		_delimiter = '\0';
 		// Set endOfLine to empty
-		_endOfLine[0] = '\0';
-		_endOfLine[1] = '\0';
-		_endOfLine[2] = '\0';
+		clearEndOfLine(_endOfLine);
 		// Set default encoding
 		_encoding = NSUTF8StringEncoding;
 		// Set default verbosity
