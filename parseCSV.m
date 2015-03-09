@@ -92,7 +92,7 @@ static char *cstrstr(const char *haystack_p, const char needle) {
 	return NULL;
 }
 
-char searchDelimiter(char *text_p) {
+static char searchDelimiter(char *text_p) {
 	// We check the entire buffer for separation characters. The first one we find wins.
 	while ((*text_p != '\0') && cstrstr(autodetectedDelimiters, *text_p) == NULL) {
 		text_p++;
