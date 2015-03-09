@@ -1,7 +1,7 @@
 /*
  * cCSVParse, a small CVS file parser
  *
- * © 2007-2014 Jan Weiß, Michael Stapelberg and contributors
+ * © 2007-2015 Jan Weiß, Michael Stapelberg and contributors
  * https://github.com/JanX2/cCSVParse
  *
  * This source code is BSD-licensed, see LICENSE for the complete license.
