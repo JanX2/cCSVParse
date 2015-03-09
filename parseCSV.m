@@ -35,7 +35,7 @@ const char UTF16LEBOM[UTF16LEBOMSize] = {0xFF, 0xFE};
 #define NOT_EOL(x) (*(x) != '\r' && *(x) != '\n')
 
 const char possibleDelimiters[] = ",;\t|. \0";
-NSString *possibleDelimiterNames[] = {
+static NSString * const possibleDelimiterNames[] = {
 	@"Comma (,)",
 	@"Semicolon (;)",
 	@"Tab Symbol (⇥)",
@@ -55,13 +55,13 @@ NSString *possibleDelimiterNames[] = {
 const char autodetectedDelimiters[] = ",;\t|\0";
 
 
-NSString *supportedLineEndings[] = {
+static NSString * const supportedLineEndings[] = {
 	@"\n",
 	@"\r",
 	@"\r\n"
 };
 
-NSString *supportedLineEndingNames[] = {
+static NSString * const supportedLineEndingNames[] = {
 	@"Unix/Mac OS X Line Endings (LF)",
 	@"Classic Mac Line Endings (CR)",
 	@"Windows Line Endings (CRLF)"
@@ -685,7 +685,7 @@ NSString * stringForDelimiter(char delimiter) {
 	NSUInteger possibleDelimiterNamesCount = sizeof(possibleDelimiterNames)/sizeof(possibleDelimiterNames[0]);
 	NSMutableArray *delimiterNamesArray = [NSMutableArray arrayWithCapacity:possibleDelimiterNamesCount];
 	for (NSUInteger i = 0; i < possibleDelimiterNamesCount; i++) {
-		NSString *delimiterName = NSLocalizedString(possibleDelimiterNames[i], @"cCSVParseDelimiterNames");
+		NSString *delimiterName = NSLocalizedString((NSString *)possibleDelimiterNames[i], @"cCSVParseDelimiterNames");
 		[delimiterNamesArray addObject:delimiterName];
 	}
 
@@ -697,7 +697,7 @@ NSString * stringForDelimiter(char delimiter) {
 	NSUInteger supportedLineEndingsCount = sizeof(supportedLineEndings)/sizeof(supportedLineEndings[0]);
 	NSMutableArray *lineEndingsArray = [NSMutableArray arrayWithCapacity:supportedLineEndingsCount];
 	for (NSUInteger i = 0; i < supportedLineEndingsCount; i++) {
-		NSString *lineEnding = supportedLineEndings[i];
+		NSString *lineEnding = (NSString *)supportedLineEndings[i];
 		[lineEndingsArray addObject:lineEnding];
 	}
 	
@@ -708,7 +708,7 @@ NSString * stringForDelimiter(char delimiter) {
 	NSUInteger supportedLineEndingNamesCount = sizeof(supportedLineEndingNames)/sizeof(supportedLineEndingNames[0]);
 	NSMutableArray *lineEndingNamesArray = [NSMutableArray arrayWithCapacity:supportedLineEndingNamesCount];
 	for (NSUInteger i = 0; i < supportedLineEndingNamesCount; i++) {
-		NSString *lineEndingName = NSLocalizedString(supportedLineEndingNames[i], @"cCSVParseLineEndingNames");
+		NSString *lineEndingName = NSLocalizedString((NSString *)supportedLineEndingNames[i], @"cCSVParseLineEndingNames");
 		[lineEndingNamesArray addObject:lineEndingName];
 	}
 	
