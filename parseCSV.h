@@ -35,14 +35,14 @@
 -(NSMutableArray *)parseData;
 -(NSMutableArray *)parseData:(NSData *)data;
 
-@property (copy) NSData *data;
+@property (nonatomic, copy) NSData *data;
 
-@property (assign) char delimiter;
-@property (assign) NSStringEncoding encoding;
-@property (assign) BOOL foundQuotedCell;
+@property (nonatomic, assign) char delimiter;
+@property (nonatomic, assign) NSStringEncoding encoding;
+@property (nonatomic, assign) BOOL foundQuotedCell;
 
-@property (assign) size_t bufferSize;
+@property (nonatomic, assign) size_t bufferSize;
 
-@property (assign) BOOL verbose;
+@property (nonatomic, assign) BOOL verbose;
 
 @end
