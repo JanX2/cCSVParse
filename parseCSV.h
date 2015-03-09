@@ -22,9 +22,6 @@
 
 -(char)autodetectDelimiter;
 
--(NSString *)delimiterString;
--(NSString *)endOfLine;
-
 +(NSArray *)supportedDelimiters;
 +(NSArray *)supportedDelimiterLocalizedNames;
 
@@ -40,6 +37,9 @@
 @property (nonatomic, assign) char delimiter;
 @property (nonatomic, assign) NSStringEncoding encoding;
 @property (nonatomic, assign) BOOL foundQuotedCell;
+
+@property (nonatomic, copy) NSString *delimiterString;
+@property (nonatomic, copy) NSString *endOfLine;
 
 @property (nonatomic, assign) size_t bufferSize;
 

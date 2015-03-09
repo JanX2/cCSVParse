@@ -220,4 +220,32 @@ static NSMutableDictionary *_expectedResultsDict;
 	}
 }
 
+- (void)testDelimiterString
+{
+	CSVParser *parser = [CSVParser new];
+	
+	NSArray *supportedDelimiters = [CSVParser supportedDelimiters];
+	
+	for (NSString *thisDelimiters in supportedDelimiters) {
+		parser.delimiterString = thisDelimiters;
+		NSString *delimiterString = parser.delimiterString;
+		
+		XCTAssertEqualObjects(thisDelimiters, delimiterString);
+	}
+}
+
+- (void)testEndOfLineString
+{
+	CSVParser *parser = [CSVParser new];
+	
+	NSArray *supportedLineEndings = [CSVParser supportedLineEndings];
+	
+	for (NSString *thisLineEnding in supportedLineEndings) {
+		parser.endOfLine = thisLineEnding;
+		NSString *lineEnding = parser.endOfLine;
+		
+		XCTAssertEqualObjects(thisLineEnding, lineEnding);
+	}
+}
+
 @end

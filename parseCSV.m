@@ -663,11 +663,41 @@ NSString * stringForDelimiter(char delimiter) {
 	return stringForDelimiter(_delimiter);
 }
 
+-(void)setDelimiterString:(NSString *)delimiterString {
+	_delimiter = '\0';
+	
+	NSArray *delimitersArray = [[self class] supportedDelimiters];
+	char *delimiter = (char *)possibleDelimiters;
+	for (NSString *thisDelimiterString in delimitersArray) {
+		if ([delimiterString isEqualToString:thisDelimiterString]) {
+			_delimiter = *delimiter;
+			break;
+		}
+		
+		delimiter++;
+	}
+}
+
 -(NSString *)endOfLine {
 	if (_endOfLine[0] == '\0') {
 		return nil;
 	} else {
 		return @(_endOfLine);
+	}
+}
+
+-(void)setEndOfLine:(NSString *)endOfLineString {
+	clearEndOfLine(_endOfLine);
+	
+	NSArray *lineEndingsArray = [[self class] supportedLineEndings];
+	for (NSString *thisEndOfLineString in lineEndingsArray) {
+		if ([endOfLineString isEqualToString:thisEndOfLineString]) {
+			_endOfLine[0] = [endOfLineString characterAtIndex:0];
+			if (endOfLineString.length > 1) {
+				_endOfLine[1] = [endOfLineString characterAtIndex:1];
+			}
+			break;
+		}
 	}
 }
 
