@@ -323,8 +323,8 @@ static void clearEndOfLine(char *endOfLine) {
 			const size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
-				char incompleteRow[incompleteRowLength + 1];
-				strlcpy(incompleteRow, incompleteRow_p, incompleteRowLength + 1); // null-terminates!
+				char incompleteRowTemp[incompleteRowLength + 1];
+				strlcpy(incompleteRowTemp, incompleteRow_p, incompleteRowLength + 1); // null-terminates!
 				
 				buffer_p = reallocf(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
@@ -335,7 +335,7 @@ static void clearEndOfLine(char *endOfLine) {
 				bufferSize = necessaryCapacity;
 				
 				// Copy incompleteRow to the beginning of the buffer.
-				strncpy(buffer_p, incompleteRow, incompleteRowLength);
+				strncpy(buffer_p, incompleteRowTemp, incompleteRowLength);
 			}
 			else {
 				// Move data at incompleteRow_p to the beginning of the buffer.
