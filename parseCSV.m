@@ -316,8 +316,6 @@ static void clearEndOfLine(char *endOfLine) {
 	while (n > 0 || incompleteRow_p != NULL) {
 		
 		if (incompleteRow_p != NULL) {
-			incompleteRowLength = strlen(incompleteRow_p);
-			
 			// Increase the buffer size so that the buffer can hold
 			// both the previous row fragment and a block of blockCharCount size.
 			const size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
@@ -343,7 +341,8 @@ static void clearEndOfLine(char *endOfLine) {
 			}
 			
 			incompleteRow_p = NULL;
-		} 
+			// incompleteRowLength is still needed.
+		}
 		else {
 			incompleteRowLength = 0;
 		}
@@ -423,6 +422,7 @@ static void clearEndOfLine(char *endOfLine) {
 					// Request retry with larger buffer, if there is is more data available.
 					if (readingComplete == false) {
 						incompleteRow_p = buffer_p;
+						incompleteRowLength = n;
 						break;
 					}
 				}
@@ -535,10 +535,12 @@ static void clearEndOfLine(char *endOfLine) {
 					// it may be too small to contain the entire row.
 					quoteCount = 0;
 					incompleteRow_p = rowStart_p;
+					incompleteRowLength = endChar_p - rowStart_p;
 					csvRow = [NSMutableArray arrayWithCapacity:previousColumnCount];
 				}
 				else {
 					incompleteRow_p = NULL;
+					incompleteRowLength = 0;
 				}
 			}
 			
