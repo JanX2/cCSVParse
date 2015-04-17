@@ -322,7 +322,8 @@ static void clearEndOfLine(char *endOfLine) {
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
 				char incompleteRowTemp[incompleteRowLength + 1];
-				strlcpy(incompleteRowTemp, incompleteRow_p, incompleteRowLength + 1); // null-terminates!
+				memcpy(incompleteRowTemp, incompleteRow_p, sizeof(char) * incompleteRowLength);
+				incompleteRowTemp[incompleteRowLength] = '\0';
 				
 				buffer_p = reallocf(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
@@ -333,7 +334,7 @@ static void clearEndOfLine(char *endOfLine) {
 				bufferSize = necessaryCapacity;
 				
 				// Copy incompleteRow to the beginning of the buffer.
-				strncpy(buffer_p, incompleteRowTemp, incompleteRowLength);
+				memcpy(buffer_p, incompleteRowTemp, sizeof(char) * incompleteRowLength);
 			}
 			else {
 				// Move data at incompleteRow_p to the beginning of the buffer.
