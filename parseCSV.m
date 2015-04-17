@@ -353,7 +353,7 @@ static void clearEndOfLine(char *endOfLine) {
 		else {
 			n = [dataStream read:(uint8_t *)(buffer_p + incompleteRowLength) maxLength:(sizeof(char) * blockCharCount)];
 		}
-
+		
 		if (n < 0) {
 			break; // Error while reading.
 		}
