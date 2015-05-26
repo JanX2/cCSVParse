@@ -330,7 +330,7 @@ static void clearEndOfLine(char *endOfLine) {
 					free(incompleteRowTemp_p);
 					
 					[csvContent removeAllObjects];
-					[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
+					[csvContent addObject:[NSMutableArray arrayWithObject: @"The CSV/TSV could not be read properly: could not allocate bytes for the row buffer."]];
 					return csvContent;
 				}
 				bufferSize = necessaryCapacity;
