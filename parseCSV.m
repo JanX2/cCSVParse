@@ -320,6 +320,10 @@ static void clearEndOfLine(char *endOfLine) {
 			// both the previous row fragment and a block of blockCharCount size.
 			const size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
+				// incompleteRow_p points to within buffer_p.
+				// So we have to move the data for the incomplete row to another buffer
+				// before reallocating buffer_p or incompleteRow_p will dangle.
+				
 				// Preserve previous row fragment.
 				char *incompleteRowTemp_p = malloc(sizeof(char) * (incompleteRowLength + 1));
 				memcpy(incompleteRowTemp_p, incompleteRow_p, sizeof(char) * incompleteRowLength);
