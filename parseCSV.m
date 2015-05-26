@@ -321,12 +321,14 @@ static void clearEndOfLine(char *endOfLine) {
 			const size_t necessaryCapacity = (incompleteRowLength + blockCharCount + 1) * sizeof(char);
 			if (bufferSize < necessaryCapacity) {
 				// Preserve previous row fragment.
-				char incompleteRowTemp[incompleteRowLength + 1];
-				memcpy(incompleteRowTemp, incompleteRow_p, sizeof(char) * incompleteRowLength);
-				incompleteRowTemp[incompleteRowLength] = '\0';
+				char *incompleteRowTemp_p = malloc(sizeof(char) * (incompleteRowLength + 1));
+				memcpy(incompleteRowTemp_p, incompleteRow_p, sizeof(char) * incompleteRowLength);
+				incompleteRowTemp_p[incompleteRowLength] = '\0';
 				
 				buffer_p = reallocf(buffer_p, necessaryCapacity);
 				if (buffer_p == NULL) {
+					free(incompleteRowTemp_p);
+					
 					[csvContent removeAllObjects];
 					[csvContent addObject:[NSMutableArray arrayWithObject: @"ERROR: Could not allocate bytes for buffer"]];
 					return csvContent;
@@ -334,7 +336,8 @@ static void clearEndOfLine(char *endOfLine) {
 				bufferSize = necessaryCapacity;
 				
 				// Copy incompleteRow to the beginning of the buffer.
-				memcpy(buffer_p, incompleteRowTemp, sizeof(char) * incompleteRowLength);
+				memcpy(buffer_p, incompleteRowTemp_p, sizeof(char) * incompleteRowLength);
+				free(incompleteRowTemp_p);
 			}
 			else {
 				// Move data at incompleteRow_p to the beginning of the buffer.
