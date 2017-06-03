@@ -292,6 +292,7 @@ static void clearEndOfLine(char *endOfLine) {
 	NSUInteger previousColumnCount = 0;
 	unsigned int quoteCount = 0;
 	bool firstLine = true;
+	bool skippedPotentialFirstHalfOfWindowsLineEnding = false;
 	bool addCurrentRowAndStartNew = false;
 	bool cellIsQuoted = false;
 	size_t bufferSize = _bufferSize;
@@ -411,7 +412,20 @@ static void clearEndOfLine(char *endOfLine) {
 		}
 		
 		text_p = buffer_p + garbageOffset;
-	
+		
+		if (skippedPotentialFirstHalfOfWindowsLineEnding) {
+			// If a CRLF is split by the buffer border right down the middle,
+			// we have to skip the second half of it (LF),
+			// or we will end up with a spurious empty row in the result.
+			
+			if (*text_p == '\n') {
+				// Skipping second half of windows line ending.
+				text_p++;
+			}
+			
+			skippedPotentialFirstHalfOfWindowsLineEnding = false;
+		}
+		
 #define VALID_QUOTES		(cellIsQuoted && ((quoteCount % 2) == 0))
 #define MATCHED_QUOTES		(VALID_QUOTES || !cellIsQuoted)
 #define UNMATCHED_QUOTES	((cellIsQuoted && ((quoteCount % 2) != 0)) || (!cellIsQuoted && false))
@@ -573,6 +587,10 @@ static void clearEndOfLine(char *endOfLine) {
 			
 			// Skip over empty lines.
 			while (EOL(text_p)) {
+				if (*text_p == '\r') {
+					skippedPotentialFirstHalfOfWindowsLineEnding = true;
+				}
+				
 				text_p++;
 			}
 		}
