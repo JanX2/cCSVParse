@@ -11,6 +11,8 @@
 		3D2898D518BBD85100F0091E /* NUL-bytes-2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D2898D418BBD85100F0091E /* NUL-bytes-2.csv */; };
 		3D2898D818BBDCA000F0091E /* NUL-bytes-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D2898D618BBDCA000F0091E /* NUL-bytes-2.plist */; };
 		3D2898D918BBDCA000F0091E /* NUL-bytes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D2898D718BBDCA000F0091E /* NUL-bytes.plist */; };
+		3D73DC851EFBF108008A1A1B /* CRLF split by buffer border.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D73DC841EFBF107008A1A1B /* CRLF split by buffer border.csv */; };
+		3D73DC871EFBF184008A1A1B /* CRLF split by buffer border.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D73DC861EFBF184008A1A1B /* CRLF split by buffer border.plist */; };
 		3D818FD31817CEEA00906A9D /* UTF8-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD01817CEE900906A9D /* UTF8-BOM.plist */; };
 		3D818FD41817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */; };
 		3D818FD51817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */; };
@@ -80,6 +82,8 @@
 		3D2898D418BBD85100F0091E /* NUL-bytes-2.csv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NUL-bytes-2.csv"; sourceTree = "<group>"; };
 		3D2898D618BBDCA000F0091E /* NUL-bytes-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NUL-bytes-2.plist"; sourceTree = "<group>"; };
 		3D2898D718BBDCA000F0091E /* NUL-bytes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NUL-bytes.plist"; sourceTree = "<group>"; };
+		3D73DC841EFBF107008A1A1B /* CRLF split by buffer border.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CRLF split by buffer border.csv"; sourceTree = "<group>"; };
+		3D73DC861EFBF184008A1A1B /* CRLF split by buffer border.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CRLF split by buffer border.plist"; sourceTree = "<group>"; };
 		3D818FD01817CEE900906A9D /* UTF8-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-BOM.plist"; sourceTree = "<group>"; };
 		3D818FD11817CEEA00906A9D /* UTF8-UTF-16BE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16BE-BOM.plist"; sourceTree = "<group>"; };
 		3D818FD21817CEEA00906A9D /* UTF8-UTF-16LE-BOM.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UTF8-UTF-16LE-BOM.plist"; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				3DC89F4717A003F70019B093 /* buffer bug 1.csv */,
 				3DC89F4817A003F70019B093 /* buffer bug 2.csv */,
 				3DC89F4917A003F70019B093 /* correctly quoted nightmare.csv */,
+				3D73DC841EFBF107008A1A1B /* CRLF split by buffer border.csv */,
 				3DC89F4A17A003F70019B093 /* empty file.csv */,
 				3DC89F4B17A003F70019B093 /* extremely long single cell.csv */,
 				3DC89F4C17A003F70019B093 /* leading LF in CRLF.csv */,
@@ -284,6 +289,7 @@
 				3DC89F7B17A00CAC0019B093 /* buffer bug 1.plist */,
 				3DC89F7C17A00CAC0019B093 /* buffer bug 2.plist */,
 				3DC89F7D17A00CAC0019B093 /* correctly quoted nightmare.plist */,
+				3D73DC861EFBF184008A1A1B /* CRLF split by buffer border.plist */,
 				3DC89F7E17A00CAC0019B093 /* empty file.plist */,
 				3DC89F7F17A00CAC0019B093 /* extremely long single cell.plist */,
 				3DC89F8017A00CAC0019B093 /* leading LF in CRLF.plist */,
@@ -380,6 +386,7 @@
 				3DC89F6917A003F80019B093 /* ObjC code.csv in Resources */,
 				3DC89F6A17A003F80019B093 /* single cell with unescaped quotes.csv in Resources */,
 				3DC89F6B17A003F80019B093 /* single character cell.csv in Resources */,
+				3D73DC871EFBF184008A1A1B /* CRLF split by buffer border.plist in Resources */,
 				3DC89F6C17A003F80019B093 /* single column.csv in Resources */,
 				3DC89F6D17A003F80019B093 /* single long cell.csv in Resources */,
 				3D2898D918BBDCA000F0091E /* NUL-bytes.plist in Resources */,
@@ -413,6 +420,7 @@
 				3D2898D818BBDCA000F0091E /* NUL-bytes-2.plist in Resources */,
 				3DC89FA017A00CAC0019B093 /* single long cell.plist in Resources */,
 				3DC89FA117A00CAC0019B093 /* single quoted cell without line break.plist in Resources */,
+				3D73DC851EFBF108008A1A1B /* CRLF split by buffer border.csv in Resources */,
 				3DE37CEB1816DB3200AAFD49 /* UTF8-BOM.csv in Resources */,
 				3DE37CEC1816DB3200AAFD49 /* UTF8-UTF-16BE-BOM.csv in Resources */,
 				3DE37CED1816DB3200AAFD49 /* UTF8-UTF-16LE-BOM.csv in Resources */,

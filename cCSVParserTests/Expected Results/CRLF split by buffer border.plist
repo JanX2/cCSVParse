@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charsetName</key>
+	<string>utf-8</string>
+	<key>csvContent</key>
+	<array>
+		<array>
+			<string>XXXX</string>
+			<string>XXXXXXXXXXXXXX</string>
+			<string>XXXXXXXXXXX</string>
+			<string>XXXXXXXXXXXXXXXXXX</string>
+			<string>XXXXXXXX</string>
+			<string>XXXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>XXXX</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>XXXX</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0004</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>5440.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>210.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>39455.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>23052.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>300.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXX</string>
+			<string>XXXXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>-501.5500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>501.5500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>-3814.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>3814.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXXXXXX</string>
+			<string>XXX</string>
+			<string>9.3000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>-5.4000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0530</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>5.4000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>3140.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>18090.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>13895.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>155.3000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>858.4800</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0524</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>2.2000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0808</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>120.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0808</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>1044.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0808</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0808</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>9.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0808</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>24.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>420.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>2528.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>4140.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>181.5500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>95.4800</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>0943</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>1.5000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1255</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>80.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>204.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>330.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>19533.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>3842.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXX</string>
+			<string>XXXXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>-18.9000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>18.9000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>-58.5200</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>58.5200</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>-1.2000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1559</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>1.2000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>15.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>1152.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>3330.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>150.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>3.1500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>1598</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>20.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>1555.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>520.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>5.2500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>145.0400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2009</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2023</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>1115.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>45.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>4359.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>3995.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XXXX</string>
+			<string>XXXXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>-85.4000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>85.4000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>-591.3500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>591.3500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2034</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>180.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>120.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>15355.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>4553.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>55.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXX</string>
+			<string>XXXXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>-23.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>23.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>-110.2400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>110.2400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>-2.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2529</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>2.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>108.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>0.3500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>45.9200</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2925</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>1504.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXX XXX X+/XX+</string>
+			<string>XXX</string>
+			<string>555.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>41533.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>4454.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>55.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXX</string>
+			<string>XXXXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>-23.1000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>23.1000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXX1</string>
+			<string>XXXX</string>
+			<string>XXX</string>
+			<string>0.4800</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXX2</string>
+			<string>XXXX</string>
+			<string>XXX</string>
+			<string>0.5500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>-105.2400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>105.2400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXXXXXX</string>
+			<string>XXX</string>
+			<string>135.4500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>-1.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2941</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>1.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>3220.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>8010.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>8010.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>X5XXXX</string>
+			<string>XXXXXXXXX-5 XXXXXXX</string>
+			<string>XXX</string>
+			<string>5.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>585.4000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>255.3500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>2945</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>0.8000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>1550.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>5318.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>3258.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>440.3000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>145.0400</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3055</string>
+			<string>XXXXX</string>
+			<string>XXXXXX XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXX</string>
+			<string>8.2000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>35.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>538.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>4.5500</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>15.1200</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3292</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XXX</string>
+			<string>XXXXXXXXXX</string>
+			<string>XXX</string>
+			<string>50.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XX</string>
+			<string>XXXX XXX XX+/XXX+</string>
+			<string>XXX</string>
+			<string>5094.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XX</string>
+			<string>XXXX XXX XXX+</string>
+			<string>XXX</string>
+			<string>215.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XX</string>
+			<string>XXXXXXX XXXXXXX XXX</string>
+			<string>XXX</string>
+			<string>100.0000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XXXX</string>
+			<string>XXXXXX XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXX</string>
+			<string>15.1000</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XXXX</string>
+			<string>XX XXXXXXXX XXXXXXX (XXXX)</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XX</string>
+			<string>XXXXXX XXXXXXXX XXXXXX</string>
+			<string>XXX</string>
+			<string>1.2800</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XX</string>
+			<string>XXXXXXXX XXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+		<array>
+			<string>201501</string>
+			<string>3405</string>
+			<string>XXXXX</string>
+			<string>XXXXXXXXXXX XXXXXXXX</string>
+			<string>XXXX</string>
+			<string>XXXX</string>
+		</array>
+	</array>
+	<key>delimiterString</key>
+	<string>;</string>
+	<key>endOfLine</key>
+	<string>\r\n</string>
+	<key>foundQuotedCell</key>
+	<false/>
+</dict>
+</plist>
