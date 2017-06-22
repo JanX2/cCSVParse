@@ -332,7 +332,6 @@
 				3DC89F21179FF51D0019B093 /* Sources */,
 				3DC89F22179FF51D0019B093 /* Frameworks */,
 				3DC89F23179FF51D0019B093 /* Resources */,
-				3DC89F24179FF51D0019B093 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -349,7 +348,7 @@
 		3DC89F05179FF51C0019B093 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Jan Weiß";
 			};
 			buildConfigurationList = 3DC89F08179FF51C0019B093 /* Build configuration list for PBXProject "cCSVParser" */;
@@ -442,22 +441,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3DC89F24179FF51D0019B093 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3DC89F21179FF51D0019B093 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -496,6 +479,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -552,6 +536,7 @@
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.geheimwerk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -569,6 +554,7 @@
 				GCC_PREFIX_HEADER = "cCSVParserTests/cCSVParserTests-Prefix.pch";
 				INFOPLIST_FILE = "cCSVParserTests/cCSVParserTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.geheimwerk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
