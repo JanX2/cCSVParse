@@ -139,12 +139,12 @@ static NSMutableDictionary *_expectedResultsDict;
 					   forKey:@"csvContent"];
 
 		// Metadata
-		if (endOfLine != nil) { // endOfLine will be nil if there are no line breaks in the file we just parsed!
+		if (endOfLine != nil) { // endOfLine will be `nil` if there are no line breaks in the file we just parsed!
 			[plistDict setObject:endOfLine
 						   forKey:@"endOfLine"];
 		}
 		
-		if (delimiterString != nil) { // delimiterString will be nil if there are no dlimiters in the file we just parsed!
+		if (delimiterString != nil) { // delimiterString will be `nil` if there are no delimiters in the file we just parsed!
 			[plistDict setObject:delimiterString
 						  forKey:@"delimiterString"];
 		}
