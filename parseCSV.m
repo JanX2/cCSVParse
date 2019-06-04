@@ -41,7 +41,7 @@ static NSString * const possibleDelimiterNames[] = {
 	@"Tab Symbol (⇥)",
 	@"Pipe Symbol (|)",
 	@"Period Character (.)",
-	@"Space Character ( )"
+	@"Space Character ( )",
 };
 /* For genstrings:
  NSLocalizedString(@"Comma (,)", @"cCSVParseDelimiterNames")
@@ -58,13 +58,13 @@ const char autodetectedDelimiters[] = ",;\t|\0";
 static NSString * const supportedLineEndings[] = {
 	@"\n",
 	@"\r",
-	@"\r\n"
+	@"\r\n",
 };
 
 static NSString * const supportedLineEndingNames[] = {
 	@"Unix/Mac OS X Line Endings (LF)",
 	@"Classic Mac Line Endings (CR)",
-	@"Windows Line Endings (CRLF)"
+	@"Windows Line Endings (CRLF)",
 };
 /* For genstrings:
  NSLocalizedString(@"Unix/Mac OS X Line Endings (LF)", @"cCSVParseLineEndingNames")
