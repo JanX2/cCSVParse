@@ -34,13 +34,14 @@ const char UTF16LEBOM[UTF16LEBOMSize] = {0xFF, 0xFE};
 #define EOL(x) ((*(x) == '\r' || *(x) == '\n'))
 #define NOT_EOL(x) (*(x) != '\r' && *(x) != '\n')
 
-const char possibleDelimiters[] = ",;\t|. \0";
+const char possibleDelimiters[] = ",;\t|.` \0";
 static NSString * const possibleDelimiterNames[] = {
 	@"Comma (,)",
 	@"Semicolon (;)",
 	@"Tab Symbol (⇥)",
 	@"Pipe Symbol (|)",
 	@"Period Character (.)",
+    @"Backtick Character ('`')",
 	@"Space Character ( )",
 };
 /* For genstrings:
@@ -49,10 +50,11 @@ static NSString * const possibleDelimiterNames[] = {
  NSLocalizedString(@"Tab Symbol", @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Pipe Symbol (|)" @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Period Character (.)" @"cCSVParseDelimiterNames")
+ NSLocalizedString(@"Backtick Character ('`')" @"cCSVParseDelimiterNames")
  NSLocalizedString(@"Space Character ( )" @"cCSVParseDelimiterNames")
  */
 
-const char autodetectedDelimiters[] = ",;\t|\0";
+const char autodetectedDelimiters[] = ",;\t|`\0";
 
 
 static NSString * const supportedLineEndings[] = {
