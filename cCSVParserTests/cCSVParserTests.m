@@ -127,7 +127,7 @@ static NSMutableDictionary *_expectedResultsDict;
 		NSString *endOfLine = [[parser endOfLine] jx_stringByEscapingForCCode];
 		NSString *delimiterString = [[parser delimiterString] jx_stringByEscapingForCCode];
 		BOOL foundQuotedCell = [parser foundQuotedCell];
-
+        
 #define VERIFY_EXPECTATIONS					1
 #define VERIFY_EXPECTATIONS_FAILURE_CASE	1
 #define DUMP_TO_PLIST						!VERIFY_EXPECTATIONS
@@ -169,7 +169,7 @@ static NSMutableDictionary *_expectedResultsDict;
 			NSString *expectedEndOfLine = expectedProperties[@"endOfLine"];
 			NSString *expectedDelimiterString = expectedProperties[@"delimiterString"];
 			BOOL expectedFoundQuotedCell = [expectedProperties[@"foundQuotedCell"] boolValue];
-			
+            
 #if !VERIFY_EXPECTATIONS_FAILURE_CASE
 			XCTAssertEqualObjects(csvContent, expectedContent, @"Content for “%@” is not as expected.", fileBaseName);
 #else
