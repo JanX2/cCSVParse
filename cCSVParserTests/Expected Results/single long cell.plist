@@ -16,6 +16,8 @@
 	</array>
 	<key>delimiterString</key>
 	<string>,</string>
+	<key>enableAutodetect</key>
+	<true/>
 	<key>endOfLine</key>
 	<string>\n</string>
 	<key>foundQuotedCell</key>

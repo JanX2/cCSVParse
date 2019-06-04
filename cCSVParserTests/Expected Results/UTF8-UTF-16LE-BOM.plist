@@ -10,6 +10,8 @@
 			<string>Campaign Name</string>
 		</array>
 	</array>
+	<key>enableAutodetect</key>
+	<true/>
 	<key>foundQuotedCell</key>
 	<false/>
 </dict>

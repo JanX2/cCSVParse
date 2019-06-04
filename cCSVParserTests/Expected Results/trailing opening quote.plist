@@ -18,6 +18,8 @@
 	</array>
 	<key>delimiterString</key>
 	<string>,</string>
+	<key>enableAutodetect</key>
+	<true/>
 	<key>foundQuotedCell</key>
 	<false/>
 </dict>

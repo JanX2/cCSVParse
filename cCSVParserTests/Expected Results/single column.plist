@@ -22,6 +22,8 @@
 			<string>provider</string>
 		</array>
 	</array>
+	<key>enableAutodetect</key>
+	<true/>
 	<key>endOfLine</key>
 	<string>\n</string>
 	<key>foundQuotedCell</key>

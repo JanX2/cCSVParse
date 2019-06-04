@@ -6,6 +6,8 @@
 	<string>utf-8</string>
 	<key>csvContent</key>
 	<array/>
+	<key>enableAutodetect</key>
+	<true/>
 	<key>foundQuotedCell</key>
 	<false/>
 </dict>

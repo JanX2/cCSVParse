@@ -115,7 +115,20 @@ static NSMutableDictionary *_expectedResultsDict;
 			CFStringEncoding cfStringEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)charsetName);
 			encoding = CFStringConvertEncodingToNSStringEncoding(cfStringEncoding);
 		}
-		
+        
+        BOOL enableAutodetect = [expectedProperties[@"enableAutodetect"] boolValue];
+        if (enableAutodetect == NO) {
+            NSString *enforcedEndOfLine = expectedProperties[@"endOfLine"];
+            NSString *enforcedDelimiterString = expectedProperties[@"delimiterString"];
+            
+            parser.endOfLine = enforcedEndOfLine;
+            parser.delimiterString = enforcedDelimiterString;
+        }
+        else {
+            parser.endOfLine = nil;
+            parser.delimiterString = nil;
+        }
+        
 		[parser setEncoding:encoding];
 		[parser setData:data];
 		
@@ -152,6 +165,9 @@ static NSMutableDictionary *_expectedResultsDict;
 		[plistDict setObject:@(foundQuotedCell)
 					  forKey:@"foundQuotedCell"];
 		
+        [plistDict setObject:@(enableAutodetect)
+                      forKey:@"enableAutodetect"];
+        
 		CFStringEncoding cfStringEncoding = CFStringConvertNSStringEncodingToEncoding(encoding);
 		NSString *encodingName = (NSString *)CFStringConvertEncodingToIANACharSetName(cfStringEncoding);
 		[plistDict setObject:encodingName
